@@ -36,19 +36,19 @@ function callBack(data){
  view+="<td>조회수</td>";
  view+="</tr>";
  
- $.each(data,(board_num,obj)=>{
+ $.each(data,(b_idx,obj)=>{
     view+="<tr>";
-    view+="<td id='board_num"+b.idx+"'>"+obj.b_area+"</td>";
-    view+="<td>"+obj.b_title+"</td>";
+    view+="<td id='board_num"+b_idx+"'>"+obj.b_area+"</td>";
+    view+="<td><a href='javascript:contentFn("+obj.b_idx+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
     view+="<td>"+obj.b_views+"</td>";
     
     view+="<c:if test='${sessionScope.loginVO==null || sessionScope.loginVO.member_id != \'admin\'}'>";
-    view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.board_num+")'disabled='disabled'>삭제</button></td>";
+    view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.b_idx+")'disabled='disabled'>삭제</button></td>";
     view+="</c:if>";
     
     view+="<c:if test='${sessionScope.loginVO.member_id == \'admin\'}'>";
-    view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.board_num+")' >삭제</button></td>";
+    view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.b_idx+")' >삭제</button></td>";
     view+="</c:if>";
     
     view+="</tr>";
@@ -65,28 +65,10 @@ function callBack(data){
  view+="</table>";
  $("#msg").html(view);
 }
-function contentFn(index) {
-var idx = $("#idx"+index).text();
-$.ajax({
-	url :"ajaxcontent.do",
-	type :"get",
-	data: {"idx":idx},
-	dataType :"json",
-	success : callContent,
-	error : function(){ alter("error");}
-});
+function contentFn(b_idx) {
+	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx;
 }
-function contentFn1() {
-	var idx = $("#cidx").val();
-	$.ajax({
-		url :"ajaxcontent.do",
-		type :"get",
-		data: {"idx":idx},
-		dataType :"json",
-		success : callContent,
-		error : function(){ alter("error");}
-	});
-}
+
 </script>
 </head>
 <body>

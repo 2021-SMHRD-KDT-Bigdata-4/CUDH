@@ -34,7 +34,7 @@ public class FrontController extends HttpServlet {
 		  
 		  HandlerMapping mappings = new HandlerMapping();		  
 		  controller = mappings.getController(command);
-		  System.out.println(controller+"         4");
+		  System.out.println(controller+"        매핑을통한 포조/ DB");
 		  
 		  //-----------------------------------------
 		  

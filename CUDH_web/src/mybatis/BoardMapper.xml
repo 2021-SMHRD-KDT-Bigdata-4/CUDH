@@ -11,4 +11,7 @@
    	<select id="boardList" resultType="VO">
     	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views  from board
     </select>
+    <select id="memberBoardContent" resultType="VO">
+    	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views from board where b_idx=#{b_idx}
+    </select>
 </mapper>

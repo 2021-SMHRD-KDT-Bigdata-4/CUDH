@@ -2,6 +2,8 @@ package frontcontroller;
 
 public class ViewResolver {
 	public static String makeUrl(String view) {
-		return "/WEB-INF/views/"+view+".jsp";
+		System.out.println(view+".jsp");
+		return view+".jsp";
+		//return "/WEB-INF/"+view+".jsp";
 	}
 }

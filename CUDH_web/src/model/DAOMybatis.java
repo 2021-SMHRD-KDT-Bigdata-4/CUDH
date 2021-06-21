@@ -36,6 +36,13 @@ public class DAOMybatis {
 		sqlSession.close();
 		return list; // 여기서는 반납만하지 세션상에 올리거나 하지는 않음
 	}
+	public VO memberBoardContent(int b_idx) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		 VO vo = sqlSession.selectOne("memberBoardContent", b_idx); // idx를 가지고 boardContent에 전송해서 vo 값을 받아온다
+		 System.out.println(vo.getB_contents());
+		 sqlSession.close();
+		 return vo;
+	}
 	
 }
 
