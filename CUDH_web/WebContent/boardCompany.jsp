@@ -10,7 +10,6 @@
 <script type="text/javascript">
 function loginFn(){
 	location.href="/CUDH_web/loginForm.jsp";
-	//<c:url value='/loginForm'/>
 }  
 </script>
 </head>
