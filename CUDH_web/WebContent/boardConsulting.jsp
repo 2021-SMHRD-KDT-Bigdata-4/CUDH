@@ -10,9 +10,10 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<meta name="viewport" content="width=device-width, user-scalable=no" />
-<title>CUDH 컨설팅 페이지</title>
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
+<meta name="viewport" content="width=device-width, user-scalable=no" />
+
+<title>CUDH 컨설팅 페이지</title>
 
 <script type="text/javascript">
 	 $(document).ready(()=>{ 
@@ -31,9 +32,9 @@
 	 }	
 
 	 function callBack(data){
-		 var view_nutrition = "<p class='text-secondary'> 영양학 </p>";
-		 var view_pathology = "<p class='text-secondary'> 질병학 </p>";
-		 var view_breeding = "<p class='text-secondary'> 육종학 </p>";
+		 var view_nutrition = "<span class='badge bg-success'> 영양학 </span>";
+		 var view_pathology = "<span class='badge bg-success'> 질병학 </span>";
+		 var view_breeding = "<span class='badge bg-success'> 육종학 </span>";
 		 
 		 $.each(data, (p_idx, obj)=>{
 			 if(obj.p_expertise.toString()=="영양학"){
@@ -53,15 +54,16 @@
 	 }
 
 	 function card(obj){
-		 var view = "";
-			 view += "<div class='profile_img'>";
-			 view += "<img src='img/profile.png'>";
-			 view += "<p class='text-primary'> 이름 : "+ obj.p_name +"</p>";
-			 view += "</div>";
-			 view += "<div class='profile_text'>";
-			 view += "<p class='text-secondary'>이력 : "+obj.p_career+"</p>";
-			 view += "<p class='text-success'>가격 : "+obj.p_consulting_price+ "만원</p>";
-			 view += "</div>";
+			 var view = "<table>";
+			 view += "<tr>";
+			 view += "<td><img class='img_profile' src='img/profile.png'></td>";
+			 view += "<td><p class='text-secondary'> "+obj.p_career+" </p></td>";
+			 view += "</tr>";
+			 view += "<tr>";
+			 view += "<td><p class='text-primary'> "+ obj.p_name +" </p></td>";
+			 view += "<td><p class='text-success'>" + obj.p_consulting_price+ "만원</p></td>";
+			 view += "</tr>";
+			 view += "</table>";
 		 return view;
 	  }
 	 
@@ -72,9 +74,21 @@
 </head>
 <body>
 	<div class="Contact" id="CONTACT">
-		<div id ="card_nutrition" > </div>
-		<div id ="card_pathology" > </div>
-		<div id ="card_breeding" > </div>
+		<div id="card_nutrition"></div>
+		<div id="card_pathology"></div>
+		<div id="card_breeding"></div>
+		<div>
+			<table>
+				<tr>
+					<td><img class='img_profile' src='img/profile.png'></td>
+					<td><p class='text-secondary'> 이력 </p></td>
+				</tr>
+				<tr>
+					<td><p class='text-primary'> 이름 </p></td>
+					<td><p class='text-success'> 가격 </p></td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </body>
 </html>

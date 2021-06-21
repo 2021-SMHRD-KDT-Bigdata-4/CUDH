@@ -115,6 +115,14 @@ font-size: 26px;
     position: center;
 }
 
+.img_profile{
+	width: 50px;
+	height: 50px;
+	object-fit: none;
+}
+
+
+
 @font-face {
  font-family: 'NanumBarunGothic';
  font-style: normal;
@@ -5222,6 +5230,7 @@ fieldset:disabled .btn {
 }
 
 .badge {
+  width : 1300px;
   display: inline-block;
   padding: 0.6em 1.2em;
   font-size: 0.75em;
