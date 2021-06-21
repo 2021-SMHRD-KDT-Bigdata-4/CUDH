@@ -8,28 +8,33 @@ insert into member values(5,'pyb','12345','박윤빈','yes','전남','비트',0)
 insert into member values(6,'jgj','12345','장경진','yes','전남','벼','0');-- 숫자 2가지방식 다 들어감
 
 --p_idx ,p_name ,p_area ,p_career ,p_mc_crop ,p_sc_crop , p_consulting_price,
-insert into professor values('1','김사과','전남','사과학 박사','과일','사과','40');
-insert into professor values('2','이귤귤','전남','겨울 귤 예측학 저자','과일','귤','35');
-insert into professor values('3','박감감','전남','닭토란 고정 패널','과일','감','40');
-insert into professor values('4','장비트','전남','한철 비트 떡상 예측 저자','밭작물','비트','50');
-insert into professor values('5','최벼벼','전남','전남 벼 관련 특허 보유','농작물','벼','전화 컨택후 협상');
+insert into professor values('1','김사과','영양학','사과학 박사','40');
+insert into professor values('2','이귤귤','영양학','겨울 귤 예측학 저자','35');
+insert into professor values('3','박감감','질병학','닭토란 고정 패널','40');
+insert into professor values('4','장비트','질병학','비트수확의 혁신 드랍 더 비트 저자','50');
+insert into professor values('5','최벼벼','영양학','전남 벼 관련 특허 보유','전화 컨택후 협상');
 
 insert into area values('1','전남','나주');
 insert into area values('2','전남','순천');
 insert into area values('3','전남','장흥');
 insert into area values('4','전남','여수');
 
-insert into contract values(2,1);--  순서) 멤버_idx,전문가_idx
-insert into contract values(5,4);
-
-insert into link values(1,1); --전문가_idx, 지역_idx
-insert into link values(1,2);
-insert into link values(1,3);
-
 insert into board values('1','공지사항','전국','커뮤니티 전체 공지','관리자','도배 및 다툼금지','1',1);
+insert into board values('2','공지사항','전국','커뮤니티 전체 공지2','관리자','게시판 주의사항','1',1);
 
 insert into crop values('1','사과','과일','사과는 사과사과');
 insert into crop values('2','귤','과일','귤은 귤귤');
 insert into crop values('3','감','과일','감은 감감');
 insert into crop values('4','배','과일','배는 배배');
 insert into crop values('5','포도','과일','포도는 포도포도');
+
+insert into contract values(2,1);--  순서) 멤버_idx,전문가_idx
+insert into contract values(5,4);
+
+insert into professor_area values(1,1); --전문가_idx, 지역_idx
+insert into professor_area values(1,2);
+insert into professor_area values(1,3);
+
+insert into professor_crop values(1,1); --전문가_idx, 작물_idx
+insert into professor_crop values(1,2);
+insert into professor_crop values(1,3);

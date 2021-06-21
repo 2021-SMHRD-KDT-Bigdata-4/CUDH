@@ -1,8 +1,9 @@
 -- 이미 한번 생성해서 지우는 코드
+drop table professor_area cascade;
+drop table professor_crop cascade;
+drop table contract cascade;
 drop table board cascade;
 drop table crop cascade;
-drop table link cascade;
-drop table contract cascade;
 drop table area cascade;
 drop table professor cascade;
 drop table member cascade;
@@ -13,7 +14,7 @@ show databases;
 show tables;
 
 -- 테이블 생성
- CREATE TABLE area (
+CREATE TABLE area (
     a_idx    INTEGER NOT NULL auto_increment,
     a_state  varchar(100),
     a_city   varchar(100),
@@ -37,24 +38,22 @@ CREATE TABLE contract (
     p_num  INTEGER NOT NULL
 );
 
-ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_num,
-                                                                m_num );
+ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_num, m_num );
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
-    c_name     varchar(100),
-    c_mc_crop  varchar(100) NOT NULL,
+    c_mc_crop  varchar(100),
+    c_sc_crop  varchar(100),
     c_info     varchar(2000),
     primary key(c_idx)
 );
 
-CREATE TABLE link (
+CREATE TABLE professor_area (
     p_idx  INTEGER NOT NULL,
     a_idx  INTEGER NOT NULL
 );
 
-ALTER TABLE link ADD CONSTRAINT relation_4_pk PRIMARY KEY ( p_idx,
-                                                            a_idx );
+ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( p_idx, a_idx );
 
 CREATE TABLE member (
     m_idx             INTEGER NOT NULL auto_increment,
@@ -71,13 +70,16 @@ CREATE TABLE member (
 CREATE TABLE professor (
     p_idx               INTEGER NOT NULL auto_increment,
     p_name              varchar(100),
-    p_area              varchar(100) NOT NULL,
+    p_expertise			varchar(100),
     p_career            varchar(2000),
-    p_mc_crop           varchar(100),
-    p_sc_crop           varchar(100),
     p_consulting_price  varchar(100),
     primary key(p_idx)
 );
+CREATE TABLE professor_crop (
+    p_idx  INTEGER NOT NULL,
+    c_idx  INTEGER NOT NULL
+);
+ALTER TABLE professor_crop ADD CONSTRAINT relation_3_pk PRIMARY KEY ( p_idx, c_idx );
 
 ALTER TABLE board
     ADD CONSTRAINT board_member_fk FOREIGN KEY ( m_idx )
@@ -91,10 +93,18 @@ ALTER TABLE contract
     ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( p_num )
         REFERENCES professor ( p_idx );
 
-ALTER TABLE link
-    ADD CONSTRAINT relation_4_area_fk FOREIGN KEY ( a_idx )
+ALTER TABLE professor_area
+    ADD CONSTRAINT relation_2_area_fk FOREIGN KEY ( a_idx )
         REFERENCES area ( a_idx );
 
-ALTER TABLE link
-    ADD CONSTRAINT relation_4_professor_fk FOREIGN KEY ( p_idx )
-        REFERENCES professor ( p_idx );       
+ALTER TABLE professor_area
+    ADD CONSTRAINT relation_2_professor_fk FOREIGN KEY ( p_idx )
+        REFERENCES professor ( p_idx );
+        
+ALTER TABLE professor_crop
+    ADD CONSTRAINT relation_3_crop_fk FOREIGN KEY ( c_idx )
+        REFERENCES crop ( c_idx );
+
+ALTER TABLE professor_crop
+    ADD CONSTRAINT relation_3_professor_fk FOREIGN KEY ( p_idx )
+        REFERENCES professor ( p_idx );  
