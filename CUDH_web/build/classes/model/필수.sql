@@ -9,6 +9,7 @@ drop table member cascade;
 
 -- 디비 생성 및 테이블 생성
 create database bestcrop;
+show databases;
 show tables;
 
 -- 테이블 생성

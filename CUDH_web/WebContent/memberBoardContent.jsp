@@ -51,9 +51,10 @@
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
-		    <c:if test="${ !empty sessionScope.loginVO }">
+		    <c:if test="${sessionScope.loginVO!=null}">
 		      <button type="button" class="btn btn-primary btn-sm" onclick="updateFn()">수정</button>
 		    </c:if>
+		    
 		      <button type="button" class="btn btn-success btn-sm" onclick="closeFn()">
 		       <span class="glyphicon glyphicon-remove"></span>닫기</button>
 		    </div>

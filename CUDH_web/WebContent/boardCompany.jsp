@@ -5,11 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=no" />
-<title>Insert title here</title>
-
-
+<title>CUDH</title>
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
-
+<script type="text/javascript">
+function loginFn(){
+	location.href="/CUDH_web/loginForm.jsp";
+	//<c:url value='/loginForm'/>
+}  
+</script>
 </head>
 <body>
 	<div class="header">
@@ -24,7 +27,7 @@
 						<li class="nav-item"><a class="nav-link" href="#CONTACT">Contact</a></li>
 					</ul>
 					<form class="d-flex">
-						<button type="button" class="btn btn-outline-success">로그인</button>
+						<button type="button" class="btn btn-outline-success" onclick="loginFn()">로그인</button>
 					</form>
 				</div>
 			</div>
