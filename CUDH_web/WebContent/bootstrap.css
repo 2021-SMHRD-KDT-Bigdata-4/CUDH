@@ -5230,7 +5230,7 @@ fieldset:disabled .btn {
 }
 
 .badge {
-  width : 1300px;
+  width : 130%;
   display: inline-block;
   padding: 0.6em 1.2em;
   font-size: 0.75em;

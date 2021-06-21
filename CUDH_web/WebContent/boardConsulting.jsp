@@ -56,8 +56,8 @@
 	 function card(obj){
 			 var view = "<table>";
 			 view += "<tr>";
-			 view += "<td><img class='img_profile' src='img/profile.png'></td>";
-			 view += "<td><p class='text-secondary'> "+obj.p_career+" </p></td>";
+			 view += "<td> <img class='img_profile' src='img/profile.png'> </td>";
+			 view += "<td> <p class='text-secondary'> "+obj.p_career+" </p> </td>";
 			 view += "</tr>";
 			 view += "<tr>";
 			 view += "<td><p class='text-primary'> "+ obj.p_name +" </p></td>";
