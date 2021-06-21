@@ -38,16 +38,16 @@ function callBack(data){
  
  $.each(data,(b_idx,obj)=>{
     view+="<tr>";
-    view+="<td id='board_num"+b_idx+"'>"+obj.b_area+"</td>";
+    view+="<td id='b_idx"+b_idx+"'>"+obj.b_area+"</td>";
     view+="<td><a href='javascript:contentFn("+obj.b_idx+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
     view+="<td>"+obj.b_views+"</td>";
     
-    view+="<c:if test='${sessionScope.loginVO==null || sessionScope.loginVO.member_id != \'admin\'}'>";
+    view+="<c:if test='${sessionScope.loginVO==null || sessionScope.loginVO.m_id != \'admin\'}'>";
     view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.b_idx+")'disabled='disabled'>삭제</button></td>";
     view+="</c:if>";
     
-    view+="<c:if test='${sessionScope.loginVO.member_id == \'admin\'}'>";
+    view+="<c:if test='${sessionScope.loginVO.m_id == \'admin\'}'>";
     view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.b_idx+")' >삭제</button></td>";
     view+="</c:if>";
     
