@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mybatis.BoardMapper">
-  
+    
     <select id="loginMember" resultType="VO">
        	select * from member where m_id= #{m_id} and m_pw=#{m_pw}
     </select>
@@ -14,7 +14,7 @@
     	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views from board where b_idx=#{b_idx}
     </select>
     	<select id="professorList" resultType="VO">
-		select p_idx, p_name, p_area, p_career, p_mc_crop, p_sc_crop, p_consulting_price from professor
+		select p_idx, p_name, p_expertise, p_career, p_consulting_price from professor order by p_expertise asc
 	</select>
 	
 </mapper>

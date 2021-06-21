@@ -26,10 +26,8 @@ public class VO {
 		
 		private int p_idx;
 		private String p_name;
-		private String p_area;
+		private String p_expertise;
 		private String p_career;
-		private String p_mc_crop;
-		private String p_sc_crop;
 		private String p_consulting_price;
 		
 		private int a_idx;
@@ -161,11 +159,11 @@ public class VO {
 		public void setP_name(String p_name) {
 			this.p_name = p_name;
 		}
-		public String getP_area() {
-			return p_area;
+		public String getP_expertise() {
+			return p_expertise;
 		}
-		public void setP_area(String p_area) {
-			this.p_area = p_area;
+		public void setP_expertise(String p_expertise) {
+			this.p_expertise = p_expertise;
 		}
 		public String getP_career() {
 			return p_career;
@@ -173,18 +171,7 @@ public class VO {
 		public void setP_career(String p_career) {
 			this.p_career = p_career;
 		}
-		public String getP_mc_crop() {
-			return p_mc_crop;
-		}
-		public void setP_mc_crop(String p_mc_crop) {
-			this.p_mc_crop = p_mc_crop;
-		}
-		public String getP_sc_crop() {
-			return p_sc_crop;
-		}
-		public void setP_sc_crop(String p_sc_crop) {
-			this.p_sc_crop = p_sc_crop;
-		}
+		
 		public String getP_consulting_price() {
 			return p_consulting_price;
 		}
