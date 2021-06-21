@@ -25,7 +25,7 @@ public class FrontController extends HttpServlet {
 		  System.out.println(cpath+"    2");
 		  
 		  String command=reqUrl.substring(cpath.length());	  
-		  DAOMybatis dao=new DAOMybatis();
+		  DAOMybatis dao = new DAOMybatis();
 		  
 		  Controller controller=null;
 		  String view=null;

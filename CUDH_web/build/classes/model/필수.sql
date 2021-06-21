@@ -1,64 +1,99 @@
+-- 이미 한번 생성해서 지우는 코드
 drop table board cascade;
 drop table crop cascade;
+drop table link cascade;
+drop table contract cascade;
+drop table area cascade;
 drop table professor cascade;
 drop table member cascade;
-drop database best_crop;
 
-show databases;
-show tables;
+-- 디비 생성 및 테이블 생성
 create database bestcrop;
-CREATE TABLE board (
-    board_num      INTEGER NOT NULL,
-    board_title    varchar(30) NOT NULL,
-    board_content  varchar(500) NOT NULL,
-    board_grade    varchar(30) NOT NULL,
-    member_num     INTEGER NOT NULL
+show tables;
+
+-- 테이블 생성
+ CREATE TABLE area (
+    a_idx    INTEGER NOT NULL auto_increment,
+    a_state  varchar(100),
+    a_city   varchar(100),
+    primary key(a_idx)
 );
 
-ALTER TABLE board ADD CONSTRAINT board_pk PRIMARY KEY ( board_num );
+CREATE TABLE board (
+    b_idx       INTEGER NOT NULL auto_increment,
+    b_category  varchar(100),
+    b_area      varchar(100),
+    b_title     varchar(100),
+    b_writer    varchar(100),
+    b_contents  varchar(10000),
+    b_views     INTEGER,
+    m_idx       INTEGER NOT NULL,
+    primary key(b_idx)
+);
+
+CREATE TABLE contract (
+    m_num  INTEGER NOT NULL,
+    p_num  INTEGER NOT NULL
+);
+
+ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_num,
+                                                                m_num );
 
 CREATE TABLE crop (
-    crop_num          INTEGER NOT NULL,
-    crop_name         varchar(30) NOT NULL,
-    crop_temperature  INTEGER,
-    crop_info         varchar(50)
+    c_idx      INTEGER NOT NULL auto_increment,
+    c_name     varchar(100),
+    c_mc_crop  varchar(100) NOT NULL,
+    c_info     varchar(2000),
+    primary key(c_idx)
 );
 
-ALTER TABLE crop ADD CONSTRAINT crop_pk PRIMARY KEY ( crop_num );
+CREATE TABLE link (
+    p_idx  INTEGER NOT NULL,
+    a_idx  INTEGER NOT NULL
+);
+
+ALTER TABLE link ADD CONSTRAINT relation_4_pk PRIMARY KEY ( p_idx,
+                                                            a_idx );
 
 CREATE TABLE member (
-    member_num   INTEGER NOT NULL,
-    member_id    varchar(30) NOT NULL,
-    member_pw    varchar(30) NOT NULL,
-    member_name  varchar(30) NOT NULL,
-    farmer       varchar(30) NOT NULL,
-    location     varchar(30) NOT NULL,
-    telephone    varchar(30) NOT NULL,
-    crob         varchar(30) NOT NULL,
-    counselling  varchar(30) NOT NULL,
-    premium      varchar(30) NOT NULL
+    m_idx             INTEGER NOT NULL auto_increment,
+    m_id              varchar(100) NOT NULL,
+    m_pw              varchar(100) NOT NULL,
+    m_name            varchar(100),
+    m_farming         varchar(100),
+    m_area            varchar(100),
+    m_hoping_crop     varchar(100),
+    m_board_counting  INTEGER,
+    primary key(m_idx)
 );
-
-ALTER TABLE member ADD CONSTRAINT user_pk PRIMARY KEY ( member_num );
 
 CREATE TABLE professor (
-    professor_num    INTEGER NOT NULL,
-    professor_sub    varchar(30) NOT NULL,
-    professor_name   varchar(30) NOT NULL,
-    professor_price  varchar(30) NOT NULL,
-    member_num       INTEGER NOT NULL
+    p_idx               INTEGER NOT NULL auto_increment,
+    p_name              varchar(100),
+    p_area              varchar(100) NOT NULL,
+    p_career            varchar(2000),
+    p_mc_crop           varchar(100),
+    p_sc_crop           varchar(100),
+    p_consulting_price  varchar(100),
+    primary key(p_idx)
 );
 
-ALTER TABLE professor ADD CONSTRAINT professor_pk PRIMARY KEY ( professor_num );
-
 ALTER TABLE board
-    ADD CONSTRAINT board_user_fk FOREIGN KEY ( member_num )
-        REFERENCES member ( member_num );
+    ADD CONSTRAINT board_member_fk FOREIGN KEY ( m_idx )
+        REFERENCES member ( m_idx );
 
-ALTER TABLE professor
-    ADD CONSTRAINT professor_user_fk FOREIGN KEY ( member_num )
-        REFERENCES member ( member_num );
-        
-        
-        
-        
+ALTER TABLE contract
+    ADD CONSTRAINT relation_1_member_fk FOREIGN KEY ( m_num )
+        REFERENCES member ( m_idx );
+
+ALTER TABLE contract
+    ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( p_num )
+        REFERENCES professor ( p_idx );
+
+ALTER TABLE link
+    ADD CONSTRAINT relation_4_area_fk FOREIGN KEY ( a_idx )
+        REFERENCES area ( a_idx );
+
+ALTER TABLE link
+    ADD CONSTRAINT relation_4_professor_fk FOREIGN KEY ( p_idx )
+        REFERENCES professor ( p_idx );       
