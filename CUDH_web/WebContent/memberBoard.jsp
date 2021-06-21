@@ -30,17 +30,18 @@ function callBack(data){
  //alert(data);
  var view="<table class = 'table table-bordered'>";
  view+="<tr>";
- view+="<td>번호</td>";
+ view+="<td>지역</td>";
  view+="<td>제목</td>";
+ view+="<td>작성자</td>";
  view+="<td>조회수</td>";
- view+="<td>삭제</td>";
  view+="</tr>";
+ 
  $.each(data,(board_num,obj)=>{
     view+="<tr>";
-    view+="<td id='board_num"+board_num+"'>"+obj.board_num+"</td>";
-    view+="<td>"+obj.board_title+"</td>";
-    view+="<td>"+obj.board_content+"</td>";
-    view+="<td>"+obj.board_grade+"</td>";
+    view+="<td id='board_num"+b.idx+"'>"+obj.b_area+"</td>";
+    view+="<td>"+obj.b_title+"</td>";
+    view+="<td>"+obj.b_writer+"</td>";
+    view+="<td>"+obj.b_views+"</td>";
     
     view+="<c:if test='${sessionScope.loginVO==null || sessionScope.loginVO.member_id != \'admin\'}'>";
     view+="<td><button class='btn btn-warning' onclick='delBtn("+obj.board_num+")'disabled='disabled'>삭제</button></td>";
@@ -92,12 +93,10 @@ function contentFn1() {
 	<div class="container">
 		<h4> Test 게시판</h4>
 		<div class="panel panel-default">
-			<div class="panel-heading">
-	
+			<div class="panel-heading">	
 			<div class="panel-body">
 			<div id="msg"></div>
-				
-
+							
 			</div>
 			<div class="panel-footer">Test 게시판 (장경진)</div>
 		</div>

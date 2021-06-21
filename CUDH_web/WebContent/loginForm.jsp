@@ -16,15 +16,14 @@
 <script type="text/javascript">
 
 function loginFn() {
-	var member_id = $("#member_id").val();
-	var member_pw = $("#member_pw").val();
-	alert(member_id)
+	var m_id = $("#m_id").val();
+	var m_pw = $("#m_pw").val();
 	$.ajax({
 		url : "loginCheck.do",
 		type : "post",
 		data : {
-			"member_id" : member_id,
-			"member_pw" : member_pw
+			"m_id" : m_id,
+			"m_pw" : m_pw
 		},
 		success : function(data) {
 			if (data == "NO") {
@@ -39,6 +38,7 @@ function loginFn() {
 
 	});
 }
+
 	function logoutFn() {
 		$.ajax({
 			url : "logoutCheck.do",
@@ -65,18 +65,18 @@ function loginFn() {
 					<form id="loginfrm" class="form-inline" method="post">
 						<div class="form-group">
 							<label>ID</label> <input type="text" class="form-control"
-								id="member_id" name="member_id">
+								id="m_id" name="m_id">
 						</div>
 						<div class="form-group">
 							<label for="pwd">Password:</label> <input type="password"
-								class="form-control" id="member_pw" name="member_pw">
+								class="form-control" id="m_pw" name="m_pw">
 						</div>
 						<button type="button" class="btn btn-default" onclick="loginFn()">로그인</button>
 					</form>
 				</c:if>
 
 				<c:if test="${sessionScope.loginVO!=null}"> 
-					${sessionScope.loginVO.member_name}님  방문을환영합니다
+					${sessionScope.loginVO.m_name}님  방문을환영합니다
 					<input type="button" value="로그아웃" onclick="logoutFn()">
 				</c:if>
 

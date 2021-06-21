@@ -26,7 +26,7 @@ public class DAOMybatis {
 		 SqlSession sqlSession = sqlSessionFactory.openSession();
 		 vo = sqlSession.selectOne("loginMember", vo);
 		 sqlSession.close();
-		 System.out.println(vo.getMember_id()+"           DAOMy5");
+		 System.out.println(vo.getM_id()+"           DAOMy5");
 		 return vo;
 	 }
 	public List<VO> boardList(){ // 앞으로 커넥션 해줄 친구

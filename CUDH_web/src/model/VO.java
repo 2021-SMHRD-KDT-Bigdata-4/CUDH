@@ -1,164 +1,213 @@
 package model;
 
 public class VO {
-		private int board_num;
-		private String board_title;
-		private String board_content;
-		private String board_grade;
+		private int b_idx;
+		private String b_category;
+		private String b_area;
+		private String b_title;
+		private String b_writer;
+		private String b_contents;
+		private int b_views;
+		
 	    
-	    private int crop_num;
-	    private String crop_name;
-	    private int crop_temperature;
-	    private String crop_info;
+	    private int c_idx;
+	    private String c_name;
+	    private String c_mc_crop;
+	    private String c_info;
 	    
-	    private int member_num;
-	    private String member_id;
-	    private String member_pw;
-	    private String member_name;
-		private String farmer;
-		private String location;
-		private String telephone;
-		private String crob;
-		private String counselling;
-		private String premium;
+	    private int m_idx;
+	    private String m_id;
+	    private String m_pw;
+	    private String m_name;
+		private String m_farming;
+		private String m_area;
+		private String m_hoping_crop;
+		private int m_board_counting;
 		
-		private String professor_num;
-		private String professor_sub;
-		private String professor_name;
-		private String professor_price;
+		private int p_idx;
+		private String p_name;
+		private String p_area;
+		private String p_career;
+		private String p_mc_crop;
+		private String p_sc_crop;
+		private String p_consulting_price;
 		
-		public int getBoard_num() {
-			return board_num;
+		private int a_idx;
+		private String a_state;
+		private String a_city;
+		public int getB_idx() {
+			return b_idx;
 		}
-		public void setBoard_num(int board_num) {
-			this.board_num = board_num;
+		public void setB_idx(int b_idx) {
+			this.b_idx = b_idx;
 		}
-		public String getBoard_title() {
-			return board_title;
+		public String getB_category() {
+			return b_category;
 		}
-		public void setBoard_title(String board_title) {
-			this.board_title = board_title;
+		public void setB_category(String b_category) {
+			this.b_category = b_category;
 		}
-		public String getBoard_content() {
-			return board_content;
+		public String getB_area() {
+			return b_area;
 		}
-		public void setBoard_content(String board_content) {
-			this.board_content = board_content;
+		public void setB_area(String b_area) {
+			this.b_area = b_area;
 		}
-		public String getBoard_grade() {
-			return board_grade;
+		public String getB_title() {
+			return b_title;
 		}
-		public void setBoard_grade(String board_grade) {
-			this.board_grade = board_grade;
+		public void setB_title(String b_title) {
+			this.b_title = b_title;
 		}
-		public int getCrop_num() {
-			return crop_num;
+		public String getB_writer() {
+			return b_writer;
 		}
-		public void setCrop_num(int crop_num) {
-			this.crop_num = crop_num;
+		public void setB_writer(String b_writer) {
+			this.b_writer = b_writer;
 		}
-		public String getCrop_name() {
-			return crop_name;
+		public String getB_contents() {
+			return b_contents;
 		}
-		public void setCrop_name(String crop_name) {
-			this.crop_name = crop_name;
+		public void setB_contents(String b_contents) {
+			this.b_contents = b_contents;
 		}
-		public int getCrop_temperature() {
-			return crop_temperature;
+		public int getB_views() {
+			return b_views;
 		}
-		public void setCrop_temperature(int crop_temperature) {
-			this.crop_temperature = crop_temperature;
+		public void setB_views(int b_views) {
+			this.b_views = b_views;
 		}
-		public String getCrop_info() {
-			return crop_info;
+		public int getC_idx() {
+			return c_idx;
 		}
-		public void setCrop_info(String crop_info) {
-			this.crop_info = crop_info;
+		public void setC_idx(int c_idx) {
+			this.c_idx = c_idx;
 		}
-		public int getMember_num() {
-			return member_num;
+		public String getC_name() {
+			return c_name;
 		}
-		public void setMember_num(int member_num) {
-			this.member_num = member_num;
+		public void setC_name(String c_name) {
+			this.c_name = c_name;
 		}
-		public String getMember_id() {
-			return member_id;
+		public String getC_mc_crop() {
+			return c_mc_crop;
 		}
-		public void setMember_id(String member_id) {
-			this.member_id = member_id;
+		public void setC_mc_crop(String c_mc_crop) {
+			this.c_mc_crop = c_mc_crop;
 		}
-		public String getMember_pw() {
-			return member_pw;
+		public String getC_info() {
+			return c_info;
 		}
-		public void setMember_pw(String member_pw) {
-			this.member_pw = member_pw;
+		public void setC_info(String c_info) {
+			this.c_info = c_info;
 		}
-		public String getMember_name() {
-			return member_name;
+		public int getM_idx() {
+			return m_idx;
 		}
-		public void setMember_name(String member_name) {
-			this.member_name = member_name;
+		public void setM_idx(int m_idx) {
+			this.m_idx = m_idx;
 		}
-		public String getFarmer() {
-			return farmer;
+		public String getM_id() {
+			return m_id;
 		}
-		public void setFarmer(String farmer) {
-			this.farmer = farmer;
+		public void setM_id(String m_id) {
+			this.m_id = m_id;
 		}
-		public String getLocation() {
-			return location;
+		public String getM_pw() {
+			return m_pw;
 		}
-		public void setLocation(String location) {
-			this.location = location;
+		public void setM_pw(String m_pw) {
+			this.m_pw = m_pw;
 		}
-		public String getTelephone() {
-			return telephone;
+		public String getM_name() {
+			return m_name;
 		}
-		public void setTelephone(String telephone) {
-			this.telephone = telephone;
+		public void setM_name(String m_name) {
+			this.m_name = m_name;
 		}
-		public String getCrob() {
-			return crob;
+		public String getM_farming() {
+			return m_farming;
 		}
-		public void setCrob(String crob) {
-			this.crob = crob;
+		public void setM_farming(String m_farming) {
+			this.m_farming = m_farming;
 		}
-		public String getCounselling() {
-			return counselling;
+		public String getM_area() {
+			return m_area;
 		}
-		public void setCounselling(String counselling) {
-			this.counselling = counselling;
+		public void setM_area(String m_area) {
+			this.m_area = m_area;
 		}
-		public String getPremium() {
-			return premium;
+		public String getM_hoping_crop() {
+			return m_hoping_crop;
 		}
-		public void setPremium(String premium) {
-			this.premium = premium;
+		public void setM_hoping_crop(String m_hoping_crop) {
+			this.m_hoping_crop = m_hoping_crop;
 		}
-		public String getProfessor_num() {
-			return professor_num;
+		public int getM_board_counting() {
+			return m_board_counting;
 		}
-		public void setProfessor_num(String professor_num) {
-			this.professor_num = professor_num;
+		public void setM_board_counting(int m_board_counting) {
+			this.m_board_counting = m_board_counting;
 		}
-		public String getProfessor_sub() {
-			return professor_sub;
+		public int getP_idx() {
+			return p_idx;
 		}
-		public void setProfessor_sub(String professor_sub) {
-			this.professor_sub = professor_sub;
+		public void setP_idx(int p_idx) {
+			this.p_idx = p_idx;
 		}
-		public String getProfessor_name() {
-			return professor_name;
+		public String getP_name() {
+			return p_name;
 		}
-		public void setProfessor_name(String professor_name) {
-			this.professor_name = professor_name;
+		public void setP_name(String p_name) {
+			this.p_name = p_name;
 		}
-		public String getProfessor_price() {
-			return professor_price;
+		public String getP_area() {
+			return p_area;
 		}
-		public void setProfessor_price(String professor_price) {
-			this.professor_price = professor_price;
+		public void setP_area(String p_area) {
+			this.p_area = p_area;
 		}
-		
+		public String getP_career() {
+			return p_career;
+		}
+		public void setP_career(String p_career) {
+			this.p_career = p_career;
+		}
+		public String getP_mc_crop() {
+			return p_mc_crop;
+		}
+		public void setP_mc_crop(String p_mc_crop) {
+			this.p_mc_crop = p_mc_crop;
+		}
+		public String getP_sc_crop() {
+			return p_sc_crop;
+		}
+		public void setP_sc_crop(String p_sc_crop) {
+			this.p_sc_crop = p_sc_crop;
+		}
+		public String getP_consulting_price() {
+			return p_consulting_price;
+		}
+		public void setP_consulting_price(String p_consulting_price) {
+			this.p_consulting_price = p_consulting_price;
+		}
+		public int getA_idx() {
+			return a_idx;
+		}
+		public void setA_idx(int a_idx) {
+			this.a_idx = a_idx;
+		}
+		public String getA_state() {
+			return a_state;
+		}
+		public void setA_state(String a_state) {
+			this.a_state = a_state;
+		}
+		public String getA_city() {
+			return a_city;
+		}
+		public void setA_city(String a_city) {
+			this.a_city = a_city;
+		}
 		
 }

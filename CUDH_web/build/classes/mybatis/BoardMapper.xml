@@ -5,10 +5,10 @@
 <mapper namespace="mybatis.BoardMapper">
   
     <select id="loginMember" resultType="VO">
-       select * from member where member_id= #{member_id} and member_pw=#{member_pw}
+       	select * from member where m_id= #{m_id} and m_pw=#{m_pw}
     </select>
     
    	<select id="boardList" resultType="VO">
-    select board_num,board_title,board_content,board_grade,member_num from board
+    	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views  from board
     </select>
 </mapper>
