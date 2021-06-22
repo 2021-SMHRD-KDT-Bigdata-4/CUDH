@@ -23,7 +23,7 @@
 	
 	 function cardList(){
 	 $.ajax({
-		 url : "cardlist.do", //이름 다시 정해서 핸들러 매핑할 것
+		 url : "consultingCardlist.do", //이름 다시 정해서 핸들러 매핑할 것
 		 type : "get",       
 		 success : callBack, 
 		 dataType : "json",
@@ -47,7 +47,6 @@
 				 view_breeding += card(obj);
 			 }
 		 });
-		 
 		 $("#card_nutrition").html(view_nutrition); 
 		 $("#card_pathology").html(view_pathology); 
 		 $("#card_breeding").html(view_breeding); 
@@ -61,19 +60,16 @@
 			 view += "</tr>";
 			 view += "<tr>";
 			 view += "<td><p class='text-primary'> "+ obj.p_name +" </p></td>";
-			 view += "<td><p class='text-success'>" + obj.p_consulting_price+ "만원</p></td>";
+			 view += "<td><p class='text-success'>" + obj.p_consulting_price + "만원</p></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		 return view;
 	  }
-	 
-		 
 </script>
-
-
 </head>
+
 <body>
-	<div class="Contact" id="CONTACT">
+	<div class="Content" id="CONTENT">
 		<div id="card_nutrition"></div>
 		<div id="card_pathology"></div>
 		<div id="card_breeding"></div>

@@ -22,7 +22,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		
 		mappings.put("/memberBoardContent.do", new MemberBoardContentController());
 
-		mappings.put("/cardlist.do", new CardListController());
+		mappings.put("/consultingCardlist.do", new CardListController());
 	}
 	public Controller getController(String command) {
 		return mappings.get(command);
