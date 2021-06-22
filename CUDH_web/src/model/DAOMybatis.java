@@ -49,6 +49,13 @@ public class DAOMybatis {
 		sqlSession.close();
 		return list;
 	}
+	public int memberBoardinsert(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.insert("memberBoardinsert", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	}
 	
 }
 

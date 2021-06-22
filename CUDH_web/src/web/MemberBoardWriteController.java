@@ -11,8 +11,7 @@ public class MemberBoardWriteController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+				
 		return "memberBoardWrite";
 	}
 

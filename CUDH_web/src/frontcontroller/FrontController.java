@@ -41,6 +41,7 @@ public class FrontController extends HttpServlet {
 		  
 		  view = controller.requestHandler(request, response);
 		  System.out.println(view + "    여기까지 오면 대부분 view 문제");
+		  
 		  if(view!=null) {  // /WEB-INF/views/boardList.jsp
 			if(view.indexOf("redirect:/")!=-1) {
 				response.sendRedirect(view.split(":/")[1]); // view = redirect:/list.do

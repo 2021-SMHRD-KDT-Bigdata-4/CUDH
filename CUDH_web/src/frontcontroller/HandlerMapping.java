@@ -9,6 +9,7 @@ import web.LoginCheckController;
 import web.LogoutCheckController;
 import web.MemberBoardContentController;
 import web.MemberBoardController;
+import web.MemberBoardRegisterController;
 import web.MemberBoardWriteController;
 
 
@@ -23,7 +24,8 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		
 		mappings.put("/memberBoardContent.do", new MemberBoardContentController());
 		mappings.put("/memberBoardWrite.do", new MemberBoardWriteController());
-
+		mappings.put("/memberBoardRegister.do", new MemberBoardRegisterController());
+		
 		mappings.put("/consultingCardlist.do", new CardListController());
 	}
 	public Controller getController(String command) {

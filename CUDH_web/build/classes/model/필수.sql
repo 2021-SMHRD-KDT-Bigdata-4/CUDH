@@ -10,6 +10,7 @@ drop table member cascade;
 
 -- 디비 생성 및 테이블 생성
 create database bestcrop;
+drop database bestcrop;
 show databases;
 show tables;
 
@@ -24,7 +25,8 @@ CREATE TABLE area (
 CREATE TABLE board (
     b_idx       INTEGER NOT NULL auto_increment,
     b_category  varchar(100),
-    b_area      varchar(100),
+    b_state      varchar(100),
+    b_city      varchar(100),
     b_title     varchar(100),
     b_writer    varchar(100),
     b_contents  varchar(10000),

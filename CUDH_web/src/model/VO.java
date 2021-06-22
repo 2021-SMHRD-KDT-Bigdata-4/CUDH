@@ -3,9 +3,10 @@ package model;
 public class VO {
 		private int b_idx;
 		private String b_category;
-		private String b_area;
+		private String b_state;
 		private String b_title;
 		private String b_writer;
+		private String b_city;
 		private String b_contents;
 		private int b_views;
 		
@@ -46,11 +47,11 @@ public class VO {
 		public void setB_category(String b_category) {
 			this.b_category = b_category;
 		}
-		public String getB_area() {
-			return b_area;
+		public String getB_state() {
+			return b_state;
 		}
-		public void setB_area(String b_area) {
-			this.b_area = b_area;
+		public void setB_state(String b_state) {
+			this.b_state = b_state;
 		}
 		public String getB_title() {
 			return b_title;
@@ -63,6 +64,12 @@ public class VO {
 		}
 		public void setB_writer(String b_writer) {
 			this.b_writer = b_writer;
+		}
+		public String getB_city() {
+			return b_city;
+		}
+		public void setB_city(String b_city) {
+			this.b_city = b_city;
 		}
 		public String getB_contents() {
 			return b_contents;

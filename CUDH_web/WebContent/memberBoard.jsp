@@ -56,7 +56,7 @@ function callBack(data){
  view+="<td colspan='5'>";
  
  view+="<c:if test='${!empty sessionScope.loginVO}'>";
- view+="<button type='button' class='btn btn-outline-secondary' onclick ='btnWrite()'>글쓰기</button>";
+ view+="<button type='button' class='btn btn-outline-warning' onclick ='btnWrite()'>글쓰기</button>";
  view+="</c:if>";
  
  view+="</td>"
