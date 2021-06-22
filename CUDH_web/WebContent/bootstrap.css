@@ -71,8 +71,8 @@
 	text-align: center;
 }
 
-.Content{
-	text-align: center;
+.Content >div{
+	display:inline-block;
 }
 
 
@@ -124,8 +124,8 @@ font-size: 26px;
 }
 
 .img_profile{
-	width: 150px;
-	height: 150px;
+	width: 250px;
+	height: 250px;
 	object-fit: fill;
 }
 
