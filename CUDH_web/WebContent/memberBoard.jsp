@@ -64,6 +64,9 @@ function callBack(data){
  view+="</table>";
  $("#msg").html(view);
 }
+function btnWrite(){
+	location.href="<c:url value='/memberBoardWrite.do'/>"
+}
 function contentFn(b_idx) {
 	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx;
 }
@@ -76,8 +79,7 @@ function contentFn(b_idx) {
 		<div class="panel panel-default">
 			<div class="panel-heading">	</div>
 			<div class="panel-body">
-			<div id="msg"></div>
-			<button type='button' class='btn btn-outline-secondary' onclick ='btnWrite()'>글쓰기</button>							
+			<div id="msg"></div>						
 			</div>
 	</div>
 </body>
