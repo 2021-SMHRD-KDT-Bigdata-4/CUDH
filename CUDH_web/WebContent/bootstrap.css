@@ -67,6 +67,14 @@
 
 }
 
+.Content{
+	text-align: center;
+}
+
+.Content{
+	text-align: center;
+}
+
 
 .Main__background {
   width: 100%;
@@ -116,9 +124,9 @@ font-size: 26px;
 }
 
 .img_profile{
-	width: 50px;
-	height: 50px;
-	object-fit: none;
+	width: 150px;
+	height: 150px;
+	object-fit: fill;
 }
 
 
@@ -5230,7 +5238,7 @@ fieldset:disabled .btn {
 }
 
 .badge {
-  width : 130%;
+  width : 1300px;
   display: inline-block;
   padding: 0.6em 1.2em;
   font-size: 0.75em;

@@ -1,5 +1,5 @@
 
---m_idx ,m_id ,m_pw ,m_name ,m_farming , m_area,m_hoping_crop , m_board_counting//   
+--m_idx ,m_id ,m_pw ,m_name ,m_farming , m_area,m_hoping_crop, m_board_counting   
 insert into member values(1,'admin','admin','admin','admin','admin','admin',0);
 insert into member values(2,'cgj','12345','최강준','no','전남','사과',0);
 insert into member values(3,'ghg','12345','고희경','no','전남','배',0);
@@ -7,7 +7,7 @@ insert into member values(4,'kse','12345','김성은','no','전남','포도',0);
 insert into member values(5,'pyb','12345','박윤빈','yes','전남','비트',0);
 insert into member values(6,'jgj','12345','장경진','yes','전남','벼','0');-- 숫자 2가지방식 다 들어감
 
---p_idx ,p_name ,p_area ,p_career ,p_mc_crop ,p_sc_crop , p_consulting_price,
+--p_idx, p_name, p_expertise, p_career, p_consulting_price
 insert into professor values('1','김사과','영양학','사과학 박사','40');
 insert into professor values('2','이귤귤','영양학','겨울 귤 예측학 저자','35');
 insert into professor values('3','박감감','질병학','닭토란 고정 패널','40');
@@ -42,3 +42,4 @@ insert into professor_area values(1,3);
 insert into professor_crop values(1,1); --전문가_idx, 작물_idx
 insert into professor_crop values(1,2);
 insert into professor_crop values(1,3);
+
