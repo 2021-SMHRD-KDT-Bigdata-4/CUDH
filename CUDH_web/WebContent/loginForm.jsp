@@ -14,7 +14,6 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-
 function loginFn() {
 	var m_id = $("#m_id").val();
 	var m_pw = $("#m_pw").val();
@@ -38,7 +37,6 @@ function loginFn() {
 
 	});
 }
-
 	function logoutFn() {
 		$.ajax({
 			url : "logoutCheck.do",
