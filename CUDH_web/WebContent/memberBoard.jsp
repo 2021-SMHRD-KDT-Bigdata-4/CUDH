@@ -7,7 +7,6 @@
 <title>멤버 게시판</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, user-scalable=no" />
@@ -57,7 +56,7 @@ function callBack(data){
  view+="<td colspan='5'>";
  
  view+="<c:if test='${!empty sessionScope.loginVO}'>";
- view+="<input type='button' value='글쓰기' class='btn btn-primary' onclick ='btnWrite()'/>";
+ view+="<button type='button' class='btn btn-outline-secondary' onclick ='btnWrite()'>글쓰기</button>";
  view+="</c:if>";
  
  view+="</td>"
@@ -75,13 +74,10 @@ function contentFn(b_idx) {
 	<div class="container">
 		<h4> Test 게시판</h4>
 		<div class="panel panel-default">
-			<div class="panel-heading">	
+			<div class="panel-heading">	</div>
 			<div class="panel-body">
-			<div id="msg"></div>
-							
+			<div id="msg"></div>							
 			</div>
-			<div class="panel-footer">Test 게시판 (장경진)</div>
-		</div>
 	</div>
 </body>
 </html>

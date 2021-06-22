@@ -6,6 +6,7 @@ import web.MemberBoardContentController;
 import web.CardListController;
 import web.Controller;
 import web.LoginCheckController;
+import web.LogoutCheckController;
 import web.MemberBoardContentController;
 import web.MemberBoardController;
 
@@ -15,6 +16,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 	public HandlerMapping() {
 		mappings= new HashMap<String, Controller>();
 		mappings.put("/loginCheck.do", new LoginCheckController());
+		mappings.put("/logoutCheck.do", new LogoutCheckController());
 		
 		mappings.put("/memberBoard.do", new MemberBoardController());
 		
