@@ -11,8 +11,8 @@ public class VO {
 		
 	    
 	    private int c_idx;
-	    private String c_name;
 	    private String c_mc_crop;
+	    private String c_sc_crop;
 	    private String c_info;
 	    
 	    private int m_idx;
@@ -33,6 +33,7 @@ public class VO {
 		private int a_idx;
 		private String a_state;
 		private String a_city;
+		
 		public int getB_idx() {
 			return b_idx;
 		}
@@ -81,17 +82,17 @@ public class VO {
 		public void setC_idx(int c_idx) {
 			this.c_idx = c_idx;
 		}
-		public String getC_name() {
-			return c_name;
-		}
-		public void setC_name(String c_name) {
-			this.c_name = c_name;
-		}
 		public String getC_mc_crop() {
 			return c_mc_crop;
 		}
 		public void setC_mc_crop(String c_mc_crop) {
 			this.c_mc_crop = c_mc_crop;
+		}
+		public String getC_sc_crop() {
+			return c_sc_crop;
+		}
+		public void setC_sc_crop(String c_sc_crop) {
+			this.c_sc_crop = c_sc_crop;
 		}
 		public String getC_info() {
 			return c_info;
@@ -171,7 +172,6 @@ public class VO {
 		public void setP_career(String p_career) {
 			this.p_career = p_career;
 		}
-		
 		public String getP_consulting_price() {
 			return p_consulting_price;
 		}

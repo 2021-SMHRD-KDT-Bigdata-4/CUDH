@@ -34,11 +34,11 @@ CREATE TABLE board (
 );
 
 CREATE TABLE contract (
-    m_num  INTEGER NOT NULL,
-    p_num  INTEGER NOT NULL
+    m_idx  INTEGER NOT NULL,
+    p_idx  INTEGER NOT NULL
 );
 
-ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_num, m_num );
+ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_idx, m_idx );
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
@@ -86,11 +86,11 @@ ALTER TABLE board
         REFERENCES member ( m_idx );
 
 ALTER TABLE contract
-    ADD CONSTRAINT relation_1_member_fk FOREIGN KEY ( m_num )
+    ADD CONSTRAINT relation_1_member_fk FOREIGN KEY ( m_idx )
         REFERENCES member ( m_idx );
 
 ALTER TABLE contract
-    ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( p_num )
+    ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( p_idx )
         REFERENCES professor ( p_idx );
 
 ALTER TABLE professor_area
