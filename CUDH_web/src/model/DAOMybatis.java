@@ -43,12 +43,22 @@ public class DAOMybatis {
 		 sqlSession.close();
 		 return vo;
 	}
-	public List<VO> professorList(){ // 앞으로 커넥션 해줄 친구
+	
+	public List<String> professorExpertiseList(){
 		SqlSession sqlSession =sqlSessionFactory.openSession();
-		List<VO> list= sqlSession.selectList("professorList");
+		List<String> list= sqlSession.selectList("professorExpertiseList");
 		sqlSession.close();
 		return list;
 	}
+	
+	
+	public List<VO> professorList(String p_expertise){ // 앞으로 커넥션 해줄 친구
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		List<VO> list= sqlSession.selectList("professorList", p_expertise);
+		sqlSession.close();
+		return list;
+	}
+	
 	
 }
 

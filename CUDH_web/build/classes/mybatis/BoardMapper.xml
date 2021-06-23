@@ -13,8 +13,12 @@
     <select id="memberBoardContent" resultType="VO">
     	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views from board where b_idx=#{b_idx}
     </select>
-    	<select id="professorList" resultType="VO">
-		select p_idx, p_name, p_expertise, p_career, p_consulting_price from professor order by p_expertise asc
+    <select id="professorExpertiseList" resultType="String">
+   	    select p_expertise from professor GROUP BY p_expertise order by p_expertise asc
 	</select>
-	
+    <select id="professorList" resultType="VO">
+		select * from professor where p_expertise=#{p_expertise}
+	</select>
+   
+
 </mapper>

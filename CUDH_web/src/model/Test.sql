@@ -42,4 +42,3 @@ insert into professor_area values(1,3);
 insert into professor_crop values(1,1); --전문가_idx, 작물_idx
 insert into professor_crop values(1,2);
 insert into professor_crop values(1,3);
-

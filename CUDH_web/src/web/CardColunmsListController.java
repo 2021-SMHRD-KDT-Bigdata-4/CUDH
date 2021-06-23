@@ -13,28 +13,22 @@ import com.google.gson.Gson;
 import model.DAOMybatis;
 import model.VO;
 
-public class CardListController implements Controller {
+public class CardColunmsListController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String p_expertise=(request.getParameter("p_expertise")).toString();	
-		
 		DAOMybatis dao = new DAOMybatis();
-		try {
-		List<VO> list = dao.professorList(p_expertise);
-		System.out.println(list);
+		List<String> list = dao.professorExpertiseList();
 		Gson g = new Gson();
 
 		String pList = g.toJson(list);
 		response.setContentType("text/json;charset=euc-kr");
 		PrintWriter out = response.getWriter();
 		out.println(pList);
-		System.out.println(pList+ "5");
-		} catch (Exception e) {			
-			e.printStackTrace();
-		}	
+		System.out.println(pList+ "4.5");
+
 		return null;
 	}
 

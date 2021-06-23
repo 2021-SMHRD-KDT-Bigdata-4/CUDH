@@ -75,6 +75,19 @@
 	display:inline-block;
 }
 
+.flex-container {
+  display : flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.flex-item {
+	display : flex;
+	
+}
+
 
 .Main__background {
   width: 100%;
