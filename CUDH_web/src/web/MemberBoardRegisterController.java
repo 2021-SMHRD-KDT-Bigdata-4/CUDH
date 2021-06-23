@@ -30,9 +30,9 @@ public class MemberBoardRegisterController implements Controller {
 		vo.setB_title(b_title);
 		vo.setB_contents(b_contents);
 		vo.setB_writer(b_writer);
-		vo.setM_idx(int_b_m_idx);
+		vo.setB_m_idx(int_b_m_idx);
         String view=null;
-        System.out.println(b_category+"  "+b_state+"  "+ b_city+"  "+ b_title+"  "+ b_contents+"  "+b_writer+"  "+b_m_idx +"   3.5");
+        System.out.println(b_category+"  "+b_state+"  "+ b_city+"  "+ b_title+"  "+ b_contents+"  "+b_writer+"  "+int_b_m_idx +"   3.5");
 		//BoardDAO dao=new BoardDAO();
         DAOMybatis dao =new DAOMybatis();
 		try {

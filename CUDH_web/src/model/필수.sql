@@ -28,8 +28,8 @@ CREATE TABLE board (
     b_state      varchar(100),
     b_city      varchar(100),
     b_title     varchar(100),
-    b_writer    varchar(100),
     b_contents  varchar(10000),
+    b_writer    varchar(100),
     b_views     INTEGER,
     b_m_idx       INTEGER NOT NULL,
     primary key(b_idx)

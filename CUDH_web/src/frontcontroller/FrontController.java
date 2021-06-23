@@ -41,14 +41,13 @@ public class FrontController extends HttpServlet {
 		  System.out.println(command+"    3"); // HandlerMapping(핸들러메핑)
 		  
 		  HandlerMapping mappings = new HandlerMapping();		  
-		  controller = mappings.getController(command); //매핑을통한 포조 처리후 복귀
+		  controller = mappings.getController(command); 	//매핑을통한 포조 처리후 복귀
 		  System.out.println(controller+"        매핑을통한 포조/ DB");
 		  
-		  //-----------------------------------------
-		  
-		  
+
 		  view = controller.requestHandler(request, response);
 		  System.out.println(view + "    여기까지 오면 대부분 view 문제");
+		//-----------------------------------------
 		  
 		  if(view!=null) {  // /WEB-INF/views/boardList.jsp
 			if(view.indexOf("redirect:/")!=-1) {

@@ -37,6 +37,7 @@
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">도</label>
 						<select class="form-select" id="b_state" name="b_state">
+							<option value="전국">전국</option>
 							<option value="서욽특별시">서울특별시</option>
 							<option value="전라북도">전라북도</option>
 							<option value="전라남도">전라남도</option>
@@ -45,7 +46,7 @@
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">시</label>
 						<select class="form-select" id="b_city" name="b_city">
-							<option value=""></option>
+							<option value="전국">전국</option>
 							<option value="목표">목포</option>
 							<option value="여수">여수</option>
 							<option value="고흥">고흥</option>
@@ -64,12 +65,12 @@
 					</div>
 					<div class="form-group">
 						<label>작성자: </label><input type="text" class="form-control"
-							id="b_writer" name="b_writer" value="${sessionScope.loginVO.m_id}"
+							id="b_writer" name="b_writer" value="${sessionScope.loginVO.m_name}"
 							readonly="readonly">
 					</div>
 					<div class="form-group">
 						<input type="text" class="form-control"
-							id="m_idx" name="m_idx" value="${sessionScope.loginVO.m_idx}"
+							id="b_m_idx" name="b_m_idx" value="${sessionScope.loginVO.m_idx}"
 							readonly="readonly" visibility : hidden>
 					</div>
 					<button type="submit" class="btn btn-success">글쓰기</button>

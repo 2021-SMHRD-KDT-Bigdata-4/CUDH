@@ -40,6 +40,7 @@ public class LoginCheckController implements Controller {
 			session.setAttribute("loginVO", loginVO);
 			//세션 바인딩~~~~~
 			request.setAttribute("loginVO", loginVO);
+			
 		}else {
 			out.print("NO"); //실패(0)
 		}

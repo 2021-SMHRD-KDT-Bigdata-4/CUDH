@@ -43,6 +43,7 @@ public class VO {
 		
 		private int pc_p_idx;
 		private int pc_c_idx;
+		
 		public int getB_idx() {
 			return b_idx;
 		}

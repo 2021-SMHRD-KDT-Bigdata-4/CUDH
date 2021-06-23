@@ -19,7 +19,7 @@
 		select * from professor where p_expertise=#{p_expertise}
 	</select>
     <insert id="memberBoardinsert" >
-        insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views ,b_m_idx)
-         values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer},0 , #{b_m_idx})
+        insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views ,b_m_idx) 
+        values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer}, 0, #{b_m_idx})
     </insert>
 </mapper>
