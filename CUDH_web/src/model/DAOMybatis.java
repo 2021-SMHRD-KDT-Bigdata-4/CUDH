@@ -58,7 +58,6 @@ public class DAOMybatis {
 		return cnt;
 	}
 	
-	
 	public List<VO> professorList(String p_expertise){ // 앞으로 커넥션 해줄 친구
 		SqlSession sqlSession =sqlSessionFactory.openSession();
 		List<VO> list= sqlSession.selectList("professorList", p_expertise);
