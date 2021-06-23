@@ -24,7 +24,6 @@ public class MemberBoardContentController implements Controller {
 			 
 			 // 상세보기페이지로 이동 : boardContent.jsp
 			 request.setAttribute("vo", vo);
-			 System.out.println(vo.getB_title()+vo.getB_idx()+vo.getB_contents()+vo.getB_writer());
 			 
 	         //RequestDispatcher rd = request.getRequestDispatcher("/boardContent.jsp");
 	         //rd.forward(request, response);

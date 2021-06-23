@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 상세보기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
 <script
@@ -14,15 +14,25 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+function deleteFn(b_idx) {
+if (confirm("정말로 삭제 하시겠습니까?") == true) {
+		location.href="<c:url value='/memberBoardDelete.do'/>?b_idx="+b_idx;
+	} else {
+		return false;
+	}
+}
+function list(){
+	location.href="/CUDH_web/memberBoard.jsp"
+}
 
 </script>
 </head>
 <body>
   <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading">게시판 상세보기</div>
+    <div class="panel-heading"></div>
     <div class="panel-body">
-		 <form id="ufrm" class="form-horizontal" action="<c:url value='/update.do'/>" method="post">
+		 <form id="ufrm" class="form-horizontal" action="<c:url value='/memberBoardUpdate.do'/>" method="post">
 		  <div class="form-group">
 		    <label class="control-label col-sm-2">번호:</label>
 		    <div class="col-sm-10">
@@ -50,12 +60,17 @@
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
-		    <c:if test="${sessionScope.loginVO.m_id == 'admin'}">
-		      <button type="button" class="btn btn-primary btn-sm" onclick="updateFn()">수정</button>
+		    <c:if test="${sessionScope.loginVO.m_id =='admin'|| sessionScope.loginVO.m_idx ==vo.getB_m_idx()}">
+		      <<button type="submit" class="btn btn-primary btn-sm">수정</button>
 		    </c:if>
 		    
-		      <button type="button" class="btn btn-success btn-sm" onclick="closeFn()">
-		       <span class="glyphicon glyphicon-remove"></span>닫기</button>
+		    <c:if test="${sessionScope.loginVO.m_id =='admin'|| sessionScope.loginVO.m_idx ==vo.getB_m_idx()}">
+		    
+		      <button type="button" class="btn btn-primary btn-sm" onclick="deleteFn(${vo.b_idx})">삭제</button>
+		    </c:if>
+
+		      <button type="button" class="btn btn-success btn-sm" onclick="list()">
+		       <span class="glyphicon glyphicon-remove"></span>목록</button>
 		    </div>
 		  </div>
 		</form>

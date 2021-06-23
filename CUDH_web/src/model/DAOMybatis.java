@@ -64,8 +64,21 @@ public class DAOMybatis {
 		sqlSession.close();
 		return list;
 	}
-	
-	
+	public int boardDelete(int b_idx) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.delete("boardDelete", b_idx);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	}
+	 public int boardUpdate(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.update("boardUpdate", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	 }
+		
 }
 
 
