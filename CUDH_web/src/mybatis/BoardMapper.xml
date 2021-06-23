@@ -8,17 +8,26 @@
        	select * from member where m_id= #{m_id} and m_pw=#{m_pw}
     </select>
    	<select id="boardList" resultType="VO">
-    	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views from board
+    	select b_idx, b_category , b_state, b_city , b_title, b_writer, b_contents, b_views, b_m_idx from board
     </select>
     <select id="memberBoardContent" resultType="VO">
-    	select b_idx, b_category ,b_area , b_title, b_writer, b_contents, b_views from board where b_idx=#{b_idx}
+    	select b_idx, b_category , b_state, b_city , b_title, b_writer, b_contents, b_views, b_m_idx from board where b_idx=#{b_idx}
     </select>
     <select id="professorExpertiseList" resultType="String">
    	    select p_expertise from professor GROUP BY p_expertise order by p_expertise asc
 	</select>
+<<<<<<< HEAD
     <select id="professorList" resultType="VO">
 		select * from professor where p_expertise=#{p_expertise}
 	</select>
    
 
+=======
+	
+	<insert id="memberBoardinsert" >
+        insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views ,b_m_idx)
+         values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer},0 , #{b_m_idx})
+    </insert>
+	
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/CUDH.git
 </mapper>

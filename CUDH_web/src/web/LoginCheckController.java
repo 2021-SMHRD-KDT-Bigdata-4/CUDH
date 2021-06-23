@@ -24,7 +24,7 @@ public class LoginCheckController implements Controller {
 		vo.setM_id(m_id);
 		vo.setM_pw(m_pw);
 		
-		System.out.println(vo.getM_id()+"                이다음부턴 mybatis 문제");
+		System.out.println(vo.getM_id()+"     이다음부턴 mybatis 문제");
 		DAOMybatis dao = new DAOMybatis();
 		VO loginVO =dao.loginMember(vo);
 		

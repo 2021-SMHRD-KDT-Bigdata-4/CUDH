@@ -10,6 +10,7 @@ drop table member cascade;
 
 -- 디비 생성 및 테이블 생성
 create database bestcrop;
+drop database bestcrop;
 show databases;
 show tables;
 
@@ -24,21 +25,22 @@ CREATE TABLE area (
 CREATE TABLE board (
     b_idx       INTEGER NOT NULL auto_increment,
     b_category  varchar(100),
-    b_area      varchar(100),
+    b_state      varchar(100),
+    b_city      varchar(100),
     b_title     varchar(100),
     b_writer    varchar(100),
     b_contents  varchar(10000),
     b_views     INTEGER,
-    m_idx       INTEGER NOT NULL,
+    b_m_idx       INTEGER NOT NULL,
     primary key(b_idx)
 );
 
 CREATE TABLE contract (
-    m_idx  INTEGER NOT NULL,
-    p_idx  INTEGER NOT NULL
+    con_m_idx  INTEGER NOT NULL,
+    con_p_idx  INTEGER NOT NULL
 );
 
-ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( p_idx, m_idx );
+ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( con_m_idx, con_p_idx );
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
@@ -49,11 +51,10 @@ CREATE TABLE crop (
 );
 
 CREATE TABLE professor_area (
-    p_idx  INTEGER NOT NULL,
-    a_idx  INTEGER NOT NULL
+    pa_p_idx  INTEGER NOT NULL,
+    pa_a_idx  INTEGER NOT NULL
 );
-
-ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( p_idx, a_idx );
+ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( pa_p_idx, pa_a_idx );
 
 CREATE TABLE member (
     m_idx             INTEGER NOT NULL auto_increment,
@@ -75,36 +76,37 @@ CREATE TABLE professor (
     p_consulting_price  varchar(100),
     primary key(p_idx)
 );
+
 CREATE TABLE professor_crop (
-    p_idx  INTEGER NOT NULL,
-    c_idx  INTEGER NOT NULL
+    pc_p_idx  INTEGER NOT NULL,
+    pc_c_idx  INTEGER NOT NULL
 );
-ALTER TABLE professor_crop ADD CONSTRAINT relation_3_pk PRIMARY KEY ( p_idx, c_idx );
+ALTER TABLE professor_crop ADD CONSTRAINT relation_3_pk PRIMARY KEY ( pc_p_idx, pc_c_idx );
 
 ALTER TABLE board
-    ADD CONSTRAINT board_member_fk FOREIGN KEY ( m_idx )
+    ADD CONSTRAINT board_member_fk FOREIGN KEY ( b_m_idx )
         REFERENCES member ( m_idx );
 
 ALTER TABLE contract
-    ADD CONSTRAINT relation_1_member_fk FOREIGN KEY ( m_idx )
+    ADD CONSTRAINT relation_1_member_fk FOREIGN KEY ( con_m_idx )
         REFERENCES member ( m_idx );
 
 ALTER TABLE contract
-    ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( p_idx )
+    ADD CONSTRAINT relation_1_professor_fk FOREIGN KEY ( con_p_idx )
         REFERENCES professor ( p_idx );
 
 ALTER TABLE professor_area
-    ADD CONSTRAINT relation_2_area_fk FOREIGN KEY ( a_idx )
+    ADD CONSTRAINT relation_2_area_fk FOREIGN KEY ( pa_a_idx )
         REFERENCES area ( a_idx );
 
 ALTER TABLE professor_area
-    ADD CONSTRAINT relation_2_professor_fk FOREIGN KEY ( p_idx )
+    ADD CONSTRAINT relation_2_professor_fk FOREIGN KEY ( pa_p_idx )
         REFERENCES professor ( p_idx );
         
 ALTER TABLE professor_crop
-    ADD CONSTRAINT relation_3_crop_fk FOREIGN KEY ( c_idx )
+    ADD CONSTRAINT relation_3_crop_fk FOREIGN KEY ( pc_c_idx )
         REFERENCES crop ( c_idx );
 
 ALTER TABLE professor_crop
-    ADD CONSTRAINT relation_3_professor_fk FOREIGN KEY ( p_idx )
+    ADD CONSTRAINT relation_3_professor_fk FOREIGN KEY ( pc_p_idx )
         REFERENCES professor ( p_idx );  

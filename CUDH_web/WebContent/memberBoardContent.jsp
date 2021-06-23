@@ -8,8 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
@@ -51,7 +50,7 @@
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
-		    <c:if test="${sessionScope.loginVO!=null}">
+		    <c:if test="${sessionScope.loginVO.m_id == 'admin'}">
 		      <button type="button" class="btn btn-primary btn-sm" onclick="updateFn()">수정</button>
 		    </c:if>
 		    

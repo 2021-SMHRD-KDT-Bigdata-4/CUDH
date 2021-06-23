@@ -32,8 +32,7 @@ function loginFn(){
 			</div>
 		</nav>
 	</div>
-	
-	<div class="About" id="ABOUT">
+		<div class="About" id="ABOUT">
 		<div class="Main__background">
 
 			<div id="TITLES">

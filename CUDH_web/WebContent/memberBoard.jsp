@@ -37,7 +37,7 @@ function callBack(data){
  
  $.each(data,(b_idx,obj)=>{
     view+="<tr>";
-    view+="<td id='b_idx"+b_idx+"'>"+obj.b_area+"</td>";
+    view+="<td id='b_idx"+b_idx+"'>"+obj.b_state+'/'+obj.b_city+"</td>";
     view+="<td><a href='javascript:contentFn("+obj.b_idx+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
     view+="<td>"+obj.b_views+"</td>";
@@ -56,13 +56,16 @@ function callBack(data){
  view+="<td colspan='5'>";
  
  view+="<c:if test='${!empty sessionScope.loginVO}'>";
- view+="<button type='button' class='btn btn-outline-secondary' onclick ='btnWrite()'>글쓰기</button>";
+ view+="<button type='button' class='btn btn-outline-warning' onclick ='btnWrite()'>글쓰기</button>";
  view+="</c:if>";
  
  view+="</td>"
  view+="</tr>";
  view+="</table>";
  $("#msg").html(view);
+}
+function btnWrite(){
+	location.href="<c:url value='/memberBoardWrite.do'/>"
 }
 function contentFn(b_idx) {
 	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx;
@@ -76,8 +79,7 @@ function contentFn(b_idx) {
 		<div class="panel panel-default">
 			<div class="panel-heading">	</div>
 			<div class="panel-body">
-			<div id="msg"></div>
-			<button type='button' class='btn btn-outline-secondary' onclick ='btnWrite()'>글쓰기</button>							
+			<div id="msg"></div>						
 			</div>
 	</div>
 </body>

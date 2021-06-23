@@ -26,7 +26,7 @@ public class DAOMybatis {
 		 SqlSession sqlSession = sqlSessionFactory.openSession();
 		 vo = sqlSession.selectOne("loginMember", vo);
 		 sqlSession.close();
-		 System.out.println(vo.getM_id()+"           DAOMy5");
+		 System.out.println(vo.getM_id()+"        바티스 성공");
 		 return vo;
 	 }
 	public List<VO> boardList(){ // 앞으로 커넥션 해줄 친구
@@ -49,6 +49,13 @@ public class DAOMybatis {
 		List<String> list= sqlSession.selectList("professorExpertiseList");
 		sqlSession.close();
 		return list;
+	}
+	public int memberBoardinsert(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.insert("memberBoardinsert", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
 	}
 	
 	

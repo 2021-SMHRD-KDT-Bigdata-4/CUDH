@@ -3,12 +3,13 @@ package model;
 public class VO {
 		private int b_idx;
 		private String b_category;
-		private String b_area;
+		private String b_state;
 		private String b_title;
 		private String b_writer;
+		private String b_city;
 		private String b_contents;
 		private int b_views;
-		
+		private int b_m_idx;
 	    
 	    private int c_idx;
 	    private String c_mc_crop;
@@ -34,6 +35,14 @@ public class VO {
 		private String a_state;
 		private String a_city;
 		
+		private int con_m_idx;
+		private int con_p_idx;
+
+		private int pa_p_idx;
+		private int pa_a_idx;
+		
+		private int pc_p_idx;
+		private int pc_c_idx;
 		public int getB_idx() {
 			return b_idx;
 		}
@@ -46,11 +55,11 @@ public class VO {
 		public void setB_category(String b_category) {
 			this.b_category = b_category;
 		}
-		public String getB_area() {
-			return b_area;
+		public String getB_state() {
+			return b_state;
 		}
-		public void setB_area(String b_area) {
-			this.b_area = b_area;
+		public void setB_state(String b_state) {
+			this.b_state = b_state;
 		}
 		public String getB_title() {
 			return b_title;
@@ -64,6 +73,12 @@ public class VO {
 		public void setB_writer(String b_writer) {
 			this.b_writer = b_writer;
 		}
+		public String getB_city() {
+			return b_city;
+		}
+		public void setB_city(String b_city) {
+			this.b_city = b_city;
+		}
 		public String getB_contents() {
 			return b_contents;
 		}
@@ -75,6 +90,12 @@ public class VO {
 		}
 		public void setB_views(int b_views) {
 			this.b_views = b_views;
+		}
+		public int getB_m_idx() {
+			return b_m_idx;
+		}
+		public void setB_m_idx(int b_m_idx) {
+			this.b_m_idx = b_m_idx;
 		}
 		public int getC_idx() {
 			return c_idx;
@@ -195,6 +216,42 @@ public class VO {
 		}
 		public void setA_city(String a_city) {
 			this.a_city = a_city;
+		}
+		public int getCon_m_idx() {
+			return con_m_idx;
+		}
+		public void setCon_m_idx(int con_m_idx) {
+			this.con_m_idx = con_m_idx;
+		}
+		public int getCon_p_idx() {
+			return con_p_idx;
+		}
+		public void setCon_p_idx(int con_p_idx) {
+			this.con_p_idx = con_p_idx;
+		}
+		public int getPa_p_idx() {
+			return pa_p_idx;
+		}
+		public void setPa_p_idx(int pa_p_idx) {
+			this.pa_p_idx = pa_p_idx;
+		}
+		public int getPa_a_idx() {
+			return pa_a_idx;
+		}
+		public void setPa_a_idx(int pa_a_idx) {
+			this.pa_a_idx = pa_a_idx;
+		}
+		public int getPc_p_idx() {
+			return pc_p_idx;
+		}
+		public void setPc_p_idx(int pc_p_idx) {
+			this.pc_p_idx = pc_p_idx;
+		}
+		public int getPc_c_idx() {
+			return pc_c_idx;
+		}
+		public void setPc_c_idx(int pc_c_idx) {
+			this.pc_c_idx = pc_c_idx;
 		}
 		
 }

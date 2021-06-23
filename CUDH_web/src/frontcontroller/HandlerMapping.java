@@ -10,6 +10,8 @@ import web.LoginCheckController;
 import web.LogoutCheckController;
 import web.MemberBoardContentController;
 import web.MemberBoardController;
+import web.MemberBoardRegisterController;
+import web.MemberBoardWriteController;
 
 
 public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 해쉬맵 타입으로넣음
@@ -22,7 +24,9 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoard.do", new MemberBoardController());
 		
 		mappings.put("/memberBoardContent.do", new MemberBoardContentController());
-
+		mappings.put("/memberBoardWrite.do", new MemberBoardWriteController());
+		mappings.put("/memberBoardRegister.do", new MemberBoardRegisterController());
+		
 		mappings.put("/consultingCardlist.do", new CardListController());
 		
 		mappings.put("/consultingCardColunmslist.do", new CardColunmsListController());
