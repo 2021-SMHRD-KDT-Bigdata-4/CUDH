@@ -20,8 +20,8 @@ public class MemberBoardRegisterController implements Controller {
 		String b_title = request.getParameter("b_title");
 		String b_contents = request.getParameter("b_contents");
 		String b_writer = request.getParameter("b_writer");
-		String m_idx = request.getParameter("m_idx");
-		int int_m_idx = Integer.parseInt(m_idx);
+		String b_m_idx = request.getParameter("b_m_idx");
+		int int_b_m_idx = Integer.parseInt(b_m_idx);
 		
 		VO vo = new VO();// 객체만들기
 		vo.setB_category(b_category);
@@ -30,9 +30,9 @@ public class MemberBoardRegisterController implements Controller {
 		vo.setB_title(b_title);
 		vo.setB_contents(b_contents);
 		vo.setB_writer(b_writer);
-		vo.setM_idx(int_m_idx);
+		vo.setM_idx(int_b_m_idx);
         String view=null;
-        System.out.println(b_category+"  "+b_state+"  "+ b_city+"  "+ b_title+"  "+ b_contents+"  "+b_writer+"  "+m_idx +"   3.5");
+        System.out.println(b_category+"  "+b_state+"  "+ b_city+"  "+ b_title+"  "+ b_contents+"  "+b_writer+"  "+b_m_idx +"   3.5");
 		//BoardDAO dao=new BoardDAO();
         DAOMybatis dao =new DAOMybatis();
 		try {

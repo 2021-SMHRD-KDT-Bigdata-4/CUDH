@@ -50,7 +50,7 @@
 		  <div class="form-group">
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
-		    <c:if test="${sessionScope.loginVO!=null}">
+		    <c:if test="${sessionScope.loginVO.m_id == 'admin'}">
 		      <button type="button" class="btn btn-primary btn-sm" onclick="updateFn()">수정</button>
 		    </c:if>
 		    
