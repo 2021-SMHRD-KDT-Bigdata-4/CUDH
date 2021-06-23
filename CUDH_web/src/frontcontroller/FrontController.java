@@ -1,6 +1,7 @@
 package frontcontroller;
 
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,13 +19,20 @@ public class FrontController extends HttpServlet {
 			                                  throws ServletException, IOException {
 		  
 		  request.setCharacterEncoding("utf-8");
-		  String reqUrl=request.getRequestURI();
-		  System.out.println(reqUrl+"    1");
-		  
-		  String cpath=request.getContextPath(); 
+		  String reqUrl = request.getRequestURI(); //url을 저장
+		  System.out.println(reqUrl+"    1"); 
+		  String cpath = request.getContextPath(); //경로(path)를 저장
 		  System.out.println(cpath+"    2");
 		  
-		  String command=reqUrl.substring(cpath.length());	  
+		  Enumeration params = request.getParameterNames();// 들어간 파라미터 확인
+		  System.out.println("자료 확인 ");
+			while(params.hasMoreElements()) {
+			  String name = (String) params.nextElement();
+			  System.out.print(name + " : " + request.getParameter(name) + "     "); 
+			}
+		  
+		  
+		  String command = reqUrl.substring(cpath.length()); // url path를 조합하여 *.do를 추출	  
 		  DAOMybatis dao = new DAOMybatis();
 		  
 		  Controller controller=null;
@@ -33,7 +41,7 @@ public class FrontController extends HttpServlet {
 		  System.out.println(command+"    3"); // HandlerMapping(핸들러메핑)
 		  
 		  HandlerMapping mappings = new HandlerMapping();		  
-		  controller = mappings.getController(command);
+		  controller = mappings.getController(command); //매핑을통한 포조 처리후 복귀
 		  System.out.println(controller+"        매핑을통한 포조/ DB");
 		  
 		  //-----------------------------------------
