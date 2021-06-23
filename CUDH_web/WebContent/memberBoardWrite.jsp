@@ -28,27 +28,27 @@
 					<tr>
 					<td>
 						<label for="exampleSelect1" class="form-label mt-4">카테고리</label>
-						<select class="form-select" id="b_category">
-							<option values="팁">팁</option>
-							<option values="이슈">이슈</option>
-							<option values="토론">토론</option>
+						<select class="form-select" id="b_category" name="b_category">
+							<option value="팁">팁</option>
+							<option value="이슈">이슈</option>
+							<option value="토론">토론</option>
 						</select>
 						</td>
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">도</label>
-						<select class="form-select" id="b_state">
-							<option values="서욽특별시">서울특별시</option>
-							<option values="전라북도">전라북도</option>
-							<option values="전라남도">전라남도</option>
+						<select class="form-select" id="b_state" name="b_state">
+							<option value="서욽특별시">서울특별시</option>
+							<option value="전라북도">전라북도</option>
+							<option value="전라남도">전라남도</option>
 						</select>
 						</td>
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">시</label>
-						<select class="form-select" id="b_city">
-							<option values=""></option>
-							<option values="목표">목포</option>
-							<option values="여수">여수</option>
-							<option values="고흥">고흥</option>
+						<select class="form-select" id="b_city" name="b_city">
+							<option value=""></option>
+							<option value="목표">목포</option>
+							<option value="여수">여수</option>
+							<option value="고흥">고흥</option>
 						</select>
 						</td>
 						</tr>
@@ -59,13 +59,18 @@
 					</div>
 					<div class="form-group">
 						<label>내용:</label>
-						<textarea class="form-control" rows="5" id=b_contents
+						<textarea class="form-control" rows="5" id="b_contents"
 							name="b_contents"></textarea>
 					</div>
 					<div class="form-group">
-						<label>작성자: </label> <input type="text" class="form-control"
+						<label>작성자: </label><input type="text" class="form-control"
 							id="b_writer" name="b_writer" value="${sessionScope.loginVO.m_id}"
 							readonly="readonly">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control"
+							id="m_idx" name="m_idx" value="${sessionScope.loginVO.m_idx}"
+							readonly="readonly" visibility : hidden>
 					</div>
 					<button type="submit" class="btn btn-success">글쓰기</button>
 

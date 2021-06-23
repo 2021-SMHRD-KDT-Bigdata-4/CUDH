@@ -37,7 +37,7 @@ function callBack(data){
  
  $.each(data,(b_idx,obj)=>{
     view+="<tr>";
-    view+="<td id='b_idx"+b_idx+"'>"+obj.b_area+"</td>";
+    view+="<td id='b_idx"+b_idx+"'>"+obj.b_state+'/'+obj.b_city+"</td>";
     view+="<td><a href='javascript:contentFn("+obj.b_idx+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
     view+="<td>"+obj.b_views+"</td>";

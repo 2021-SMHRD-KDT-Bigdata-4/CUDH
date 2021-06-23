@@ -1,4 +1,4 @@
-
+.
 --m_idx ,m_id ,m_pw ,m_name ,m_farming , m_area,m_hoping_crop, m_board_counting   
 insert into member values(1,'admin','admin','admin','admin','admin','admin',0);
 insert into member values(2,'cgj','12345','최강준','no','전남','사과',0);
