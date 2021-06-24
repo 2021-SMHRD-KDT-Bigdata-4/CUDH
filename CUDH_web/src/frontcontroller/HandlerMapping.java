@@ -34,8 +34,8 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
 		mappings.put("/consultingCardlist.do", new CardListController());
 		mappings.put("/consultingCardColunmslist.do", new CardColunmsListController());
-		mappings.put("/contractForm.do", new ContractFormController());//contractWrite.do
-		mappings.put("/contractWrite.do", new ContractWriteController());//contractWrite.do
+		mappings.put("/contractForm.do", new ContractFormController());
+		mappings.put("/contractWrite.do", new ContractWriteController());
 	}
 	public Controller getController(String command) {
 		return mappings.get(command);

@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
 
 <title>CUDH 컨설팅 페이지</title>
@@ -70,11 +71,10 @@
 			 view += "<td><p class='text-success'>" + obj.p_consulting_price + "만원</p></td>";
 			 view += "</tr>";
 			 view += "<tr>";
-			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
-			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
+			 var idx=JSON.stringify( obj.p_idx );
 			 var name=JSON.stringify( obj.p_name );
 			 var ept=JSON.stringify( obj.p_expertise );
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+name+","+ept+")'/></td>";
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		});
@@ -82,15 +82,19 @@
 		 $("#consulting_main").append(view);
 	 }
 	 
-	 function btnWrite(name, ept){
+	 function btnWrite(idx,name,ept){
+		 var con_m_idx='${sessionScope.loginVO.m_idx}';
 		 var m_name='${sessionScope.loginVO.m_name}';
+		 var con_p_idx = idx;
 		 var p_name = name;
 		 var p_expertise = ept;
 		 
 		 $("#cf").css("display","block");
+		 $("#con_m_idx").val(con_m_idx);
+		 $("#con_p_idx").val(con_p_idx);
 		 $("#m_name").val(m_name);
-		 $("#p_name").val(p_name);
-		 $("#p_expertise").val(p_expertise);
+		 $("#p_name").val(p_name); //오류
+		 $("#p_expertise").val(p_expertise); //오류
 	 }
 </script>
 </head>
