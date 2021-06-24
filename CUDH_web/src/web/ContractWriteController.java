@@ -14,7 +14,24 @@ public class ContractWriteController implements Controller {
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
+		/*
+		int con_m_idx = Integer.parseInt(request.getParameter("con_m_idx"));
+		int con_p_idx = Integer.parseInt(request.getParameter("con_p_idx"));
+		String con_about = request.getParameter("con_about");
+		String con_date = request.getParameter("con_date");
+		String con_approval = "n";
+		
+		VO vo = new VO();// 객체만들기
+		
+		vo.setCon_m_idx(con_m_idx);
+		vo.setCon_p_idx(con_p_idx);
+		vo.setCon_about(con_about);
+		vo.setCon_date(con_date);
+		vo.setCon_approval(con_approval);
+		*/
+		
+		
 		int con_m_idx = Integer.parseInt(request.getParameter("con_m_idx"));
 		int con_p_idx = Integer.parseInt(request.getParameter("con_p_idx"));
 		String con_about = request.getParameter("con_about");

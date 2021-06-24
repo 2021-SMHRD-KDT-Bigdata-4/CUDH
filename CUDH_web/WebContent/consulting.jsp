@@ -6,17 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="bootstrap.css">
 <meta name="viewport" content="width=device-width, user-scalable=no" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
 
 <title>CUDH 컨설팅 페이지</title>
-
 <script type="text/javascript">
 	 var Colunms = [];
+	 
 	 $(document).ready(()=> { 
 		 cardColunmsList();
 		 cardList();
@@ -74,7 +72,9 @@
 			 view += "<tr>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+'obj.p_name'+","+'obj.p_expertise'+")'/></td>";
+			 var name=JSON.stringify( obj.p_name );
+			 var ept=JSON.stringify( obj.p_expertise );
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+name+","+ept+")'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		});
@@ -82,23 +82,19 @@
 		 $("#consulting_main").append(view);
 	 }
 	 
-	 function btnWrite(p_name,p_expertise){
-		 var name = p_name;
-		 alert(name);
-		 //var m_name='${sessionScope.loginVO.m_name}';
-		 //var p_name = p_name.toString();
-		// var p_expertise = p_expertise.toString();
-		 //alert( ${vo.getP_name()} );
-		 		 
-		 //$("#cf").css("display","block");
-		 //$("#m_name").val(m_name);
-		 //$("#p_name").val(p_name);
-		 //$("#p_expertise").val(p_expertise);
+	 function btnWrite(name, ept){
+		 var m_name='${sessionScope.loginVO.m_name}';
+		 var p_name = name;
+		 var p_expertise = ept;
+		 
+		 $("#cf").css("display","block");
+		 $("#m_name").val(m_name);
+		 $("#p_name").val(p_name);
+		 $("#p_expertise").val(p_expertise);
 	 }
-	 
-	 
 </script>
 </head>
+
 <body>
 		<div style="display: none;" id="cf">
 					<c:import url="contractForm.jsp" />

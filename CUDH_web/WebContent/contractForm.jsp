@@ -24,27 +24,27 @@
 		<div>		
 			<form action="<c:url value='/contractWrite.do'/>" method="post">
 				<div class="form-group">
-					<label>신청인: </label><input type="text" class="form-control"
+					<label>신청인 </label><input type="text" class="form-control"
 						id="m_name" name="m_name" 
 						readonly="readonly">
 				</div>
 				<div class="form-group">
-					<label>전문가: </label><input type="text" class="form-control"
+					<label>전문가 </label><input type="text" class="form-control"
 						id="p_name" name="p_name"
 						readonly="readonly">
 				</div>
 				<div class="form-group">
-					<label>전문 영역: </label><input type="text" class="form-control"
+					<label>전문 영역 </label><input type="text" class="form-control"
 						id="p_expertise" name="p_expertise"
 						readonly="readonly">
 				</div>
 				<div class="form-group">
-					<label>요청 사유: </label> 
+					<label>요청 사유 </label> 
 					<input type="text" class="form-control"
 						id="con_about" name="con_about">
 				</div>
 				<div class="form-group">
-					<label>신청할 날짜:</label>
+					<label>신청할 날짜</label>
 					<input type="date" class="form-control"
 						 id="con_date"	name="con_date">
 				</div>
