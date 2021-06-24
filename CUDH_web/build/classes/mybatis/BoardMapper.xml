@@ -15,15 +15,15 @@
     	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes , b_m_idx from board where b_idx=#{b_idx}
     </select>
     
-    <select id="professorExpertiseList" resultType="String">
+    <select id="consultingCardColumnsList" resultType="String">
    	    select p_expertise from professor GROUP BY p_expertise order by p_expertise asc
 	</select>
 	
-    <select id="professorList" resultType="VO">
+    <select id="consultingCardList" resultType="VO">
 		select * from professor where p_expertise=#{p_expertise}
 	</select>
 	
-    <insert id="contactInsert">
+    <insert id="consultInsert">
         insert into contract(con_m_idx, con_p_idx, con_about, con_date, con_approval)
         values(#{con_m_idx}, #{con_p_idx}, #{con_about}, #{con_date}, #{con_approval})
     </insert>

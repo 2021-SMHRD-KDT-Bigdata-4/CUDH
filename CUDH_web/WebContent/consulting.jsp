@@ -14,29 +14,29 @@
 
 <title>CUDH 컨설팅 페이지</title>
 <script type="text/javascript">
-	 var Colunms = [];
+	 var Columns = [];
 	 
 	 $(document).ready(()=> { 
-		 cardColunmsList();
+		 cardColumnsList();
 		 cardList();
 	 }); 
 	 
-	 function cardColunmsList(){
+	 function cardColumnsList(){
 		 //픽스
 		 $.ajax({
-			 url : "consultingCardColunmslist.do", 
+			 url : "consultingCardColumnslist.do", 
 			 type : "get",       
-			 success : cardColunmsListArray, 
+			 success : cardColumnsListArray, 
 			 dataType : "json",
 			 async:false,
 			 error : function(){ alert("error");}
 			 }); 
 		 }	
 	
-	 function cardColunmsListArray(data){
+	 function cardColumnsListArray(data){
 		 	
 		 	for(var i = 0 ; i < data.length ; i++){
-		 		Colunms.push( data[i]);
+		 		Columns.push( data[i]);
 		 	}
 	 }
 	 
@@ -46,7 +46,7 @@
 			$.ajax({
 				url : "consultingCardlist.do", 
 				type : "get", 
-				data : { "p_expertise" : Colunms[i] },
+				data : { "p_expertise" : Columns[i] },
 				async:false,
 				dataType : "text",
 				success : card,

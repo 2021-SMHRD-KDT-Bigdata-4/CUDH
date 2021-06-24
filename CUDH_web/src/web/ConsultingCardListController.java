@@ -23,7 +23,7 @@ public class ConsultingCardListController implements Controller {
 		
 		DAOMybatis dao = new DAOMybatis();
 		try {
-		List<VO> list = dao.professorList(p_expertise);
+		List<VO> list = dao.consultingCardList(p_expertise);
 		System.out.println(list);
 		Gson g = new Gson();
 

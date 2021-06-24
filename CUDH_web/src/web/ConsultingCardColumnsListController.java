@@ -20,7 +20,8 @@ public class ConsultingCardColumnsListController implements Controller {
 			throws ServletException, IOException {
 		
 		DAOMybatis dao = new DAOMybatis();
-		List<String> list = dao.professorExpertiseList();
+		//List<String> list = dao.professorExpertiseList();
+		List<String> list = dao.consultingCardColumnsList();
 		Gson g = new Gson();
 
 		String pList = g.toJson(list);

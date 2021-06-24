@@ -44,7 +44,7 @@ public class ConsultingWriteController implements Controller {
         System.out.println(con_m_idx+"  "+con_p_idx+"  "+ con_about+"  "+ con_date+"  "+ con_approval+"   3.5");
         DAOMybatis dao =new DAOMybatis();
 		try {
-			int cnt=dao.contactInsert(vo);
+			int cnt=dao.consultInsert(vo);
 			if(cnt>0) {
 				//저장성공후->다시 리스트페이지로 가기(/list.do)
 				// redirect 기법(서버에서 전화돌리기->요청돌리기)

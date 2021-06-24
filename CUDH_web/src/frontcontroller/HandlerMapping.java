@@ -33,7 +33,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardUpdate.do", new MemberBoardUpdateController());
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
 		mappings.put("/consultingCardlist.do", new ConsultingCardListController());
-		mappings.put("/consultingCardColunmslist.do", new ConsultingCardColumnsListController());
+		mappings.put("/consultingCardColumnslist.do", new ConsultingCardColumnsListController());
 		mappings.put("/consultingContractForm.do", new ConsultingContractFormController());
 		mappings.put("/consultingWrite.do", new ConsultingWriteController());
 	}
