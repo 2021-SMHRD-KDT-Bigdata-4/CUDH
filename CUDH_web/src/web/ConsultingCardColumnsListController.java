@@ -13,7 +13,7 @@ import com.google.gson.Gson;
 import model.DAOMybatis;
 import model.VO;
 
-public class CardColunmsListController implements Controller {
+public class ConsultingCardColumnsListController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)

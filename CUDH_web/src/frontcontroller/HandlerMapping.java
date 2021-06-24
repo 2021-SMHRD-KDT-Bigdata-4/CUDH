@@ -3,8 +3,8 @@ package frontcontroller;
 import java.util.HashMap;
 
 import web.MemberBoardContentController;
-import web.CardColunmsListController;
-import web.CardListController;
+import web.ConsultingCardColumnsListController;
+import web.ConsultingCardListController;
 import web.Controller;
 import web.LoginCheckController;
 import web.LogoutCheckController;
@@ -32,9 +32,9 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardDelete.do", new MemberBoardDeleteController());
 		mappings.put("/memberBoardUpdate.do", new MemberBoardUpdateController());
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
-		mappings.put("/consultingCardlist.do", new CardListController());
-		mappings.put("/consultingCardColunmslist.do", new CardColunmsListController());
-		mappings.put("/consultingContractForm.do", new ConsultingContractFormController()); // 수정중
+		mappings.put("/consultingCardlist.do", new ConsultingCardListController());
+		mappings.put("/consultingCardColunmslist.do", new ConsultingCardColumnsListController());
+		mappings.put("/consultingContractForm.do", new ConsultingContractFormController());
 		mappings.put("/consultingWrite.do", new ConsultingWriteController());
 	}
 	public Controller getController(String command) {
