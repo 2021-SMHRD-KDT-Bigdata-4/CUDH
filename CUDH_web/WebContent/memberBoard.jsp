@@ -38,7 +38,7 @@ function callBack(data){
  $.each(data,(b_idx,obj)=>{
     view+="<tr>";
     view+="<td id='b_idx"+b_idx+"'>"+obj.b_state+'/'+obj.b_city+"</td>";
-    view+="<td><a href='javascript:contentFn("+obj.b_idx+")'>"+obj.b_title+"</td>";
+    view+="<td><a href='javascript:contentFn("+obj.b_idx+","+obj.b_views+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
     view+="<td>"+obj.b_views+"</td>";
      
@@ -59,8 +59,8 @@ function callBack(data){
 function btnWrite(){
 	location.href="<c:url value='/memberBoardWrite.do'/>"
 }
-function contentFn(b_idx) {
-	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx;
+function contentFn(b_idx,b_views) {
+	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx+"&b_views="+b_views;
 }
 
 </script>

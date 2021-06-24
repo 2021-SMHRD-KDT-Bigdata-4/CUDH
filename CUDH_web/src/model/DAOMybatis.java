@@ -78,6 +78,13 @@ public class DAOMybatis {
 		sqlSession.close();
 		return cnt;
 	 }
+	 public int boardUpdateViews(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.update("boardUpdateViews", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	 }
 		
 }
 

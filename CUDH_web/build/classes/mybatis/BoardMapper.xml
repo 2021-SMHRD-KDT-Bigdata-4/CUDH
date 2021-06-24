@@ -35,4 +35,8 @@
     <update id="boardUpdate" >
         update board set b_title = #{b_title}, b_contents = #{b_contents} where b_idx = #{b_idx}
     </update>
+    
+    <update id="boardUpdateViews" >
+        update board set b_views = #{b_views} where b_idx = #{b_idx}
+    </update>
 </mapper>
