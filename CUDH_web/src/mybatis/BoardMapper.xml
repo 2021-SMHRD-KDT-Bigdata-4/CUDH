@@ -8,11 +8,11 @@
     </select>
     
    	<select id="boardList" resultType="VO">
-    	select b_idx, b_category , b_state, b_city , b_title, b_writer, b_contents, b_views, b_m_idx from board
+    	select b_idx, b_category , b_state, b_city , b_title,  b_contents, b_writer, b_views, b_likes, b_m_idx from board
     </select>
     
     <select id="memberBoardContent" resultType="VO">
-    	select b_idx, b_category , b_state, b_city , b_title, b_writer, b_contents, b_views, b_m_idx from board where b_idx=#{b_idx}
+    	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes , b_m_idx from board where b_idx=#{b_idx}
     </select>
     
     <select id="professorExpertiseList" resultType="String">
@@ -24,8 +24,8 @@
 	</select>
 	
     <insert id="memberBoardinsert" >
-        insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views ,b_m_idx) 
-        values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer}, 0, #{b_m_idx})
+        insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views,b_likes ,b_m_idx) 
+        values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer}, 0, 0, #{b_m_idx})
     </insert>
     
     <delete id="boardDelete" >
@@ -39,4 +39,13 @@
     <update id="boardUpdateViews" >
         update board set b_views = #{b_views} where b_idx = #{b_idx}
     </update>
+    
+    <insert id="insertLikeList">
+        insert into likelist(l_b_idx, l_m_idx) values(#{b_idx},#{m_idx})
+    </insert>
+    
+    <update id="memberBoardLikeUP" >
+        update board set b_likes = #{b_likes} where b_idx = #{b_idx}
+    </update>
+    
 </mapper>

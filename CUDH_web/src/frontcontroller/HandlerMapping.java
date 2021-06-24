@@ -11,6 +11,7 @@ import web.LogoutCheckController;
 import web.MemberBoardContentController;
 import web.MemberBoardController;
 import web.MemberBoardDeleteController;
+import web.MemberBoardLikeUPController;
 import web.MemberBoardRegisterController;
 import web.MemberBoardUpdateController;
 import web.MemberBoardWriteController;
@@ -30,6 +31,8 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/consultingCardColunmslist.do", new CardColunmsListController());
 		mappings.put("/memberBoardDelete.do", new MemberBoardDeleteController());
 		mappings.put("/memberBoardUpdate.do", new MemberBoardUpdateController());
+		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
+		
 	}
 	public Controller getController(String command) {
 		return mappings.get(command);

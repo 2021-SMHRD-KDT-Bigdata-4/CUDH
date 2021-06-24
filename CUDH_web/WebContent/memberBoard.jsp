@@ -59,7 +59,7 @@ function callBack(data){
 function btnWrite(){
 	location.href="<c:url value='/memberBoardWrite.do'/>"
 }
-function contentFn(b_idx,b_views) {
+function contentFn(b_idx, b_views) {
 	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx+"&b_views="+b_views;
 }
 

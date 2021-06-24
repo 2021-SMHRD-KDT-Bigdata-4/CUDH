@@ -9,6 +9,7 @@ public class VO {
 		private String b_city;
 		private String b_contents;
 		private int b_views;
+		private int b_likes;
 		private int b_m_idx;
 	    
 	    private int c_idx;
@@ -43,6 +44,9 @@ public class VO {
 		
 		private int pc_p_idx;
 		private int pc_c_idx;
+		
+		private int l_b_idx;
+		private int l_m_idx;
 		
 		public int getB_idx() {
 			return b_idx;
@@ -91,6 +95,12 @@ public class VO {
 		}
 		public void setB_views(int b_views) {
 			this.b_views = b_views;
+		}
+		public int getB_likes() {
+			return b_likes;
+		}
+		public void setB_likes(int b_likes) {
+			this.b_likes = b_likes;
 		}
 		public int getB_m_idx() {
 			return b_m_idx;
@@ -254,5 +264,20 @@ public class VO {
 		public void setPc_c_idx(int pc_c_idx) {
 			this.pc_c_idx = pc_c_idx;
 		}
+		public int getL_b_idx() {
+			return l_b_idx;
+		}
+		public void setL_b_idx(int l_b_idx) {
+			this.l_b_idx = l_b_idx;
+		}
+		public int getL_m_idx() {
+			return l_m_idx;
+		}
+		public void setL_m_idx(int l_m_idx) {
+			this.l_m_idx = l_m_idx;
+		}
+		
+		
+		
 		
 }

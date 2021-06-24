@@ -28,7 +28,9 @@ public class MemberBoardContentController implements Controller {
 		DAOMybatis dao =new DAOMybatis();
 		try {
 			int cnt=dao.boardUpdateViews(voUV);
+			
 			if(cnt>0) {
+				
 				try {
 					 VO vo=dao.memberBoardContent(b_idx);
 					 
@@ -41,15 +43,16 @@ public class MemberBoardContentController implements Controller {
 				} catch (Exception e) {			
 					e.printStackTrace();
 				}
+				
 			}else {
-			 throw new ServletException("error");
+				throw new ServletException("error");
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		
-		
+
 		return "memberBoardContent"; //ViewName(논리적인뷰의이름)->/WEB-INF/views/boardContent.jsp(물리적인경로)
 	}
 }

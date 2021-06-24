@@ -37,7 +37,8 @@ public class DAOMybatis {
 		return list; // 여기서는 반납만하지 세션상에 올리거나 하지는 않음
 	}
 	public VO memberBoardContent(int b_idx) {
-		SqlSession sqlSession =sqlSessionFactory.openSession();
+		 SqlSession sqlSession =sqlSessionFactory.openSession();
+		 System.out.println("값 확인"  +  b_idx);
 		 VO vo = sqlSession.selectOne("memberBoardContent", b_idx); // idx를 가지고 boardContent에 전송해서 vo 값을 받아온다
 		 System.out.println(vo.getB_contents());
 		 sqlSession.close();
@@ -85,7 +86,29 @@ public class DAOMybatis {
 		sqlSession.close();
 		return cnt;
 	 }
-		
+	 public int memberBoardLikes(int b_idx) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.selectOne("memberBoardLikes",b_idx);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	 }
+	 
+	public int memberBoardLikeUP(VO vo) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int cnt = sqlSession.update("memberBoardLikeUP", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	}
+	public int insertLikeList(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.insert("insertLikeList", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+	}
+
 }
 
 
