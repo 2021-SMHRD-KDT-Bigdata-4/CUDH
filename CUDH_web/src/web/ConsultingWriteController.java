@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.DAOMybatis;
 import model.VO;
 
-public class ContractWriteController implements Controller {
+public class ConsultingWriteController implements Controller {
 
 	@Override
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)

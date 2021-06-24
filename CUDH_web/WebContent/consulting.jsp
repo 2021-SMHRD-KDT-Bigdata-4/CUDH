@@ -101,7 +101,7 @@
 
 <body>
 		<div style="display: none;" id="cf">
-					<c:import url="contractForm.jsp" />
+					<c:import url="consultingForm.jsp" />
 		</div>
 		<div id="consulting_main"></div>
 </body>

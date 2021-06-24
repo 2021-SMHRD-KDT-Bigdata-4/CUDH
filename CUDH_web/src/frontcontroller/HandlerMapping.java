@@ -15,8 +15,8 @@ import web.MemberBoardLikeUPController;
 import web.MemberBoardRegisterController;
 import web.MemberBoardUpdateController;
 import web.MemberBoardWriteController;
-import web.ContractWriteController;
-import web.ContractFormController;
+import web.ConsultingWriteController;
+import web.ConsultingContractFormController;
 
 
 public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 해쉬맵 타입으로넣음
@@ -34,8 +34,8 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
 		mappings.put("/consultingCardlist.do", new CardListController());
 		mappings.put("/consultingCardColunmslist.do", new CardColunmsListController());
-		mappings.put("/contractForm.do", new ContractFormController());
-		mappings.put("/contractWrite.do", new ContractWriteController());
+		mappings.put("/consultingContractForm.do", new ConsultingContractFormController()); // 수정중
+		mappings.put("/consultingWrite.do", new ConsultingWriteController());
 	}
 	public Controller getController(String command) {
 		return mappings.get(command);

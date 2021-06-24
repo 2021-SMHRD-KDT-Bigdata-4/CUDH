@@ -57,8 +57,6 @@ function loginFn() {
 		<h4>빅데이터 분석 서비스 과정</h4>
 		<div class="panel panel-default">
 			<div class="panel-heading">
-
-
 				<c:if test="${sessionScope.loginVO==null}">
 					<form id="loginfrm" class="form-inline" method="post">
 						<div class="form-group">

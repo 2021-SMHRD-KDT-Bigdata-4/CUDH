@@ -25,7 +25,7 @@ function btnApply() {
 	 var con_date = $("#con_date").val();
 	 var con_approval =$("#con_approval").val();
 		 $.ajax({
-			url : "contractWrite.do",
+			url : "consultingWrite.do",
 			type : "post",
 			data : { "con_m_idx" : con_m_idx, "con_p_idx" : con_p_idx, "con_about" : con_about , "con_date" : con_date,  "con_approval" : con_approval },
 			success : function(){
@@ -44,7 +44,6 @@ function btnApply() {
 <div class="container">
 	<h2>컨설팅 신청</h2>
 	<div>
-		<div >컨설팅 신청</div>
 		<div>		
 			<form method="post" id="confrm">
 				<div class="form-group" style ="display:none">
