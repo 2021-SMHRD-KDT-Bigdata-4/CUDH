@@ -2,6 +2,7 @@
 drop table professor_area cascade;
 drop table professor_crop cascade;
 drop table contract cascade;
+drop table likelist cascade;
 drop table board cascade;
 drop table crop cascade;
 drop table area cascade;
@@ -31,6 +32,7 @@ CREATE TABLE board (
     b_contents  varchar(10000),
     b_writer    varchar(100),
     b_views     INTEGER,
+    b_likes     INTEGER,
     b_m_idx       INTEGER NOT NULL,
     primary key(b_idx)
 );
@@ -77,11 +79,18 @@ CREATE TABLE professor (
     primary key(p_idx)
 );
 
+CREATE TABLE likelist  (
+    l_b_idx               INTEGER NOT NULL,
+    l_m_idx				  INTEGER NOT NULL
+);
+ALTER TABLE likelist ADD CONSTRAINT like_pk PRIMARY KEY ( l_b_idx, l_m_idx );
+
 CREATE TABLE professor_crop (
     pc_p_idx  INTEGER NOT NULL,
     pc_c_idx  INTEGER NOT NULL
 );
 ALTER TABLE professor_crop ADD CONSTRAINT relation_3_pk PRIMARY KEY ( pc_p_idx, pc_c_idx );
+
 
 ALTER TABLE board
     ADD CONSTRAINT board_member_fk FOREIGN KEY ( b_m_idx )

@@ -25,7 +25,6 @@ public class FrontController extends HttpServlet {
 		  System.out.println(cpath+"    2");
 		  
 		  Enumeration params = request.getParameterNames();// 들어간 파라미터 확인
-		  System.out.println("자료 확인 ");
 			while(params.hasMoreElements()) {
 			  String name = (String) params.nextElement();
 			  System.out.print(name + " : " + request.getParameter(name) + "     "); 

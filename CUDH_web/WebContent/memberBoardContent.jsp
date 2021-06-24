@@ -14,6 +14,24 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
+function memberBoardLikeUP(b_likes, b_idx ,b_m_idx){
+	$.ajax({
+        url : "memberBoardLikeUP.do", //----------------------> AjavBoardListController ----↓
+        type : "get",        //                      ↓ JSON = dic : {"idx":1, "name":"홍길동"}
+        success : callBack,  //-----------------------------------------------------
+        data: {"b_likes": b_likes,"b_idx":b_idx,"b_m_idx":b_m_idx},
+        dataType : "json",
+        error : function(){ alert("이미 좋아요를 누른 게시물입니다");}
+     });
+}
+
+function callBack(b_idx){
+	var b_views = ${vo.b_views}
+	b_views -= 1;
+	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx+"&b_views="+b_views;	
+}
+
 function deleteFn(b_idx) {
 if (confirm("정말로 삭제 하시겠습니까?") == true) {
 		location.href="<c:url value='/memberBoardDelete.do'/>?b_idx="+b_idx;
@@ -21,7 +39,8 @@ if (confirm("정말로 삭제 하시겠습니까?") == true) {
 		return false;
 	}
 }
-function list(){
+
+function boardlist(){
 	location.href="/CUDH_web/memberBoard.jsp"
 }
 
@@ -61,19 +80,21 @@ function list(){
 		    <div class="col-sm-offset-2 col-sm-10">
 		    
 		    <c:if test="${sessionScope.loginVO.m_id =='admin'|| sessionScope.loginVO.m_idx ==vo.getB_m_idx()}">
-		      <<button type="submit" class="btn btn-primary btn-sm">수정</button>
+		      <button type="submit" class="btn btn-primary btn-sm">수정</button>
 		    </c:if>
 		    
 		    <c:if test="${sessionScope.loginVO.m_id =='admin'|| sessionScope.loginVO.m_idx ==vo.getB_m_idx()}">
-		    
-		      <button type="button" class="btn btn-primary btn-sm" onclick="deleteFn(${vo.b_idx})">삭제</button>
+		    	<button type="button" class="btn btn-primary btn-sm" onclick="deleteFn(${vo.b_idx})">삭제</button>
 		    </c:if>
 
-		      <button type="button" class="btn btn-success btn-sm" onclick="list()">
+		      <button type="button" class="btn btn-success btn-sm" onclick="boardlist()">
 		       <span class="glyphicon glyphicon-remove"></span>목록</button>
 		    </div>
 		  </div>
 		</form>
+    </div>
+    <div class="panel-footer">
+    <button class="btn btn-success btn-sm" onclick="memberBoardLikeUP(${vo.b_likes},${vo.b_idx},${vo.b_m_idx})">좋아요: ${vo.b_likes}</button>
     </div>
   </div>
 </div>

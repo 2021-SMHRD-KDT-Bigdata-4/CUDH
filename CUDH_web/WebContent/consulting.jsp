@@ -74,7 +74,7 @@
 			 view += "<tr>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+obj.p_name+","+obj.p_expertise+")'/></td>";
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite()'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		});
@@ -82,19 +82,18 @@
 		 $("#consulting_main").append(view);
 	 }
 	 
-	 function btnWrite(p_name, p_expertise){
-		
-		 var m_name='${sessionScope.loginVO.m_name}';
-		 //var p_name = p_name;
-		 //var p_expertise = p_expertise;
-		 alert( ${vo.getP_name()} );
+	 function btnWrite(){
 		 
-		 
-		 $("#cf").css("display","block");
-		 $("#m_name").val(m_name);
+		 alert(p_name);
+		 //var m_name='${sessionScope.loginVO.m_name}';
+		 //var p_name = p_name.toString();
+		// var p_expertise = p_expertise.toString();
+		 //alert( ${vo.getP_name()} );
+		 		 
+		 //$("#cf").css("display","block");
+		 //$("#m_name").val(m_name);
 		 //$("#p_name").val(p_name);
 		 //$("#p_expertise").val(p_expertise);
-		 //alert(p_name);
 	 }
 	 
 	 

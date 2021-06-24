@@ -23,8 +23,8 @@ insert into area values('2','전라남도','순천시');
 insert into area values('3','전라남도','장흥시');
 insert into area values('4','전라남도','여수시');
 
-insert into board values('1','공지사항','전국','전국','커뮤니티 전체 공지','관리자','도배 및 다툼금지','1',1);
-insert into board values('2','공지사항','전국','전국','커뮤니티 전체 공지2','관리자','게시판 주의사항','1',1);
+insert into board values('1','공지사항','전국','전국','커뮤니티 전체 공지','도배 및 다툼금지','관리자','2',0 , 1);
+insert into board values('2','공지사항','전국','전국','커뮤니티 전체 공지2','게시판 주의사항','관리자','1',0 , 1);
 
 insert into crop values('1','사과','과일','사과는 사과사과');
 insert into crop values('2','귤','과일','귤은 귤귤');
@@ -42,3 +42,6 @@ insert into professor_area values(1,3);
 insert into professor_crop values(1,1); --전문가_idx, 작물_idx
 insert into professor_crop values(1,2);
 insert into professor_crop values(1,3);
+
+insert into likelist values(1,1);
+insert into likelist values(1,2);
