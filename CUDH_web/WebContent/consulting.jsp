@@ -74,7 +74,7 @@
 			 view += "<tr>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
 			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite()'/></td>";
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+'obj.p_name'+","+'obj.p_expertise'+")'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		});
@@ -82,9 +82,9 @@
 		 $("#consulting_main").append(view);
 	 }
 	 
-	 function btnWrite(){
-		 
-		 alert(p_name);
+	 function btnWrite(p_name,p_expertise){
+		 var name = p_name;
+		 alert(name);
 		 //var m_name='${sessionScope.loginVO.m_name}';
 		 //var p_name = p_name.toString();
 		// var p_expertise = p_expertise.toString();
