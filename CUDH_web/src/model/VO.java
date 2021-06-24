@@ -37,7 +37,10 @@ public class VO {
 		
 		private int con_m_idx;
 		private int con_p_idx;
-
+		private String con_about;	
+		private String con_date;
+		private String con_approval;
+		
 		private int pa_p_idx;
 		private int pa_a_idx;
 		
@@ -229,6 +232,24 @@ public class VO {
 		}
 		public void setCon_p_idx(int con_p_idx) {
 			this.con_p_idx = con_p_idx;
+		}
+		public String getCon_about() {
+			return con_about;
+		}
+		public void setCon_about(String con_about) {
+			this.con_about = con_about;
+		}
+		public String getCon_date() {
+			return con_date;
+		}
+		public void setCon_date(String con_date) {
+			this.con_date = con_date;
+		}
+		public String getCon_approval() {
+			return con_approval;
+		}
+		public void setCon_approval(String con_approval) {
+			this.con_approval = con_approval;
 		}
 		public int getPa_p_idx() {
 			return pa_p_idx;

@@ -13,6 +13,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
 <script type="text/javascript">
 function loginFn() {
 	var m_id = $("#m_id").val();
@@ -28,7 +29,7 @@ function loginFn() {
 			if (data == "NO") {
 				alert("회원인증 실패");
 			} else {
-				location.href="/CUDH_web/memberBoard.jsp"
+				location.href="/CUDH_web/consulting.jsp"
 			}
 		},
 		error : function() {

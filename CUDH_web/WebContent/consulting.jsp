@@ -71,15 +71,39 @@
 			 view += "<td><p class='text-primary'> "+ obj.p_name +" </p></td>";
 			 view += "<td><p class='text-success'>" + obj.p_consulting_price + "만원</p></td>";
 			 view += "</tr>";
+			 view += "<tr>";
+			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
+			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+obj.p_name+","+obj.p_expertise+")'/></td>";
+			 view += "</tr>";
 			 view += "</table>";
 		});
 		 view += "</div>";
 		 $("#consulting_main").append(view);
 	 }
 	 
+	 function btnWrite(p_name, p_expertise){
+		
+		 var m_name='${sessionScope.loginVO.m_name}';
+		 //var p_name = p_name;
+		 //var p_expertise = p_expertise;
+		 alert( ${vo.getP_name()} );
+		 
+		 
+		 $("#cf").css("display","block");
+		 $("#m_name").val(m_name);
+		 //$("#p_name").val(p_name);
+		 //$("#p_expertise").val(p_expertise);
+		 //alert(p_name);
+	 }
+	 
+	 
 </script>
 </head>
 <body>
+		<div style="display: none;" id="cf">
+					<c:import url="contractForm.jsp" />
+		</div>
 		<div id="consulting_main"></div>
 </body>
 </html>

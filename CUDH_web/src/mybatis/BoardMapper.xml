@@ -23,6 +23,11 @@
 		select * from professor where p_expertise=#{p_expertise}
 	</select>
 	
+    <insert id="contactInsert">
+        insert into contract(con_m_idx, con_p_idx, con_about, con_date, con_approval)
+        values(#{con_m_idx}, #{con_p_idx}, #{con_about}, #{con_date}, #{con_approval})
+    </insert>
+	
     <insert id="memberBoardinsert" >
         insert into board(b_category, b_state, b_city, b_title, b_contents, b_writer,b_views ,b_m_idx) 
         values(#{b_category},#{b_state},#{b_city},#{b_title},#{b_contents},#{b_writer}, 0, #{b_m_idx})
@@ -39,4 +44,5 @@
     <update id="boardUpdateViews" >
         update board set b_views = #{b_views} where b_idx = #{b_idx}
     </update>
+    
 </mapper>

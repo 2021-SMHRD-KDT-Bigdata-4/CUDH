@@ -69,7 +69,7 @@ CREATE TABLE member (
 );
 
 CREATE TABLE professor (
-    p_idx               INTEGER NOT NULL auto_increment,
+    	               INTEGER NOT NULL auto_increment,
     p_name              varchar(100),
     p_expertise			varchar(100),
     p_career            varchar(2000),

@@ -85,6 +85,7 @@
 
 .flex-item {
 	display : flex;
+	flex-basis : 0%;
 	
 }
 
