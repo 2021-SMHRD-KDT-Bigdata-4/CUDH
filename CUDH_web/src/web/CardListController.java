@@ -31,7 +31,6 @@ public class CardListController implements Controller {
 		response.setContentType("text/json;charset=euc-kr");
 		PrintWriter out = response.getWriter();
 		out.println(pList);
-		System.out.println(pList+ "5");
 		} catch (Exception e) {			
 			e.printStackTrace();
 		}	

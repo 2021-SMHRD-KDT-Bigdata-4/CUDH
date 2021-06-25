@@ -30,6 +30,7 @@ function loginFn() {
 				alert("회원인증 실패");
 			} else {
 				location.href="/CUDH_web/consulting.jsp"
+	
 			}
 		},
 		error : function() {

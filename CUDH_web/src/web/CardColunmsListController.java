@@ -27,7 +27,7 @@ public class CardColunmsListController implements Controller {
 		response.setContentType("text/json;charset=euc-kr");
 		PrintWriter out = response.getWriter();
 		out.println(pList);
-		System.out.println(pList+ "4.5");
+		System.out.println(pList+ "4.5444444444444444444444444444444444444444");
 
 		return null;
 	}
