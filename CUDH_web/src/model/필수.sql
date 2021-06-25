@@ -33,7 +33,7 @@ CREATE TABLE board (
     b_writer    varchar(100),
     b_views     INTEGER,
     b_likes     INTEGER,
-    b_m_idx       INTEGER NOT NULL,
+    b_m_idx     INTEGER NOT NULL,
     primary key(b_idx)
 );
 
