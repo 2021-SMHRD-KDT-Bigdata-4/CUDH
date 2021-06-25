@@ -2,7 +2,7 @@ select p_expertise from professor GROUP BY p_expertise order by p_expertise asc;
 select * from professor where p_expertise="영양학";
 
 
-select * from contract;
+select * from member;
 
 alter table contract add con_about varchar(100)  not null;
 alter table contract add con_date date   not null;

@@ -6,20 +6,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="bootstrap.css">
-
 <title>CUDH 컨설팅 페이지</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 <script type="text/javascript">
 	 var Columns = [];
 	 
-	 $(document).ready(()=> { 
+	 $(document).ready(()=> { ${sessionScope.loginVO.m_idx}
 		 cardColumnsList();
 		 cardList();
 	 }); 
+	 
 	 
 	 function cardColumnsList(){
 		 //픽스
@@ -41,7 +46,6 @@
 	 }
 	 
 	 function cardList(){
-
 		for(var i =0; i < 3 ; i ++){
 			$.ajax({
 				url : "consultingCardlist.do", 
@@ -74,12 +78,23 @@
 			 var idx=JSON.stringify( obj.p_idx );
 			 var name=JSON.stringify( obj.p_name );
 			 var ept=JSON.stringify( obj.p_expertise );
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
+			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
 		});
 		 view += "</div>";
 		 $("#consulting_main").append(view);
+	 }
+	 
+	 function btnList(){
+		 $("#cl").css("display","block");
+		 $.ajax({
+		       url : "consultingList.do", //----------------------------> AjavBoardListController ----↓
+		       type : "get",        //                                              ↓ JSON = dic : {"idx":1, "name":"홍길동"}
+		       success : callBack,  //-----------------------------------------------------------
+		       dataType : "json",
+		       error : function(){ alert("error");}
+		    });
 	 }
 	 
 	 function btnWrite(idx,name,ept){
@@ -96,13 +111,41 @@
 		 $("#p_name").val(p_name); //오류
 		 $("#p_expertise").val(p_expertise); //오류
 	 }
+	 
+		function logoutFn() {
+			$.ajax({
+				url : "logoutCheck.do",
+				type : "get",
+				success : function() {
+					location.href = "loginForm.jsp";
+				},
+				error : function() {
+					alert("error");
+				}
+			});}
 </script>
 </head>
 
 <body>
-		<div style="display: none;" id="cf">
-					<c:import url="consultingForm.jsp" />
-		</div>
-		<div id="consulting_main"></div>
+
+	<div class="panel-heading">
+		<c:if test='${sessionScope.loginVO.m_id==\'admin\'}'>
+			<button class='btn btn-warning' onclick='btnList()'>계약목록확인</button>
+		</c:if>
+		
+		<c:if test='${sessionScope.loginVO!=null}'>
+					${sessionScope.loginVO.m_name}님 방문을 환영합니다. 
+					<input type="button" value="로그아웃" class="btn btn-primary"
+				onclick="logoutFn()">
+		</c:if>
+	</div>
+	<div style="display: none;" id="cl">
+		<c:import url="consultingList.jsp" />
+	</div>
+	<div style="display: none;" id="cf">
+		<c:import url="consultingForm.jsp" />
+	</div>
+	<div id="consulting_main"></div>
 </body>
+
 </html>

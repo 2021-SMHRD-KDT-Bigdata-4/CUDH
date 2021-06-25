@@ -17,7 +17,7 @@ function loginFn(){
 	<div class="header">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="boardCompany.jsp">CUDH</a>
+				<a class="navbar-brand" href="companyHome.jsp">CUDH</a>
 				<div class="collapse navbar-collapse" id="navbarColor03">
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item"><a class="nav-link" href="#TITLES">About</a></li>
