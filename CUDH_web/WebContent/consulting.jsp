@@ -20,7 +20,7 @@
 <script type="text/javascript">
 	 var Columns = [];
 	 
-	 $(document).ready(()=> { ${sessionScope.loginVO.m_idx}
+	 $(document).ready(()=> { 
 		 cardColumnsList();
 		 cardList();
 	 }); 

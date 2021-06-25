@@ -4,7 +4,7 @@ select * from professor where p_expertise="영양학";
 
 select * from member;
 
-alter table contract add con_about varchar(100)  not null;
+alter table contract add con_about varchar(100) not null;
 alter table contract add con_date date   not null;
 alter table contract add con_approval varchar(100)   not null;
 alter table contract drop column c_aboutExpertise;
@@ -15,7 +15,7 @@ insert into contract values(5,4,'2021-07-01','내용은 수정할 수 있으니�
 
 select * from professor;
 
-insert into contract(con_m_idx, con_p_idx, con_about, con_date, con_approval)
-        values(1,1,'사과나무냉해','2021-06-24','n');
+insert into contract(con_m_idx, con_p_idx, con_date, con_about, con_approval)
+        values(1,1,'2021-06-24','사과나무냉해','n');
 
 select * from contract;
