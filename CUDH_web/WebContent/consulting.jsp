@@ -75,16 +75,10 @@
 			 view += "<td><p class='text-success'>" + obj.p_consulting_price + "만원</p></td>";
 			 view += "</tr>";
 			 view += "<tr>";
-<<<<<<< HEAD
-			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+ obj.p_idx + obj.p_name + obj.p_expertise +")> 컨설팅 신청 </button></td>";
-			 //view += "<td colspan = '2'><button onclick=ConsultingForm("+obj.p_idx+obj.p_name+obj.p_expertise+")> 컨설팅 신청 </button></td>";
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' onclick='btnWrite("+obj.p_name+")'/></td>";
-=======
 			 var idx=JSON.stringify( obj.p_idx );
 			 var name=JSON.stringify( obj.p_name );
 			 var ept=JSON.stringify( obj.p_expertise );
 			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/CUDH.git
 			 view += "</tr>";
 			 view += "</table>";
 		});
@@ -92,20 +86,7 @@
 		 $("#consulting_main").append(view);
 	 }
 	 
-<<<<<<< HEAD
-	 function btnWrite(p_name){
-		 
-		 alert(p_name);
-		 //var m_name='${sessionScope.loginVO.m_name}';
-		 //var p_name = p_name.toString();
-		// var p_expertise = p_expertise.toString();
-		 //alert( ${vo.getP_name()} );
-		 		 
-		 //$("#cf").css("display","block");
-		 //$("#m_name").val(m_name);
-		 //$("#p_name").val(p_name);
-		 //$("#p_expertise").val(p_expertise);
-=======
+
 	 function btnList(){
 		 $("#cl").css("display","block");
 		 $.ajax({
@@ -115,7 +96,6 @@
 		       dataType : "json",
 		       error : function(){ alert("error");}
 		    });
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-Bigdata-4/CUDH.git
 	 }
 	 
 	 function btnWrite(idx,name,ept){
