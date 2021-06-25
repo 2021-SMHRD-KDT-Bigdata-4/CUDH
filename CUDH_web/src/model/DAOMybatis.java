@@ -79,23 +79,23 @@ public class DAOMybatis {
 		return cnt;
 	}
 
-	public List<VO> professorList(String p_expertise) {
+	public List<VO> consultingCardList(String p_expertise) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<VO> list = sqlSession.selectList("professorList", p_expertise);
+		List<VO> list = sqlSession.selectList("consultingCardList", p_expertise);
 		sqlSession.close();
 		return list;
 	}
 
-	public List<String> professorExpertiseList() {
+	public List<String> consultingCardColumnsList() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<String> list = sqlSession.selectList("professorExpertiseList");
+		List<String> list = sqlSession.selectList("consultingCardColumnsList");
 		sqlSession.close();
 		return list;
 	}
 	
-	public int contactInsert(VO vo) {
+	public int consultInsert(VO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int cnt = sqlSession.insert("contactInsert", vo);
+		int cnt = sqlSession.insert("consultInsert", vo);
 		sqlSession.commit();
 		sqlSession.close();
 		return cnt;
