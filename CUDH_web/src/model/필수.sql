@@ -26,7 +26,7 @@ CREATE TABLE area (
 CREATE TABLE board (
     b_idx       INTEGER NOT NULL auto_increment,
     b_category  varchar(100),
-    b_state      varchar(100),
+    b_state     varchar(100),
     b_city      varchar(100),
     b_title     varchar(100),
     b_contents  varchar(10000),
@@ -39,7 +39,10 @@ CREATE TABLE board (
 
 CREATE TABLE contract (
     con_m_idx  INTEGER NOT NULL,
-    con_p_idx  INTEGER NOT NULL
+    con_p_idx  INTEGER NOT NULL,
+    con_date   date not null;
+    con_about  varchar(10000) not null,
+    con_approval	varchar(100) not null
 );
 
 ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( con_m_idx, con_p_idx );
@@ -71,7 +74,7 @@ CREATE TABLE member (
 );
 
 CREATE TABLE professor (
-    	               INTEGER NOT NULL auto_increment,
+    p_idx	               INTEGER NOT NULL auto_increment,
     p_name              varchar(100),
     p_expertise			varchar(100),
     p_career            varchar(2000),

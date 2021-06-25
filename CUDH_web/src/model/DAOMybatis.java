@@ -98,6 +98,13 @@ public class DAOMybatis {
 		sqlSession.close();
 		return cnt;
 	}
+	
+	public List<VO> consultList() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<VO> list = sqlSession.selectList("consultList");
+		sqlSession.close();
+		return list;
+	}
 	 public int memberBoardLikes(int b_idx) {
 		SqlSession sqlSession =sqlSessionFactory.openSession();
 		int cnt = sqlSession.selectOne("memberBoardLikes",b_idx);
