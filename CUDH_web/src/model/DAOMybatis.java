@@ -91,17 +91,35 @@ public class DAOMybatis {
 		return list;
 	}
 	
-	public int consultInsert(VO vo) {
+	public int consultingInsert(VO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int cnt = sqlSession.insert("consultInsert", vo);
+		int cnt = sqlSession.insert("consultingInsert", vo);
 		sqlSession.commit();
 		sqlSession.close();
 		return cnt;
 	}
 	
-	public List<VO> consultList() {
+	public int consultingDelete(int con_idx) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<VO> list = sqlSession.selectList("consultList");
+		int cnt = sqlSession.delete("consultingDelete", con_idx);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+
+	}
+	
+	public int consultingUpdate(int con_idx) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int cnt = sqlSession.update("consultingUpdate", con_idx);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
+
+	}
+	
+	public List<VO> consultingList() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<VO> list = sqlSession.selectList("consultingList");
 		sqlSession.close();
 		return list;
 	}

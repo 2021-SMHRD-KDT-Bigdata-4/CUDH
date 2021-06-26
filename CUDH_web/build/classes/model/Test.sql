@@ -32,8 +32,13 @@ insert into crop values('3','감','과일','감은 감감');
 insert into crop values('4','배','과일','배는 배배');
 insert into crop values('5','포도','과일','포도는 포도포도');
 
-insert into contract values(2,1,'2021-07-05','일단 신청할게요','n');--  순서) 멤버_idx,전문가_idx, 컨설팅 필요한 날짜, 컨설팅 요청한 이유, 승인여부
-insert into contract values(5,4,'2021-07-01','내용은 수정할 수 있으니까','n');
+
+-- ------------------------------통합시 참고!! 여기 수정했어요!!!
+insert into contract values(1,2,1,'2021-07-05','일단 신청할게요','n');--  순서) 멤버_idx,전문가_idx, 컨설팅 필요한 날짜, 컨설팅 요청한 이유, 승인여부
+insert into contract values(2,5,4,'2021-07-01','내용은 수정할 수 있으니까','n');
+insert into contract values(3,4,3,'2021-07-08','아무내용','n');
+-- ------------------------------통합시 참고!! 여기 수정했어요!!!
+
 
 insert into professor_area values(1,1); --전문가_idx, 지역_idx
 insert into professor_area values(1,2);

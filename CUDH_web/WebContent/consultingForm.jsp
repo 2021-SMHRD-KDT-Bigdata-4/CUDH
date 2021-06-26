@@ -17,7 +17,6 @@
 <script type="text/javascript">
 
 function btnApply() {
-	 //var formData=$("#confrm").serialize();
 	 
 	 var con_m_idx = $("#con_m_idx").val();
 	 var con_p_idx = $("#con_p_idx").val();
@@ -29,7 +28,6 @@ function btnApply() {
 			type : "post",
 			data : { "con_m_idx" : con_m_idx, "con_p_idx" : con_p_idx, "con_about" : con_about , "con_date" : con_date,  "con_approval" : con_approval },
 			success : function(){
-			alert("이제 쉬어도 되나?");
 			//location.href="consulting.jsp";
 			},
 		error : function(){ alert("error"); }

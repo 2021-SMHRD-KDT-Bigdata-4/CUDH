@@ -36,6 +36,7 @@ public class VO {
 		private String a_state;
 		private String a_city;
 		
+		private int con_idx;
 		private int con_m_idx;
 		private int con_p_idx;
 		private String con_about;	
@@ -230,6 +231,12 @@ public class VO {
 		}
 		public void setA_city(String a_city) {
 			this.a_city = a_city;
+		}
+		public int getCon_idx() {
+			return con_idx;
+		}
+		public void setCon_idx(int con_idx) {
+			this.con_idx = con_idx;
 		}
 		public int getCon_m_idx() {
 			return con_m_idx;

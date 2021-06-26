@@ -86,14 +86,8 @@
 
 	 function btnList(){
 		 $("#cl").css("display","block");
-		 $.ajax({
-		       url : "consultingList.do", //----------------------------> AjavBoardListController ----↓
-		       type : "get",        //                                              ↓ JSON = dic : {"idx":1, "name":"홍길동"}
-		       success : callBack,  //-----------------------------------------------------------
-		       dataType : "json",
-		       error : function(){ alert("error");}
-		    });
-	 }
+		 }
+	
 	 
 	 function btnWrite(idx,name,ept){
 		 var con_m_idx='${sessionScope.loginVO.m_idx}';
@@ -120,7 +114,8 @@
 				error : function() {
 					alert("error");
 				}
-			});}
+			});
+			}
 </script>
 </head>
 

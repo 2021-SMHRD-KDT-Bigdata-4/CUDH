@@ -37,15 +37,19 @@ CREATE TABLE board (
     primary key(b_idx)
 );
 
+-- ------------------------------통합시 참고!! 여기 수정했어요!!!
 CREATE TABLE contract (
+	con_idx    INTEGER NOT NULL auto_increment,
     con_m_idx  INTEGER NOT NULL,
     con_p_idx  INTEGER NOT NULL,
-    con_date   date not null;
+    con_date   date not null,
     con_about  varchar(10000) not null,
-    con_approval	varchar(100) not null
+    con_approval	varchar(100) not null,
+    primary key(con_idx, con_m_idx, con_p_idx)
 );
+-- ------------------------------통합시 참고!! 여기 수정했어요!!!
 
-ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY ( con_m_idx, con_p_idx );
+ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY (con_m_idx, con_p_idx );
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
