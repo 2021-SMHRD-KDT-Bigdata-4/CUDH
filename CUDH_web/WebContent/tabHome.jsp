@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +11,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>CUDH</title>
+
 <script type="text/javascript">
 
 $(document).ready(()=> { 
+	
 	maptab()
+	
 }); 
 
 function maptab(){
@@ -51,10 +52,10 @@ function consultingtab(){
 } 
 
 
-
 </script>
 </head>
 <body>
+
 	<ul class="nav nav-tabs">
 		<a class="navbar-brand" href="companyHome.jsp">CUDH</a>
 		
@@ -67,26 +68,35 @@ function consultingtab(){
 		<li class="nav-item">
 			<a class="nav-link" data-bs-toggle="tab" data-tab="tab-3" onclick='consultingtab()' href="#tab-3">컨설팅 신청</a></li>
 	</ul>
-
+	
 	<div id="myTabContent" class="tab-content" name="Tab">
-
+	<table>
+		<tr><td>
 		<div id="tab-1" class="active_map">
 			<div style="display: block;" id="mh" class="mh" name="mh">
-				<c:import url="mapHome.jsp" />
+				<%-- <c:import url="mapHome.jsp" /> --%>
+				<iframe style="width:1800px; height:700px;" src="mapHome.jsp"></iframe>
 			</div>
 		</div>
-
+		</td></tr>
+		
+		<tr><td>
 		<div id="tab-2" class="active_board">
 			<div style="display: block;" id="mb" class="mb" name="mb">
-				<c:import url="memberBoard.jsp" />
+				<iframe style="width:1800px; height:700px;" src="memberBoard.jsp"></iframe>
 			</div>
 		</div>
-
+		</td></tr>
+		
+		<tr><td>
 		<div id="tab-3" class="active_con">
 			<div style="display: block;" id="mc" class="mc" name="mc">
-				<c:import url="consulting.jsp" />
-				<h1>야이 색햐</h1>
+				<iframe style="width:1800px; height:700px;" src="consulting.jsp"></iframe>
 			</div>
 		</div>
-
-	</div></html>
+		
+		</td></tr>
+		</table>
+	</div>
+</body>
+</html>
