@@ -118,6 +118,20 @@
 			location.href="/CUDH_web/consulting.jsp"
 		}
 		
+		function logoutFn() {
+			$.ajax({
+				url : "logoutCheck.do",
+				type : "get",
+				success : function() {
+					location.href = "loginForm.jsp";
+				},
+				error : function() {
+					alert("error");
+				}
+			});
+			}
+		
+	
 </script>
 </head>
 
