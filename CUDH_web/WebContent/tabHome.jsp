@@ -98,7 +98,7 @@ function logoutFn() {
 		<div id="tab-1" class="active_map">
 			<div style="display: block;" id="mh" class="mh" name="mh">
 				<%-- <c:import url="mapHome.jsp" /> --%>
-				<iframe style="width:1800px; height:700px;" src="mapHome.jsp"></iframe>
+				<iframe style="width:1800px; height:900px;" src="mapHome.jsp"></iframe>
 			</div>
 		</div>
 		</td></tr>

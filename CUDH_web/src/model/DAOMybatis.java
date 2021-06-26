@@ -145,4 +145,12 @@ public class DAOMybatis {
 		sqlSession.close();
 		return cnt;
 	}
+	
+	public List<VO> cropClimateList(String c_name) { // 앞으로 커넥션 해줄 친구
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<VO> list = sqlSession.selectList("cropClimateList", c_name);
+		sqlSession.close();
+		return list; 
+	}
+	
 }

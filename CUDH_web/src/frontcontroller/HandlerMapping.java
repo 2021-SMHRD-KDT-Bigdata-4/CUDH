@@ -7,6 +7,7 @@ import web.ConsultingUpdateController;
 import web.ConsultingCardColumnsListController;
 import web.ConsultingCardListController;
 import web.Controller;
+import web.CropClimateListController;
 import web.LoginCheckController;
 import web.LogoutCheckController;
 import web.MemberBoardContentController;
@@ -44,6 +45,8 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/consultingList.do", new ConsultingListController());
 		mappings.put("/consultingUpdate.do", new ConsultingUpdateController());
 		mappings.put("/consultingDelete.do", new ConsultingDeleteController());
+		mappings.put("/cropClimateList.do", new CropClimateListController());
+		
 	}
 	public Controller getController(String command) {
 		return mappings.get(command);
