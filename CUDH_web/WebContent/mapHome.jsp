@@ -66,9 +66,9 @@
 	</table>
 	<div>
 		<form action="http://127.0.0.1:5000" method="GET">
-			<input type="text" id="IcropDo" name="cropDo">
-			<input type="text" id="IcropSi" name="cropSi"> 
-			<input type="text" id="IcropName" name="cropName"> 
+			<input type="text" id="cropDo" name="cropDo">
+			<input type="text" id="cropSi" name="cropSi"> 
+			<input type="text" id="cropName" name="cropName"> 
 			<input type="submit" id="flaskSubmit" value="전송">
 		</form>
 	</div>
@@ -89,6 +89,7 @@
 	
 	<script>
 
+	/*
 	$(document).ready(()=> { 
 	//<c:if test="${not empty cropName}">
 	//		cropClimateList(cropName);
@@ -113,7 +114,7 @@
 	 function cropClimateCall(data){
 		 console.log(data);
 	 }
-	
+	 */
 	//------------------------------------------------------------------------------------지도 그리기 위한 객체 생성 및 초기화
 	var mapContainer = document.getElementById('map');//지도를 표시할 div 지정
 	var mapOption = { //지도를 생성할 때 필요한 기본 옵션(이름 바꿔도 됨)
@@ -234,7 +235,7 @@
 			clickOverlay.setMap(map);
 			
 			document.getElementById('cropDo').setAttribute("value","전라남도");
-			document.getElementById('cropSi').setAttribute("value",name);
+			document.getElementById('cropSi').setAttribute("value", name);
 			
 		});
 	}
