@@ -18,7 +18,7 @@ public class ConsultingDeleteController implements Controller {
 		// TODO Auto-generated method stub
 		int con_idx = Integer.parseInt(request.getParameter("con_idx"));
 		DAOMybatis dao = new DAOMybatis();
-		int cnt = dao.consultingUpdate(con_idx);
+		int cnt = dao.consultingDelete(con_idx);
 		PrintWriter out = response.getWriter();
 		out.println(cnt);
 

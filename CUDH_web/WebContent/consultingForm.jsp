@@ -26,10 +26,13 @@ function btnApply() {
 			type : "post",
 			data : { "con_m_idx" : con_m_idx, "con_p_idx" : con_p_idx, "con_about" : con_about , "con_date" : con_date,  "con_approval" : con_approval },
 			success : function(){
-			//location.href="consulting.jsp";
+			location.href="/CUDH_web/consulting.jsp"
 			},
 		error : function(){ alert("error"); }
 	});
+}
+function proList(){
+	location.href="/CUDH_web/consulting.jsp"
 }
 
 </script>
@@ -82,6 +85,7 @@ function btnApply() {
 						id="con_approval" name="con_approval" value = "n" readonly="readonly">
 				</div>
 				<button type="button" class="btn btn-default" onclick="btnApply()"> 신청하기 </button>
+				<button type="button" class="btn btn-default" onclick="proList()"> 목록 </button>
 			</form>
 		</div>
 		<div>빅데이터 4차(큐티 윤빈)</div>

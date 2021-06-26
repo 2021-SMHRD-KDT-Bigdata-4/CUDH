@@ -21,7 +21,7 @@ public class ConsultingListController implements Controller {
 		
 		DAOMybatis dao = new DAOMybatis();
 		List<VO> list = dao.consultingList();
-		
+		System.out.println("되나?");
 		//Json 핸들링  API : GSON 
 		Gson g = new Gson();
 		String bList = g.toJson(list);

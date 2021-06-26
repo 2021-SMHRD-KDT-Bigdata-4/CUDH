@@ -20,6 +20,10 @@
 	 $(document).ready(()=> { 
 		 cardColumnsList();
 		 cardList();
+		$("#consulting_main").css("display","block");
+		$("#cl").css("display","none");
+		$("#cf").css("display","none");
+		 
 	 }); 
 	 
 	 
@@ -85,7 +89,7 @@
 	 
 
 	 function btnList(){
-		 $("#cl").css("display","block");
+			 $("#cl").css("display","block");
 		 }
 	
 	 
@@ -96,26 +100,24 @@
 		 var p_name = name;
 		 var p_expertise = ept;
 		 
+		 $("#consulting_main").css("display","none");
+		 $("#cl").css("display","none");
 		 $("#cf").css("display","block");
+		 
 		 $("#con_m_idx").val(con_m_idx);
 		 $("#con_p_idx").val(con_p_idx);
 		 $("#m_name").val(m_name);
 		 $("#p_name").val(p_name); //오류
+		 
 		 $("#p_expertise").val(p_expertise); //오류
+		 
 	 }
 	 
-		function logoutFn() {
-			$.ajax({
-				url : "logoutCheck.do",
-				type : "get",
-				success : function() {
-					location.href = "loginForm.jsp";
-				},
-				error : function() {
-					alert("error");
-				}
-			});
-			}
+
+		function proList(){
+			location.href="/CUDH_web/consulting.jsp"
+		}
+		
 </script>
 </head>
 
@@ -124,21 +126,19 @@
 	<div class="panel-heading">
 		<c:if test='${sessionScope.loginVO.m_id==\'admin\'}'>
 			<button class='btn btn-warning' onclick='btnList()'>계약목록확인</button>
+			<button class='btn btn-warning' onclick='proList()'>목록으로</button>
 		</c:if>
 		
-		<c:if test='${sessionScope.loginVO!=null}'>
-					${sessionScope.loginVO.m_name}님 방문을 환영합니다. 
-					<input type="button" value="로그아웃" class="btn btn-primary"
-				onclick="logoutFn()">
-		</c:if>
 	</div>
-	<div style="display: none;" id="cl">
+	<div style="display: none; "id="cl">
 		<c:import url="consultingList.jsp" />
 	</div>
-	<div style="display: none;" id="cf">
+	
+	<div style="display: none; "id="cf">
 		<c:import url="consultingForm.jsp" />
 	</div>
-	<div id="consulting_main"></div>
+	
+	<div style="display: none; "id="consulting_main"></div>
 </body>
 
 </html>

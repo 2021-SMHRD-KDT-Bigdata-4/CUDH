@@ -52,19 +52,18 @@ function callBack(data){
 		 view += "</tr>";
 	 });
 	 view +="</table>";
-	 $("#listShow").append(view);
+	 $("#listShow").html(view);
 }
 
 function btnConsultingApproval(con_idx){
-	alert("버튼은 작동함");
 	$.ajax({
 		url : "consultingUpdate.do",
 		type : "get",
 		data : { "con_idx" : con_idx},
 		dataType : "json",
 		success : function() {	
-			//location.href="consultingList.jsp"
-			alert("새로고침 해야 하는데 이건 나중에");},
+			consultingList();
+			},
 		error : function() { alert("error");		}
 	});
 	
@@ -77,8 +76,7 @@ function btnConsultingDelete(con_idx){
 		data : { "con_idx" : con_idx},
 		dataType : "json",
 		success : function() {	
-			//location.href="consultingList.jsp"
-			alert("새로고침 해야 하는데 이건 나중에");},
+		location.href="/CUDH_web/consulting.jsp";},
 		error : function() { alert("error");		}
 	});
 }

@@ -55,7 +55,7 @@ function callBack(data){
  view+="</td>"
  view+="</tr>";
  view+="</table>";
- $("#msg").append(view);
+ $("#msg").html(view);
 }
 function btnWrite(){
 	location.href="<c:url value='/memberBoardWrite.do'/>"

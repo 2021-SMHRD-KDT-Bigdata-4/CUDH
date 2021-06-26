@@ -51,6 +51,19 @@ function consultingtab(){
 	//$('div').detach('.active_con');  */
 } 
 
+function logoutFn() {
+	$.ajax({
+		url : "logoutCheck.do",
+		type : "get",
+		success : function() {
+			location.href = "/CUDH_web/companyHome.jsp";
+		},
+		error : function() {
+			alert("error");
+		}
+	});
+}
+
 
 </script>
 </head>
@@ -67,6 +80,16 @@ function consultingtab(){
 			
 		<li class="nav-item">
 			<a class="nav-link" data-bs-toggle="tab" data-tab="tab-3" onclick='consultingtab()' href="#tab-3">컨설팅 신청</a></li>
+			
+	<div>	
+		<c:if test='${sessionScope.loginVO!=null}'>
+					${sessionScope.loginVO.m_name}님 방문을 환영합니다. 
+					<input type="button" value="로그아웃" class="btn btn-primary"
+				onclick="logoutFn()">
+		</c:if>
+	</div>	
+	
+	
 	</ul>
 	
 	<div id="myTabContent" class="tab-content" name="Tab">

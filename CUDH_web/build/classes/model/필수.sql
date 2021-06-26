@@ -3,6 +3,7 @@ drop table professor_area cascade;
 drop table professor_crop cascade;
 drop table contract cascade;
 drop table likelist cascade;
+
 drop table board cascade;
 drop table crop cascade;
 drop table area cascade;
@@ -52,9 +53,29 @@ CREATE TABLE contract (
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
-    c_mc_crop  varchar(100),
-    c_sc_crop  varchar(100),
-    c_info     varchar(2000),
+    c_state  	varchar(100),
+    c_city  	varchar(100),
+    c_name     	varchar(100),
+    
+    a_tem  	varchar(100),
+    ah_tem  	varchar(100),
+    h_tem 	 	varchar(100),
+    al_tem  	varchar(100),
+    l_tem  		varchar(100),
+    s_h_tem  	varchar(100),
+    s_a_tem  	varchar(100),
+    s_ah_tem  	varchar(100),
+    s_al_tem  	varchar(100),
+    s_l_tem  	varchar(100),
+    
+    precipitation  	varchar(100),
+    a_humidity  	varchar(100),
+    l_humidity  	varchar(100),
+    insolation  	varchar(100),
+    insolation_add  	varchar(100),
+    a_wind_spd  	varchar(100),
+    h_wind_spd  	varchar(100),
+    sow_month  	varchar(100),   
     primary key(c_idx)
 );
 
