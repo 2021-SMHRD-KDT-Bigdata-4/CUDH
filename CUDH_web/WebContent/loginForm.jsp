@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,8 +29,8 @@ function loginFn() {
 			if (data == "NO") {
 				alert("회원인증 실패");
 			} else {
-				location.href="/CUDH_web/consulting.jsp"
-	
+				//location.href="/CUDH_web/memberBoard.jsp"
+				location.href="/CUDH_web/tabHome.jsp"
 			}
 		},
 		error : function() {

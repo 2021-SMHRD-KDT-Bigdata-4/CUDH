@@ -6,6 +6,7 @@
 <head>
 <title>멤버 게시판</title>
 <meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -54,7 +55,7 @@ function callBack(data){
  view+="</td>"
  view+="</tr>";
  view+="</table>";
- $("#msg").html(view);
+ $("#msg").append(view);
 }
 function btnWrite(){
 	location.href="<c:url value='/memberBoardWrite.do'/>"
