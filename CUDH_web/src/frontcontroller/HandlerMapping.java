@@ -28,6 +28,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings= new HashMap<String, Controller>();
 		mappings.put("/loginCheck.do", new LoginCheckController());
 		mappings.put("/logoutCheck.do", new LogoutCheckController());
+		
 		mappings.put("/memberBoard.do", new MemberBoardController());
 		mappings.put("/memberBoardContent.do", new MemberBoardContentController());
 		mappings.put("/memberBoardWrite.do", new MemberBoardWriteController());
@@ -35,6 +36,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardDelete.do", new MemberBoardDeleteController());
 		mappings.put("/memberBoardUpdate.do", new MemberBoardUpdateController());
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
+		
 		mappings.put("/consultingCardlist.do", new ConsultingCardListController());
 		mappings.put("/consultingCardColumnslist.do", new ConsultingCardColumnsListController());
 		mappings.put("/consultingContractForm.do", new ConsultingContractFormController());

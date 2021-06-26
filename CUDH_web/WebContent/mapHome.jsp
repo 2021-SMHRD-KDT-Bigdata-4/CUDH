@@ -10,13 +10,14 @@
 </head>
 <body>
 <!-- 지도를 표시할 div 입니다 -->
-<div id="map" style="width:100%;height:1000px;"></div>
+<div id="map" style="width:100%;height:800px;"></div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=187f81a906ad2f0464d0446073be0004"></script>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(35.149831, 126.919847), // 지도의 중심좌표
+        draggable: false,// 지도 이동 막기 지우면 이동됨
         level: 1 // 지도의 확대 레벨
     };
 

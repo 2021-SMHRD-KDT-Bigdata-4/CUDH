@@ -1,17 +1,29 @@
 package model;
 
 public class VO {
+	//area
+		private int a_idx;
+		private String a_state;
+		private String a_city;
+	//board
 		private int b_idx;
 		private String b_category;
 		private String b_state;
 		private String b_title;
-		private String b_writer;
 		private String b_city;
 		private String b_contents;
+		private String b_writer;
 		private int b_views;
 		private int b_likes;
 		private int b_m_idx;
-	    
+	  //계약  
+		private int con_idx;
+		private int con_m_idx;
+		private int con_p_idx;
+		private String con_date;
+		private String con_about;	
+		private String con_approval;
+		//작물
 	    private int c_idx;
 	    private String c_mc_crop;
 	    private String c_sc_crop;
@@ -32,16 +44,6 @@ public class VO {
 		private String p_career;
 		private String p_consulting_price;
 		
-		private int a_idx;
-		private String a_state;
-		private String a_city;
-		
-		private int con_idx;
-		private int con_m_idx;
-		private int con_p_idx;
-		private String con_about;	
-		private String con_date;
-		private String con_approval;
 		
 		private int pa_p_idx;
 		private int pa_a_idx;
@@ -51,7 +53,24 @@ public class VO {
 		
 		private int l_b_idx;
 		private int l_m_idx;
-		
+		public int getA_idx() {
+			return a_idx;
+		}
+		public void setA_idx(int a_idx) {
+			this.a_idx = a_idx;
+		}
+		public String getA_state() {
+			return a_state;
+		}
+		public void setA_state(String a_state) {
+			this.a_state = a_state;
+		}
+		public String getA_city() {
+			return a_city;
+		}
+		public void setA_city(String a_city) {
+			this.a_city = a_city;
+		}
 		public int getB_idx() {
 			return b_idx;
 		}
@@ -76,12 +95,6 @@ public class VO {
 		public void setB_title(String b_title) {
 			this.b_title = b_title;
 		}
-		public String getB_writer() {
-			return b_writer;
-		}
-		public void setB_writer(String b_writer) {
-			this.b_writer = b_writer;
-		}
 		public String getB_city() {
 			return b_city;
 		}
@@ -93,6 +106,12 @@ public class VO {
 		}
 		public void setB_contents(String b_contents) {
 			this.b_contents = b_contents;
+		}
+		public String getB_writer() {
+			return b_writer;
+		}
+		public void setB_writer(String b_writer) {
+			this.b_writer = b_writer;
 		}
 		public int getB_views() {
 			return b_views;
@@ -111,6 +130,42 @@ public class VO {
 		}
 		public void setB_m_idx(int b_m_idx) {
 			this.b_m_idx = b_m_idx;
+		}
+		public int getCon_idx() {
+			return con_idx;
+		}
+		public void setCon_idx(int con_idx) {
+			this.con_idx = con_idx;
+		}
+		public int getCon_m_idx() {
+			return con_m_idx;
+		}
+		public void setCon_m_idx(int con_m_idx) {
+			this.con_m_idx = con_m_idx;
+		}
+		public int getCon_p_idx() {
+			return con_p_idx;
+		}
+		public void setCon_p_idx(int con_p_idx) {
+			this.con_p_idx = con_p_idx;
+		}
+		public String getCon_date() {
+			return con_date;
+		}
+		public void setCon_date(String con_date) {
+			this.con_date = con_date;
+		}
+		public String getCon_about() {
+			return con_about;
+		}
+		public void setCon_about(String con_about) {
+			this.con_about = con_about;
+		}
+		public String getCon_approval() {
+			return con_approval;
+		}
+		public void setCon_approval(String con_approval) {
+			this.con_approval = con_approval;
 		}
 		public int getC_idx() {
 			return c_idx;
@@ -214,60 +269,6 @@ public class VO {
 		public void setP_consulting_price(String p_consulting_price) {
 			this.p_consulting_price = p_consulting_price;
 		}
-		public int getA_idx() {
-			return a_idx;
-		}
-		public void setA_idx(int a_idx) {
-			this.a_idx = a_idx;
-		}
-		public String getA_state() {
-			return a_state;
-		}
-		public void setA_state(String a_state) {
-			this.a_state = a_state;
-		}
-		public String getA_city() {
-			return a_city;
-		}
-		public void setA_city(String a_city) {
-			this.a_city = a_city;
-		}
-		public int getCon_idx() {
-			return con_idx;
-		}
-		public void setCon_idx(int con_idx) {
-			this.con_idx = con_idx;
-		}
-		public int getCon_m_idx() {
-			return con_m_idx;
-		}
-		public void setCon_m_idx(int con_m_idx) {
-			this.con_m_idx = con_m_idx;
-		}
-		public int getCon_p_idx() {
-			return con_p_idx;
-		}
-		public void setCon_p_idx(int con_p_idx) {
-			this.con_p_idx = con_p_idx;
-		}
-		public String getCon_about() {
-			return con_about;
-		}
-		public void setCon_about(String con_about) {
-			this.con_about = con_about;
-		}
-		public String getCon_date() {
-			return con_date;
-		}
-		public void setCon_date(String con_date) {
-			this.con_date = con_date;
-		}
-		public String getCon_approval() {
-			return con_approval;
-		}
-		public void setCon_approval(String con_approval) {
-			this.con_approval = con_approval;
-		}
 		public int getPa_p_idx() {
 			return pa_p_idx;
 		}
@@ -304,7 +305,6 @@ public class VO {
 		public void setL_m_idx(int l_m_idx) {
 			this.l_m_idx = l_m_idx;
 		}
-		
 		
 		
 		

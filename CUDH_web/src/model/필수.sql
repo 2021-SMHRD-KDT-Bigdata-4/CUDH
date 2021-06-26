@@ -42,14 +42,13 @@ CREATE TABLE contract (
 	con_idx    INTEGER NOT NULL auto_increment,
     con_m_idx  INTEGER NOT NULL,
     con_p_idx  INTEGER NOT NULL,
-    con_date   date not null,
-    con_about  varchar(10000) not null,
-    con_approval	varchar(100) not null,
+    con_date   date,
+    con_about  varchar(10000),
+    con_approval	varchar(100),
     primary key(con_idx, con_m_idx, con_p_idx)
 );
 -- ------------------------------통합시 참고!! 여기 수정했어요!!!
 
-ALTER TABLE contract ADD CONSTRAINT relation_1_pk PRIMARY KEY (con_m_idx, con_p_idx );
 
 CREATE TABLE crop (
     c_idx      INTEGER NOT NULL auto_increment,
@@ -59,11 +58,6 @@ CREATE TABLE crop (
     primary key(c_idx)
 );
 
-CREATE TABLE professor_area (
-    pa_p_idx  INTEGER NOT NULL,
-    pa_a_idx  INTEGER NOT NULL
-);
-ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( pa_p_idx, pa_a_idx );
 
 CREATE TABLE member (
     m_idx             INTEGER NOT NULL auto_increment,
@@ -85,6 +79,12 @@ CREATE TABLE professor (
     p_consulting_price  varchar(100),
     primary key(p_idx)
 );
+
+CREATE TABLE professor_area (
+    pa_p_idx  INTEGER NOT NULL,
+    pa_a_idx  INTEGER NOT NULL
+);
+ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( pa_p_idx, pa_a_idx );
 
 CREATE TABLE likelist  (
     l_b_idx               INTEGER NOT NULL,
