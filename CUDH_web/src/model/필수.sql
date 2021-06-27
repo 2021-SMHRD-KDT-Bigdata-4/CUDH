@@ -3,7 +3,6 @@ drop table professor_area cascade;
 drop table professor_crop cascade;
 drop table contract cascade;
 drop table likelist cascade;
-
 drop table board cascade;
 drop table crop cascade;
 drop table area cascade;

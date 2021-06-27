@@ -12,7 +12,7 @@
     </select>
     
     <select id="memberBoardContent" resultType="VO">
-    	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes , b_m_idx from board where b_idx=#{b_idx}
+    	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes, b_m_idx from board where b_idx=#{b_idx}
     </select>
     
     <select id="consultingCardColumnsList" resultType="String">
@@ -64,4 +64,9 @@
     <update id="memberBoardLikeUP" >
         update board set b_likes = #{b_likes} where b_idx = #{b_idx}
     </update>
+    
+    <select id="cropClimateList" resultType="VO">
+        select a_tem, ah_tem, al_tem,precipitation, a_humidity,insolation,a_wind_spd , h_wind_spd from crop where c_name=#{c_name}
+    </select>
+    
 </mapper>
