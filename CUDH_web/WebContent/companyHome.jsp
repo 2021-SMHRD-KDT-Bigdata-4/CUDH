@@ -52,8 +52,7 @@ function show(){
 				
 					<ul class="navbar-nav me-auto">
 						<li class="nav-item"><a class="nav-link" href="#TITLES">About</a></li>
-						<li class="nav-item"><a class="nav-link" href="#SERVICE">Service</a>
-						</li>
+						<li class="nav-item"><a class="nav-link" href="#SERVICE">Service</a></li>
 						<li class="nav-item"><a class="nav-link" href="#CONTACT">Contact</a></li>
 					</ul>
 					
@@ -81,7 +80,7 @@ function show(){
 		</nav>
 		
 	</div>
-		<div class="About" id="ABOUT" style="z-index: 1">
+		<div class="About" id="ABOUT">
 		<div class="Main__background" >
 
 			<div id="TITLES">
@@ -95,12 +94,12 @@ function show(){
 		</div>
 	</div>
 
-	<div class="Service" id="SERVICE" style="z-index: 1">
+	<div class="Service" id="SERVICE">
 	
 	</div>
 	
 	
-	<div class="Contact" id="CONTACT" style="z-index: 1">
+	<div class="Contact" id="CONTACT">
 	
 	</div>
 	
