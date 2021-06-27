@@ -12,7 +12,7 @@
     </select>
     
     <select id="memberBoardContent" resultType="VO">
-    	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes , b_m_idx from board where b_idx=#{b_idx}
+    	select b_idx, b_category , b_state, b_city , b_title, b_contents, b_writer, b_views, b_likes, b_m_idx from board where b_idx=#{b_idx}
     </select>
     
     <select id="consultingCardColumnsList" resultType="String">

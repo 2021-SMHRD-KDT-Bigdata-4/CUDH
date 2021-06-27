@@ -55,11 +55,11 @@
 	</td>
 	<td>
 	<div id="sideBar" class="sidenav" style="width: 400px; height: 800px;">
-		<input type="text" id="sideCropDo" value="<%= cropDo %>">
-		<input type="text" id="sideCropSi" value="<%= cropSi %>">
-		<input type="text" id="sideCropName" value="<%= cropName %>">
-		<input type="text" id="sidePreProduction_test_score" value="<%= preProduction_test_score %>">
-		<input type="text" id="side{reProduction_amount" value="<%= preProduction_amount %>">
+		<input type="text" id="sideCropDo">
+		<input type="text" id="sideCropSi">
+		<input type="text" id="sideCropName">
+		<input type="text" id="sidePreProduction_test_score">
+		<input type="text" id="sidePreProduction_amount">
 	</div>
 	</td>
 	</tr>
@@ -69,7 +69,7 @@
 			<input type="text" id="cropDo" name="cropDo">
 			<input type="text" id="cropSi" name="cropSi"> 
 			<input type="text" id="cropName" name="cropName"> 
-			<input type="submit" id="flaskSubmit" value="전송">
+			<input type="button" id="flaskSubmit" value="전송">
 		</form>
 	</div>
 	<div>
@@ -85,16 +85,13 @@
 	
 	
 	
-	
-	
 	<script>
 
-	/*
+	
 	$(document).ready(()=> { 
 	//<c:if test="${not empty cropName}">
 	//		cropClimateList(cropName);
 	//	</c:if>
-		console.log(document.getElementById('sideCropSi').value);
 		console.log(cropName);
 	}); 
 	
@@ -114,7 +111,7 @@
 	 function cropClimateCall(data){
 		 console.log(data);
 	 }
-	 */
+	 
 	//------------------------------------------------------------------------------------지도 그리기 위한 객체 생성 및 초기화
 	var mapContainer = document.getElementById('map');//지도를 표시할 div 지정
 	var mapOption = { //지도를 생성할 때 필요한 기본 옵션(이름 바꿔도 됨)
@@ -252,8 +249,44 @@
 		c_name = c_name.split(" ")[0];
 		document.getElementById('cropName').setAttribute("value",c_name);
 		$("#flaskSubmit").trigger("click");
-		
 	}
+	
+	
+	$("#flaskSubmit").click(function(){
+		var cropSi = $('#cropSi').val();
+		var cropName = $('#cropName').val();
+		var postdata = {'cropDo': '전라남도','cropSi': cropSi,'cropName':cropName };
+			
+		$.ajax({
+			url : 'http://127.0.0.1:5000',
+			type : 'GET',
+			data : postdata,
+			dataType : 'json',
+			success : sideBarList,
+			error : function(){alert("error");}
+			});
+		
+	});
+	
+	function sideBarList(data){
+		console.log(data.cropDo);
+		console.log(data.cropSi);
+		console.log(data.CropName);
+		console.log(data.PreProduction_test_score);
+		console.log(data.PreProduction_amount);
+		var cropDo = data.cropDo.toString();
+		var cropSi = data.cropSi.toString();
+		var cropName = data.cropName.toString();
+		var preProduction_test_score = data.preProduction_test_score.toString();
+		var preProduction_amount = data.preProduction_amount.toString();
+		
+		document.getElementById('sideCropDo').setAttribute("value",cropDo);
+		document.getElementById('sideCropSi').setAttribute("value",cropSi);
+		document.getElementById('sideCropName').setAttribute("value",cropName);
+		document.getElementById('sidePreProduction_test_score').setAttribute("value",preProduction_test_score);
+		document.getElementById('sidePreProduction_amount').setAttribute("value",preProduction_amount);
+	}
+	
 	//------------------------------------------------------------------------------------클릭된 지도 중앙 부분 좌표 구하기
 	//나도 몰라서 주석 못 달아용~ 퍼왔어요~
 	function centroid( points ){
