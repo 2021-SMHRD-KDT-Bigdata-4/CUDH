@@ -14,7 +14,7 @@ insert into contract values(1,2,1,'2021-07-05','일단 신청할게요','n');-- 
 insert into contract values(2,5,4,'2021-07-01','내용은 수정할 수 있으니까','n');
 insert into contract values(3,4,3,'2021-07-08','아무내용','n');
 
-select * from professor;
+select * from crop;
 
 insert into contract(con_m_idx, con_p_idx, con_date, con_about, con_approval)
         values(1,1,'2021-06-24','사과나무냉해','n');
@@ -55,4 +55,9 @@ CREATE TABLE crop (
     primary key(c_idx)
 );
 
-select a_tem, ah_tem, al_tem,precipitation, a_humidity,insolation,a_wind_spd , h_wind_spd from crop where c_name='벼' ;
+select a_tem, ah_tem, al_tem,precipitation, a_humidity,insolation,a_wind_spd , h_wind_spd from crop where c_name=#{c_name}
+
+
+select a_tem, ah_tem, al_tem, precipitation, a_humidity, insolation, a_wind_spd, h_wind_spd from crop where c_name='논벼' and c_city='무안군';
+
+;select a_tem, ah_tem, al_tem,precipitation, a_humidity,insolation,a_wind_spd , h_wind_spd from crop where c_name='벼' ;

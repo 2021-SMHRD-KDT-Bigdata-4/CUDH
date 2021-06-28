@@ -24,10 +24,30 @@ public class VO {
 		private String con_about;	
 		private String con_approval;
 		//작물
-	    private int c_idx;
-	    private String c_mc_crop;
-	    private String c_sc_crop;
-	    private String c_info;
+		private int c_idx;
+		      private String c_state;
+		      private String c_city;
+		       private String c_name;
+		       
+		       private String a_tem;
+		       private String ah_tem;
+		       private String h_tem;
+		       private String al_tem;
+		       private String l_tem;
+		       private String s_h_tem;
+		       private String s_a_tem;
+		       private String s_ah_tem;
+		       private String s_al_tem;
+		       private String s_l_tem;
+		       
+		       private String precipitation;
+		       private String a_humidity;
+		       private String l_humidity;
+		       private String insolation;
+		       private String insolation_add;
+		       private String a_wind_spd;
+		       private String h_wind_spd;
+		       private String sow_month;
 	    
 	    private int m_idx;
 	    private String m_id;
@@ -173,23 +193,131 @@ public class VO {
 		public void setC_idx(int c_idx) {
 			this.c_idx = c_idx;
 		}
-		public String getC_mc_crop() {
-			return c_mc_crop;
+		public String getC_state() {
+			return c_state;
 		}
-		public void setC_mc_crop(String c_mc_crop) {
-			this.c_mc_crop = c_mc_crop;
+		public void setC_state(String c_state) {
+			this.c_state = c_state;
 		}
-		public String getC_sc_crop() {
-			return c_sc_crop;
+		public String getC_city() {
+			return c_city;
 		}
-		public void setC_sc_crop(String c_sc_crop) {
-			this.c_sc_crop = c_sc_crop;
+		public void setC_city(String c_city) {
+			this.c_city = c_city;
 		}
-		public String getC_info() {
-			return c_info;
+		public String getC_name() {
+			return c_name;
 		}
-		public void setC_info(String c_info) {
-			this.c_info = c_info;
+		public void setC_name(String c_name) {
+			this.c_name = c_name;
+		}
+		public String getA_tem() {
+			return a_tem;
+		}
+		public void setA_tem(String a_tem) {
+			this.a_tem = a_tem;
+		}
+		public String getAh_tem() {
+			return ah_tem;
+		}
+		public void setAh_tem(String ah_tem) {
+			this.ah_tem = ah_tem;
+		}
+		public String getH_tem() {
+			return h_tem;
+		}
+		public void setH_tem(String h_tem) {
+			this.h_tem = h_tem;
+		}
+		public String getAl_tem() {
+			return al_tem;
+		}
+		public void setAl_tem(String al_tem) {
+			this.al_tem = al_tem;
+		}
+		public String getL_tem() {
+			return l_tem;
+		}
+		public void setL_tem(String l_tem) {
+			this.l_tem = l_tem;
+		}
+		public String getS_h_tem() {
+			return s_h_tem;
+		}
+		public void setS_h_tem(String s_h_tem) {
+			this.s_h_tem = s_h_tem;
+		}
+		public String getS_a_tem() {
+			return s_a_tem;
+		}
+		public void setS_a_tem(String s_a_tem) {
+			this.s_a_tem = s_a_tem;
+		}
+		public String getS_ah_tem() {
+			return s_ah_tem;
+		}
+		public void setS_ah_tem(String s_ah_tem) {
+			this.s_ah_tem = s_ah_tem;
+		}
+		public String getS_al_tem() {
+			return s_al_tem;
+		}
+		public void setS_al_tem(String s_al_tem) {
+			this.s_al_tem = s_al_tem;
+		}
+		public String getS_l_tem() {
+			return s_l_tem;
+		}
+		public void setS_l_tem(String s_l_tem) {
+			this.s_l_tem = s_l_tem;
+		}
+		public String getPrecipitation() {
+			return precipitation;
+		}
+		public void setPrecipitation(String precipitation) {
+			this.precipitation = precipitation;
+		}
+		public String getA_humidity() {
+			return a_humidity;
+		}
+		public void setA_humidity(String a_humidity) {
+			this.a_humidity = a_humidity;
+		}
+		public String getL_humidity() {
+			return l_humidity;
+		}
+		public void setL_humidity(String l_humidity) {
+			this.l_humidity = l_humidity;
+		}
+		public String getInsolation() {
+			return insolation;
+		}
+		public void setInsolation(String insolation) {
+			this.insolation = insolation;
+		}
+		public String getInsolation_add() {
+			return insolation_add;
+		}
+		public void setInsolation_add(String insolation_add) {
+			this.insolation_add = insolation_add;
+		}
+		public String getA_wind_spd() {
+			return a_wind_spd;
+		}
+		public void setA_wind_spd(String a_wind_spd) {
+			this.a_wind_spd = a_wind_spd;
+		}
+		public String getH_wind_spd() {
+			return h_wind_spd;
+		}
+		public void setH_wind_spd(String h_wind_spd) {
+			this.h_wind_spd = h_wind_spd;
+		}
+		public String getSow_month() {
+			return sow_month;
+		}
+		public void setSow_month(String sow_month) {
+			this.sow_month = sow_month;
 		}
 		public int getM_idx() {
 			return m_idx;

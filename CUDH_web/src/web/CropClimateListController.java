@@ -19,10 +19,15 @@ public class CropClimateListController implements Controller {
 	public String requestHandler(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String c_name=(request.getParameter("c_name")).toString();	
+		VO vo = new VO();
+		
+		String c_name = request.getParameter("c_name");	
+		String c_city = request.getParameter("c_city");
+		vo.setC_name(c_name);
+		vo.setC_city(c_city);
 		
 		DAOMybatis dao = new DAOMybatis();
-		List<VO> list = dao.cropClimateList(c_name);
+		List<VO> list = dao.cropClimateList(vo);
 		System.out.println("되나?");
 		//Json 핸들링  API : GSON 
 		Gson g = new Gson();

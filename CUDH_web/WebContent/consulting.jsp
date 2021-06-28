@@ -64,7 +64,7 @@
 		 data = JSON.parse(data);
 		 var view="";
 		 view += "<span class='badge bg-success' id='span"+data[0].p_expertise+"'> "+ data[0].p_expertise +" </span>";
-		 view += "<div class='flex-container' id =div"+data[0].p_expertise+">";
+		 view += "<div class='flex-container' id ='div"+data[0].p_expertise+"'>";
 		 $.each(data, (index,obj) =>{
 			 view += "<table class='flex-item' id='tbl"+ obj.p_expertise + index +"'>";
 			 view += "<tr>";
