@@ -60,7 +60,6 @@
 		 }
 	 }
 	 
-<<<<<<< HEAD
 	    function card(data){
 	        data = JSON.parse(data);
 	        var view="";
