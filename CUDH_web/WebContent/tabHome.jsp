@@ -68,6 +68,7 @@ function logoutFn() {
 </script>
 </head>
 <body>
+ <div class="tab-bar" style=" width: 100%; height : 50px">
 	<div style="float: left; width: 40%;">
 	<ul class="nav nav-tabs" style="border-bottom-width: 0px;">
 		<a class="navbar-brand" href="companyHome.jsp">CUDH</a>
@@ -88,7 +89,7 @@ function logoutFn() {
 					<a><strong>${sessionScope.loginVO.m_name}</strong>님 방문을 환영합니다.</a><input type="button" value="로그아웃" class="btn btn-primary" onclick="logoutFn()">
 		</c:if>
 	</div>
-	
+</div>
 	
 	<div id="myTabContent" class="tab-content" name="Tab" style="width:100%; height:100%;">
 	<table style="width:100%; height:100%;">

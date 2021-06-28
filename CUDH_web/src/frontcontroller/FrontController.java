@@ -24,11 +24,11 @@ public class FrontController extends HttpServlet {
 		  String cpath = request.getContextPath(); //경로(path)를 저장
 		  System.out.println(cpath+"    2");
 		  
-		  //Enumeration params = request.getParameterNames();// 들어간 파라미터 확인
-			//while(params.hasMoreElements()) {
-			  //String name = (String) params.nextElement();
-			  //System.out.print(name + " : " + request.getParameter(name) + "     "); 
-			//}
+		  Enumeration params = request.getParameterNames();// 들어간 파라미터 확인
+			while(params.hasMoreElements()) {
+			  String name = (String) params.nextElement();
+			  System.out.print(name + " : " + request.getParameter(name) + "     "); 
+			}
 		  
 		  
 		  String command = reqUrl.substring(cpath.length()); // url path를 조합하여 *.do를 추출	  

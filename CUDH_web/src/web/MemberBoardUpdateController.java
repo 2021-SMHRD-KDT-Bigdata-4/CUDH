@@ -34,7 +34,7 @@ public class MemberBoardUpdateController implements Controller {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return view; // list.do or nul
+		return view; // list.do or null
 		
 	}
 

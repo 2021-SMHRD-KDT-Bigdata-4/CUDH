@@ -66,7 +66,7 @@
     </update>
     
     <select id="cropClimateList" resultType="VO">
-        select a_tem, ah_tem, al_tem,precipitation, a_humidity,insolation,a_wind_spd , h_wind_spd from crop where c_name=#{c_name}
+        select a_tem, ah_tem, al_tem, precipitation, a_humidity, insolation, a_wind_spd, h_wind_spd from crop where c_name=#{c_name} and c_city=#{c_city}
     </select>
     
 </mapper>

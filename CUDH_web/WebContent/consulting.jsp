@@ -60,6 +60,7 @@
 		 }
 	 }
 	 
+<<<<<<< HEAD
 	    function card(data){
 	        data = JSON.parse(data);
 	        var view="";
@@ -101,7 +102,7 @@
 	        view += "</div>";
 	        $("#consulting_main").append(view);
 	     }
-	 
+
 
 	 function btnList(){
 			 $("#cl").css("display","block");
