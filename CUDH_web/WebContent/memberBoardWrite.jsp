@@ -13,6 +13,18 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+function opchange(){
+
+	var select = $("#b_state").val();
+	var op;
+	if(select=="전라남도"){
+		op+="<option value='전지역'>전지역</option>";
+		op+="<option value='목표'>목포</option>";
+		op+="<option value='여수'>여수</option>";
+		op+="<option value='고흥'>고흥</option>";
+		$('#b_city').html(op);
+	};
+}
 
 </script>
 </head>
@@ -36,20 +48,23 @@
 						</td>
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">도</label>
-						<select class="form-select" id="b_state" name="b_state">
+						<select class="form-select" id="b_state" name="b_state" onchange ="opchange()">
 							<option value="전국">전국</option>
 							<option value="서욽특별시">서울특별시</option>
+							<option value="경기도">경기도</option>
+							<option value="강원도">강원도</option>
+							<option value="충청북도">충청북도</option>
+							<option value="충청남도">충청남도</option>
 							<option value="전라북도">전라북도</option>
 							<option value="전라남도">전라남도</option>
+							<option value="경상북도">경상북도</option>
+							<option value="경상남도">경상남도</option>
 						</select>
 						</td>
 						<td>
 						<label for="exampleSelect1" class="form-label mt-4">시</label>
-						<select class="form-select" id="b_city" name="b_city">
-							<option value="전국">전국</option>
-							<option value="목표">목포</option>
-							<option value="여수">여수</option>
-							<option value="고흥">고흥</option>
+						<select class="form-select" id="b_city" name="b_city">							
+							
 						</select>
 						</td>
 						</tr>
@@ -77,7 +92,7 @@
 
 				</form>
 			</div>
-			<div>빅데이터 4차(장경진)</div>
+			
 		</div>
 	</div>
 

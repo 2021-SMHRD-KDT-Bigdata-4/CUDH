@@ -68,8 +68,9 @@ function logoutFn() {
 </script>
 </head>
 <body>
-
-	<ul class="nav nav-tabs">
+ <div class="tab-bar" style=" width: 100%; height : 50px">
+	<div style="float: left; width: 40%;">
+	<ul class="nav nav-tabs" style="border-bottom-width: 0px;">
 		<a class="navbar-brand" href="companyHome.jsp">CUDH</a>
 		
 		<li class="nav-item">
@@ -80,25 +81,23 @@ function logoutFn() {
 			
 		<li class="nav-item">
 			<a class="nav-link" data-bs-toggle="tab" data-tab="tab-3" onclick='consultingtab()' href="#tab-3">컨설팅 신청</a></li>
-			
-	<div>	
-		<c:if test='${sessionScope.loginVO!=null}'>
-					${sessionScope.loginVO.m_name}님 방문을 환영합니다. 
-					<input type="button" value="로그아웃" class="btn btn-primary"
-				onclick="logoutFn()">
-		</c:if>
-	</div>	
-	
-	
+
 	</ul>
+	</div>
+	<div style="float: right; width: 20%;">	
+		<c:if test='${sessionScope.loginVO!=null}'>
+					<a><strong>${sessionScope.loginVO.m_name}</strong>님 방문을 환영합니다.</a><input type="button" value="로그아웃" class="btn btn-primary" onclick="logoutFn()">
+		</c:if>
+	</div>
+</div>
 	
-	<div id="myTabContent" class="tab-content" name="Tab">
-	<table>
+	<div id="myTabContent" class="tab-content" name="Tab" style="width:100%; height:100%;">
+	<table style="width:100%; height:100%;">
 		<tr><td>
 		<div id="tab-1" class="active_map">
 			<div style="display: block;" id="mh" class="mh" name="mh">
 				<%-- <c:import url="mapHome.jsp" /> --%>
-				<iframe style="width:1800px; height:900px;" src="mapHome.jsp"></iframe>
+				<iframe style="width:100%; height:900px;" src="mapHome.jsp"></iframe>
 			</div>
 		</div>
 		</td></tr>
@@ -106,7 +105,7 @@ function logoutFn() {
 		<tr><td>
 		<div id="tab-2" class="active_board">
 			<div style="display: block;" id="mb" class="mb" name="mb">
-				<iframe style="width:1800px; height:700px;" src="memberBoard.jsp"></iframe>
+				<iframe style="width:100%; height:900px;" src="memberBoard.jsp"></iframe>
 			</div>
 		</div>
 		</td></tr>
@@ -114,7 +113,7 @@ function logoutFn() {
 		<tr><td>
 		<div id="tab-3" class="active_con">
 			<div style="display: block;" id="mc" class="mc" name="mc">
-				<iframe style="width:1800px; height:700px;" src="consulting.jsp"></iframe>
+				<iframe style="width:100%; height:900px;" src="consulting.jsp"></iframe>
 			</div>
 		</div>
 		

@@ -25,29 +25,29 @@ public class VO {
 		private String con_approval;
 		//작물
 		private int c_idx;
-		      private String c_state;
-		      private String c_city;
-		       private String c_name;
-		       
-		       private String a_tem;
-		       private String ah_tem;
-		       private String h_tem;
-		       private String al_tem;
-		       private String l_tem;
-		       private String s_h_tem;
-		       private String s_a_tem;
-		       private String s_ah_tem;
-		       private String s_al_tem;
-		       private String s_l_tem;
-		       
-		       private String precipitation;
-		       private String a_humidity;
-		       private String l_humidity;
-		       private String insolation;
-		       private String insolation_add;
-		       private String a_wind_spd;
-		       private String h_wind_spd;
-		       private String sow_month;
+		private String c_state;
+		private String c_city;
+	    private String c_name;
+	    
+	    private String a_tem;
+	    private String ah_tem;
+	    private String h_tem;
+	    private String al_tem;
+	    private String l_tem;
+	    private String s_h_tem;
+	    private String s_a_tem;
+	    private String s_ah_tem;
+	    private String s_al_tem;
+	    private String s_l_tem;
+	    
+	    private String precipitation;
+	    private String a_humidity;
+	    private String l_humidity;
+	    private String insolation;
+	    private String insolation_add;
+	    private String a_wind_spd;
+	    private String h_wind_spd;
+	    private String sow_month;
 	    
 	    private int m_idx;
 	    private String m_id;
@@ -73,6 +73,8 @@ public class VO {
 		
 		private int l_b_idx;
 		private int l_m_idx;
+		
+		
 		public int getA_idx() {
 			return a_idx;
 		}
@@ -433,7 +435,6 @@ public class VO {
 		public void setL_m_idx(int l_m_idx) {
 			this.l_m_idx = l_m_idx;
 		}
-		
 		
 		
 }
