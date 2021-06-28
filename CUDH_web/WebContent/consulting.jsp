@@ -61,10 +61,11 @@
 	 }
 	 
 	 function card(data){
+		 
 		 data = JSON.parse(data);
 		 var view="";
 		 view += "<span class='badge bg-success' id='span"+data[0].p_expertise+"'> "+ data[0].p_expertise +" </span>";
-		 view += "<div class='flex-container' id =div"+data[0].p_expertise+">";
+		 view += "<div class='flex-container' id ='div'"+data[0].p_expertise+">";
 		 $.each(data, (index,obj) =>{
 			 view += "<table class='flex-item' id='tbl"+ obj.p_expertise + index +"'>";
 			 view += "<tr>";
@@ -82,6 +83,7 @@
 			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
 			 view += "</tr>";
 			 view += "</table>";
+			 cnt++;
 		});
 		 view += "</div>";
 		 $("#consulting_main").append(view);
