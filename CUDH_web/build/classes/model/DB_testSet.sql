@@ -23,8 +23,11 @@ insert into area values('2','전라남도','순천시');
 insert into area values('3','전라남도','장흥시');
 insert into area values('4','전라남도','여수시');
 
-insert into board values('1','공지사항','전국','전국','커뮤니티 전체 공지','도배 및 다툼금지','관리자','2',0 , 1);
-insert into board values('2','공지사항','전국','전국','커뮤니티 전체 공지2','게시판 주의사항','관리자','1',0 , 1);
+insert into board values('1','공지사항','전국','전지역','커뮤니티 전체 공지','도배 및 다툼금지','관리자','2',0 , 1);
+insert into board values('2','공지사항','전국','전지역','커뮤니티 회원님들께 알립니다','도배 및 다툼금지','관리자','2',0 , 1);
+insert into board values('3','공지사항','전국','전지역','컨설팅에 대해 알립니다.','컨설팅 주의사항','관리자','1',0 , 1);
+insert into board values('4','공지사항','전국','전지역','의견사항에 대해 남기는법.','의견사항 제출시 주의법','관리자','1',0 , 1);
+insert into board values('5','공지사항','전국','전지역','전문가 등록방법.','전문가 등록방법','관리자','1',0 , 1);
 
 insert into crop values('1','전라남도','무안군','벼','14','17.5','33.3','11','-7.5',	'25.1','17.2','21.2','13.9','11.1','141.4','79','23','47.19','204.8','3.5','9.8','5');
 insert into crop values('2','전라남도','순천시','벼','15.1','18.6','32.6','12.2','-7','26.5','18','21.3','15.2','12.5','139.4','76','27','51.21','222.2','3.4','12','5');
@@ -52,5 +55,3 @@ insert into professor_crop values(1,1); --전문가_idx, 작물_idx
 insert into professor_crop values(1,2);
 insert into professor_crop values(1,3);
 
-insert into likelist values(1,1);
-insert into likelist values(1,2);

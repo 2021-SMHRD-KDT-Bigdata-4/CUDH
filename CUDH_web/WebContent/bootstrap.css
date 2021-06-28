@@ -11228,6 +11228,14 @@ font-size: 26px;
  	width: 100vw;
   	position: center;
 }
+.tab-bar{
+ 	width: 100%;
+ 	background-size: cover;
+ 	background-image: url("img/background_rice_2.jpg");
+  	background-repeat: no-repeat;
+  	position: center;
+}
+
 
 .img_profile{
 	width: 250px;

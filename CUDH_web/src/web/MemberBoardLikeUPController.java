@@ -17,15 +17,15 @@ public class MemberBoardLikeUPController implements Controller {
 		
 		int b_likes= Integer.parseInt(request.getParameter("b_likes"));
 		int b_idx= Integer.parseInt(request.getParameter("b_idx"));
-		int b_m_idx= Integer.parseInt(request.getParameter("b_m_idx"));
+		int m_idx= Integer.parseInt(request.getParameter("m_idx"));
 		
 		b_likes+=1; // 여기서 뷰스 증가
 
 		VO vo = new VO();
 		vo.setB_likes(b_likes);
 		vo.setB_idx(b_idx);
-		vo.setB_m_idx(b_m_idx);
-		System.out.println(b_likes+b_idx+b_m_idx);
+		vo.setM_idx(m_idx);
+		System.out.println(b_likes+b_idx+m_idx);
 		
 		DAOMybatis dao =new DAOMybatis();
 		//int cnt=dao.memberBoardLikeUP(vo);
@@ -42,7 +42,7 @@ public class MemberBoardLikeUPController implements Controller {
 				}
 				
 			}else {
-				throw new ServletException("이미 좋아요를 누른 게시물입니다.");
+				System.out.println("안됨");
 			}
 
 		} catch (Exception e) {
