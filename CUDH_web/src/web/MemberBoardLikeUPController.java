@@ -42,14 +42,15 @@ public class MemberBoardLikeUPController implements Controller {
 				}
 				
 			}else {
-				System.out.println("안됨");
+				System.out.println("여기는 안침");
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("여기도 안침");
 		}
 				
-		return "memberBoardContent";
+		return null;
 	}
 
 }

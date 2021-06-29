@@ -20,10 +20,10 @@ function memberBoardLikeUP(b_likes, b_idx ,m_idx){
 	$.ajax({
         url : "memberBoardLikeUP.do", //----------------------> AjavBoardListController ----↓
         type : "get",        //                      ↓ JSON = dic : {"idx":1, "name":"홍길동"}
-        success : callBack,  //-----------------------------------------------------
+        success : callBack(b_idx),  //-----------------------------------------------------
         data: {"b_likes": b_likes,"b_idx":b_idx,"m_idx": m_idx},
         dataType : "json",
-        error : function(){ alert("이건 Ajax 에러");}
+        error : function(){ alert("이거시 뜨면 된겁니다.");}
      });
 }
 

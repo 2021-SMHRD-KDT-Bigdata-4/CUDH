@@ -21,6 +21,7 @@ public class DAOMybatis {
 			e.printStackTrace();
 		}
 	}
+	
 
 	public VO loginMember(VO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -151,6 +152,13 @@ public class DAOMybatis {
 		List<VO> list = sqlSession.selectList("cropClimateList", vo);
 		sqlSession.close();
 		return list; 
+	}
+	public int MemberInsert(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.insert("MemberInsert", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
 	}
 	
 }

@@ -17,6 +17,7 @@ import web.MemberBoardLikeUPController;
 import web.MemberBoardRegisterController;
 import web.MemberBoardUpdateController;
 import web.MemberBoardWriteController;
+import web.SignUpController;
 import web.ConsultingWriteController;
 import web.ConsultingContractFormController;
 import web.ConsultingDeleteController;
@@ -37,6 +38,7 @@ public class HandlerMapping {//인터페이스 컨트롤러로 묶어서 그걸 
 		mappings.put("/memberBoardDelete.do", new MemberBoardDeleteController());
 		mappings.put("/memberBoardUpdate.do", new MemberBoardUpdateController());
 		mappings.put("/memberBoardLikeUP.do", new MemberBoardLikeUPController());
+		mappings.put("/signUp.do", new SignUpController());
 		
 		mappings.put("/consultingCardlist.do", new ConsultingCardListController());
 		mappings.put("/consultingCardColumnslist.do", new ConsultingCardColumnsListController());

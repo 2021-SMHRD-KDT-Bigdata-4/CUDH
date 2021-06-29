@@ -69,4 +69,8 @@
         select a_tem, ah_tem, al_tem, precipitation, a_humidity, insolation, a_wind_spd, h_wind_spd from crop where c_name=#{c_name} and c_city=#{c_city}
     </select>
     
+    <insert id="MemberInsert">
+        insert into member(m_id, m_pw ,m_name ,m_hoping_crop) values(#{m_id},#{m_pw},#{m_name},#{m_hoping_crop})
+    </insert>
+    
 </mapper>
