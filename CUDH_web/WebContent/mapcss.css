@@ -47,7 +47,7 @@ ul{
 }
 
 .td_inner_btn{
- 	font-family: 'NanumSquare', sans-serif !important;
+    font-family: 'NanumSquare', sans-serif !important;
 	width: 100%;
 	height: 24px;
 	border-radius:10px;
@@ -140,7 +140,7 @@ ul{
 }
 
 #chart{
-	 width:1000x;
+	 width:960x;
 	 height:200px;
 	 margin-top:20px;
 	 margin-bottom:20px;
