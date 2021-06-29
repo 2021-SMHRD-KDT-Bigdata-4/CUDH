@@ -68,6 +68,7 @@ function logoutFn() {
 </script>
 </head>
 <body>
+
  <div class="tab-bar" style=" width: 100%; height : 50px">
 	<div style="float: left; width: 40%;">
 	<ul class="nav nav-tabs" style="border-bottom-width: 0px;">

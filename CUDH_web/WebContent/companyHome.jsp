@@ -22,6 +22,7 @@ function loginFn() {
 			"m_pw" : m_pw
 		},
 		success : function(data) {
+			
 			if (data == "NO") {
 				alert("회원인증 실패");
 			} else {
