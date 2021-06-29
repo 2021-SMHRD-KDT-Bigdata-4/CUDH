@@ -5124,7 +5124,7 @@ fieldset:disabled .btn {
 }
 
 .badge {
-  width : 1800px;
+  width : 1600px;
   display: inline-block;
   padding: 0.6em 1.2em;
   font-size: 0.75em;
@@ -8085,7 +8085,7 @@ fieldset:disabled .btn {
 }
 
 .text-success {
-  color: #02b875 !important;
+  color: #343a40 !important;
 }
 
 .text-info {

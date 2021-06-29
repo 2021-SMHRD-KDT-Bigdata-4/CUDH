@@ -74,7 +74,7 @@ function contentFn(b_idx, b_views) {
 <body style="background-color:transparent">
 	<div>
 	<center>
-		<h1 >게시판</h1>
+		<h1 style="margin-top: 100px; margin-bottom: 50px;">게시판</h1>
 	</center>
 	</div>
 	<div class="container">

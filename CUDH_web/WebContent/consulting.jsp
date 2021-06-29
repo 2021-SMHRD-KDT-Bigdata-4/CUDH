@@ -83,14 +83,14 @@
 	           view += "</tr>";
 	           view += "<tr>";
 	           view += "<td></td>";
-	           view += "<td><p class='text-success'>컨설팅 비용: " + obj.p_consulting_price + "</p></td>";
+	           view += "<td><p class='text-success'>컨설팅 비용: <strong>" + obj.p_consulting_price + "</strong></p></td>";
 	           view += "</tr>";
 	           view += "<tr>";	          
 	              var idx=JSON.stringify( obj.p_idx );
 	              var name=JSON.stringify( obj.p_name );
 	              var ept=JSON.stringify( obj.p_expertise );
 	              view += "<td></td>";
-	             view += "<td><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'></td>";
+	             view += "<td><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' style='background-color: #08614D' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'></td>";
 	             view += "</tr>";
 	          view += "</table>";   
 	          view += "</table>";
@@ -151,7 +151,7 @@
 
 <body style="background-color:transparent">
 
-	<div class="panel-heading">
+	<div class="panel-heading" style="padding-left: 150px;">
 		<c:if test='${sessionScope.loginVO.m_id==\'admin\'}'>
 			<button class='btn btn-warning' onclick='btnList()'>계약목록확인</button>
 			<button class='btn btn-warning' onclick='proList()'>목록으로</button>
