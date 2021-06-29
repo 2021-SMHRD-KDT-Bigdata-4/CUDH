@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%
 	response.setCharacterEncoding("utf-8");
@@ -13,89 +14,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="mapcss.css">
-    <title>지도 생성하기</title>
-    
-<style>
-	.area {
-		position: absolute;
-		background: #fff;
-		border: 1px solid #888;
-		border-radius: 3px;
-		font-size: 12px;
-		top: -5px;
-		left: 15px;
-		padding: 2px;
-	}
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="mapcss.css">
+<title>지도 생성하기</title>
 
-	.info {
-		font-size: 12px;
-		padding: 5px;
-	}
-
-	.info .title {
-		font-weight: bold;
-	}
-
-
-</style>
-	
 </head>
 </head>
 <body>
 
 	<!-- 지도가 실제로 그려지는 div-->
-	<div id="map" style="width: 100%; height: 800px;"></div>
-	
+	<div id="map" style="width: 100%; height: 900px;"></div>
+
+
+			
+			 
+			 
 	<!-- 사이드바 그려지는 div-->
-	<div id="sideBar" class="sidenav">
+	<div id="sideBar" class="sidenav" style='padding-top: 30px;'>
 		<div id="flaskDiv">
-			<table id="flaskTable">
-			<tr>
-			<td>작물명</td>
-			<td id="sideCropName"></td>
-			</tr>
-		
-			<tr>
-			<td>예측양</td>
-			<td id="sidePreProduction_amount"></td>
-			</tr>
-				
-			<tr>
-			<td>예측정확도</td>
-			<td id="sidePreProduction_test_score"></td>
-			</tr>
+			<table id="flaskTable" class="sidelist" >
+			<thead> <tr> <th> 항목 </th> <th> 내용 </th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th>작물명</th>
+					<td id="sideCropName"></td>
+				</tr>
+
+				<tr>
+					<th>예측생산양</th>
+					<td id="sidePreProduction_amount"></td>
+				</tr>
+
+				<tr>
+					<th>예측정확도</th>
+					<td id="sidePreProduction_test_score"></td>
+				</tr>
+				</tbody>
 			</table>
 		</div>
-		
-		<div id="climateDiv">
+
+		<div>
+			<image src='img/background_tea.jpg' id="chart"></image>
 		</div>
-		
+
+		<div id="climateDiv"></div>
+
 		</table>
 	</div>
-	
-	<div>
+
+	<div style="display: none;">
 		<form action="http://127.0.0.1:5000" method="GET">
-			<input type="text" id="cropDo" name="cropDo">
-			<input type="text" id="cropSi" name="cropSi"> 
-			<input type="text" id="cropName" name="cropName"> 
-			<input type="button" id="flaskSubmit" value="전송">
+			<input type="text" id="cropDo" name="cropDo"> <input
+				type="text" id="cropSi" name="cropSi"> <input type="text"
+				id="cropName" name="cropName"> <input type="button"
+				id="flaskSubmit" value="전송">
 		</form>
 	</div>
-	<div>
-		
-	</div>
-	
-	
+	<div></div>
+
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=187f81a906ad2f0464d0446073be0004"></script>
 	<!-- api 키 입력하는 부분은 head나 body 어디에 있어도 상관없지만, 반드시 실행코드보다 먼저 선언될 것 -->
-	
-	
-	
+
+
+
 	<script>
 	
 	//------------------------------------------------------------------------------------지도 그리기 위한 객체 생성 및 초기화
@@ -207,10 +192,19 @@
             '        <div class="title">' + name +
             '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
             '        </div>' + 
-            '        <div class="body">' + 
-            '        	<div> <input type="button" value="논벼" onclick="clickCrop(this.value)"/> </div>'+
-            '        	<div> <input type="button" value="포도" onclick="clickCrop(this.value)"/> </div>'+
-            '        	<div> <input type="button" value="대파" onclick="clickCrop(this.value)"/> </div>'+
+            '        <div class="body" style="display:flex; align-items:center; justify-content: center; margin-top : 6px">' + 
+            '			<table style="border-spacing:20px; text-ailgn:center;"> <tr>'+
+            '			<td> <image class=\'c_icon\' src = \'img/논벼.png\'></td>'+
+            '			<td> <image class=\'c_icon\' src = \'img/포도.png\'></td>'+
+            '			<td> <image class=\'c_icon\' src = \'img/양파.png\'></td>'+
+            '			<td> <image class=\'c_icon\' src = \'img/양배추.png\'></td>'+
+            '			<td> <image class=\'c_icon\' src = \'img/대파.png\'></td></tr>'+
+            '        	<tr> <td> <button type="button" class="td_inner_btn" name="논벼" value="논벼" onclick="clickCrop(this.value)"/>논벼</button> </td>'+
+            '        	<td> <button type="button" class="td_inner_btn" name="포도" value="포도" onclick="clickCrop(this.value)"/>포도</button> </td>'+
+            '        	<td> <button type="button" class="td_inner_btn" name="양파" value="양파" onclick="clickCrop(this.value)"/>양파</button> </td>'+
+            '        	<td> <button type="button" class="td_inner_btn" name="양배추" value="양배추" onclick="clickCrop(this.value)"/>양배추</button> </td>'+
+            '        	<td> <button type="button" class="td_inner_btn" name="대파" value="대파" onclick="clickCrop(this.value)"/>대파</button> </td>'+
+            '			</tr> </table>'+
             '</div>';
      				
 			clickOverlay.setContent(content); 
@@ -227,21 +221,23 @@
 		document.getElementById('cropDo').setAttribute("value","");
 		document.getElementById('cropSi').setAttribute("value","");
 		document.getElementById('cropName').setAttribute("value","");
+		closeNav();
 	}
 	//------------------------------------------------------------------------------------본격적으로 그림 그리는 영역
 	
 	
 	function clickCrop(c_name){
-		c_name = c_name.split(" ")[0];
-		document.getElementById('cropName').setAttribute("value",c_name);
-		$("#flaskSubmit").trigger("click");
+			c_name = c_name.split(" ")[0];
+			document.getElementById('cropName').setAttribute("value",c_name);
+			$("#flaskSubmit").trigger("click");
+		
 	}
 	
 	
 	$("#flaskSubmit").click(function(){
 		var cropSi = $('#cropSi').val();
 		var cropName = $('#cropName').val();
-		var postdata = {'cropDo': '전라남도','cropSi': cropSi,'cropName':cropName };
+		var postdata = {'cropDo': '전라남도' ,'cropSi': cropSi,'cropName':cropName };
 			
 		$.ajax({
 			url : 'http://127.0.0.1:5000',
@@ -288,22 +284,23 @@
 	
 		 var view="";
 		 $.each(data, (index,obj) =>{
-			 view += "<table id='climateTable'>";
-		 view += "<tr><td>평균 기온</td>";
+			 view += "<table id='climateTable' class=\"sidelist\">";
+			 view += "<thead> <tr> <th> 항목 </th> <th> 내용 </th> </tr> </thead>"
+		 	 view += "<tr scope=\"row\"><th>평균 기온</td>";
 			 view += "<td id ="+obj.a_tem+">"+obj.a_tem+"</td></tr>";
-			 view += "<tr><td>평균 최고기온 </td>";
+			 view += "<tr scope=\"row\"><th>평균 최고기온 </td>";
 			 view += "<td id ="+obj.ah_tem+">"+obj.ah_tem+"</td></tr>";
-			 view += "<tr><td>평균 최저기온 </td>";
+			 view += "<tr scope=\"row\"><th>평균 최저기온 </td>";
 			 view += "<td id ="+obj.al_tem+">"+obj.al_tem+"</td></tr>";
-			 view += "<tr><td>평균 강수량 </td>";
+			 view += "<tr scope=\"row\"><th>평균 강수량 </td>";
 			 view += "<td id ="+obj.precipitation+">"+obj.precipitation+"</td></tr>";
-			 view += "<tr><td>습도</td>";
+			 view += "<tr scope=\"row\"><th>습도</td>";
 			 view += "<td id ="+obj.a_humidity+">"+obj.a_humidity+"</td></tr>";
-			 view += "<tr><td>일조량</td>";
+			 view += "<tr scope=\"row\"><th>일조량</td>";
 			 view += "<td id ="+obj.insolation+">"+obj.insolation+"</td></tr>";
-			 view += "<tr><td>평균 풍속</td>";
+			 view += "<tr scope=\"row\"><th>평균 풍속</td>";
 			 view += "<td id ="+obj.a_wind_spd+">"+obj.a_wind_spd+"</td></tr>";
-			 view += "<tr><td>최대  풍속</td>";
+			 view += "<tr scope=\"row\"><th>최대  풍속</td>";
 			 view += "<td id ="+obj.h_wind_spd+">"+obj.h_wind_spd+"</td></tr>";
 			 view += "</table>";
 		 });
@@ -318,7 +315,7 @@
 		document.getElementById("sideBar").style.width = "700px";
 		}
 	
-	function clossNav(){
+	function closeNav(){
 		document.getElementById("sideBar").style.width = "0px";
 	}
 	
