@@ -21,6 +21,7 @@ public class DAOMybatis {
 			e.printStackTrace();
 		}
 	}
+	
 
 	public VO loginMember(VO vo) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -146,11 +147,18 @@ public class DAOMybatis {
 		return cnt;
 	}
 	
-	public List<VO> cropClimateList(String c_name) { // 앞으로 커넥션 해줄 친구
+	public List<VO> cropClimateList(VO vo) { // 앞으로 커넥션 해줄 친구
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<VO> list = sqlSession.selectList("cropClimateList", c_name);
+		List<VO> list = sqlSession.selectList("cropClimateList", vo);
 		sqlSession.close();
 		return list; 
+	}
+	public int MemberInsert(VO vo) {
+		SqlSession sqlSession =sqlSessionFactory.openSession();
+		int cnt = sqlSession.insert("MemberInsert", vo);
+		sqlSession.commit();
+		sqlSession.close();
+		return cnt;
 	}
 	
 }

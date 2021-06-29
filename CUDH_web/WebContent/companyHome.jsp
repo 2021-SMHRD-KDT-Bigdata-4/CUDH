@@ -22,6 +22,7 @@ function loginFn() {
 			"m_pw" : m_pw
 		},
 		success : function(data) {
+			
 			if (data == "NO") {
 				alert("회원인증 실패");
 			} else {
@@ -34,6 +35,9 @@ function loginFn() {
 		}
 
 	});
+}
+function signUp(){
+	location.href="signUp.jsp"
 }
 function show(){
 	//location.href="/CUDH_web/loginForm.jsp";
@@ -70,9 +74,10 @@ function show(){
 						<button type="button" class="btn btn-outline-success" onclick="loginFn()">로그인</button>
 										
 					</div>
-					<div id="login_bt" class="login_bt" name="login_bt">
-						<button type="button" class="btn btn-outline-success" onclick="show()">로그인</button>
-					</div>
+						<div id="login_bt" class="login_bt" name="login_bt">
+							<button type="button" class="btn btn-outline-success" onclick="show()">로그인</button>
+						</div>
+						<button type="button" class="btn btn-outline-success" onclick="signUp()">회원가입</button>
 					</form>
 					
 				</div>

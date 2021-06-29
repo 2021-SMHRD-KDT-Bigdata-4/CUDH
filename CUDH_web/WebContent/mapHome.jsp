@@ -18,7 +18,6 @@
     <title>지도 생성하기</title>
     
 <style>
-
 	.area {
 		position: absolute;
 		background: #fff;
@@ -47,23 +46,35 @@
 <body>
 
 	<!-- 지도가 실제로 그려지는 div-->
-	<table>
-	<tr>
-	<td>
-	<div id="map" style="width: 1200px; height: 800px;"></div>
+	<div id="map" style="width: 100%; height: 800px;"></div>
+	
 	<!-- 사이드바 그려지는 div-->
-	</td>
-	<td>
-	<div id="sideBar" class="sidenav" style="width: 400px; height: 800px;">
-		<input type="text" id="sideCropDo">
-		<input type="text" id="sideCropSi">
-		<input type="text" id="sideCropName">
-		<input type="text" id="sidePreProduction_test_score">
-		<input type="text" id="sidePreProduction_amount">
+	<div id="sideBar" class="sidenav">
+		<div id="flaskDiv">
+			<table id="flaskTable">
+			<tr>
+			<td>작물명</td>
+			<td id="sideCropName"></td>
+			</tr>
+		
+			<tr>
+			<td>예측양</td>
+			<td id="sidePreProduction_amount"></td>
+			</tr>
+				
+			<tr>
+			<td>예측정확도</td>
+			<td id="sidePreProduction_test_score"></td>
+			</tr>
+			</table>
+		</div>
+		
+		<div id="climateDiv">
+		</div>
+		
+		</table>
 	</div>
-	</td>
-	</tr>
-	</table>
+	
 	<div>
 		<form action="http://127.0.0.1:5000" method="GET">
 			<input type="text" id="cropDo" name="cropDo">
@@ -86,32 +97,7 @@
 	
 	
 	<script>
-
 	
-	$(document).ready(()=> { 
-	//<c:if test="${not empty cropName}">
-	//		cropClimateList(cropName);
-	//	</c:if>
-		console.log(cropName);
-	}); 
-	
-	
-	 function cropClimateList(c_name){
-		$.ajax({
-			url : "cropClimateList.do",
-			type : "get",
-			data : {"c_name":c_name},
-			async: false,
-			dataType : "json",
-			success : cropClimateCall,
-			error : function(){alert("error");}
-		});
-	 }
-	 
-	 function cropClimateCall(data){
-		 console.log(data);
-	 }
-	 
 	//------------------------------------------------------------------------------------지도 그리기 위한 객체 생성 및 초기화
 	var mapContainer = document.getElementById('map');//지도를 표시할 div 지정
 	var mapOption = { //지도를 생성할 때 필요한 기본 옵션(이름 바꿔도 됨)
@@ -265,27 +251,80 @@
 			success : sideBarList,
 			error : function(){alert("error");}
 			});
+
+		openNav();
 		
 	});
 	
 	function sideBarList(data){
-		console.log(data.cropDo);
-		console.log(data.cropSi);
-		console.log(data.CropName);
-		console.log(data.PreProduction_test_score);
-		console.log(data.PreProduction_amount);
 		var cropDo = data.cropDo.toString();
 		var cropSi = data.cropSi.toString();
 		var cropName = data.cropName.toString();
 		var preProduction_test_score = data.preProduction_test_score.toString();
 		var preProduction_amount = data.preProduction_amount.toString();
 		
-		document.getElementById('sideCropDo').setAttribute("value",cropDo);
-		document.getElementById('sideCropSi').setAttribute("value",cropSi);
-		document.getElementById('sideCropName').setAttribute("value",cropName);
-		document.getElementById('sidePreProduction_test_score').setAttribute("value",preProduction_test_score);
-		document.getElementById('sidePreProduction_amount').setAttribute("value",preProduction_amount);
+		$("#sideCropDo").html(cropDo);
+		$("#sideCropSi").html(cropSi);
+		$("#sideCropName").html(cropName);
+		$("#sidePreProduction_test_score").html(preProduction_test_score);
+		$("#sidePreProduction_amount").html(preProduction_amount);
+		
+		cropClimateList(cropName, cropSi);
+	};
+	
+
+	 function cropClimateList(c_name, c_city){
+		$.ajax({
+			url : "cropClimateList.do",
+			type : "get",
+			data : {'c_city': c_city,'c_name' : c_name},
+			dataType : "json",
+			success : cropClimateCall,
+			error : function(){alert("error");}
+		});
+	 }
+	 
+	 function cropClimateCall(data){
+	
+		 var view="";
+		 $.each(data, (index,obj) =>{
+			 view += "<table id='climateTable'>";
+		 view += "<tr><td>평균 기온</td>";
+			 view += "<td id ="+obj.a_tem+">"+obj.a_tem+"</td></tr>";
+			 view += "<tr><td>평균 최고기온 </td>";
+			 view += "<td id ="+obj.ah_tem+">"+obj.ah_tem+"</td></tr>";
+			 view += "<tr><td>평균 최저기온 </td>";
+			 view += "<td id ="+obj.al_tem+">"+obj.al_tem+"</td></tr>";
+			 view += "<tr><td>평균 강수량 </td>";
+			 view += "<td id ="+obj.precipitation+">"+obj.precipitation+"</td></tr>";
+			 view += "<tr><td>습도</td>";
+			 view += "<td id ="+obj.a_humidity+">"+obj.a_humidity+"</td></tr>";
+			 view += "<tr><td>일조량</td>";
+			 view += "<td id ="+obj.insolation+">"+obj.insolation+"</td></tr>";
+			 view += "<tr><td>평균 풍속</td>";
+			 view += "<td id ="+obj.a_wind_spd+">"+obj.a_wind_spd+"</td></tr>";
+			 view += "<tr><td>최대  풍속</td>";
+			 view += "<td id ="+obj.h_wind_spd+">"+obj.h_wind_spd+"</td></tr>";
+			 view += "</table>";
+		 });
+		$("#climateDiv").html(view);
+	
+		 
+		 
+	 }
+	 
+	
+	function openNav() {
+		document.getElementById("sideBar").style.width = "700px";
+		}
+	
+	function clossNav(){
+		document.getElementById("sideBar").style.width = "0px";
 	}
+	
+	
+	
+	
 	
 	//------------------------------------------------------------------------------------클릭된 지도 중앙 부분 좌표 구하기
 	//나도 몰라서 주석 못 달아용~ 퍼왔어요~
@@ -304,8 +343,6 @@
 		return new kakao.maps.LatLng((x/area),(y/area));
 	}
 	//------------------------------------------------------------------------------------클릭된 지도 중앙 부분 좌표 구하기
-	
-	
 	
 	
 	

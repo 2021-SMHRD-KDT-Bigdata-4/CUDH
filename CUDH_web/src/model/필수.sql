@@ -106,18 +106,17 @@ CREATE TABLE professor_area (
 );
 ALTER TABLE professor_area ADD CONSTRAINT relation_2_pk PRIMARY KEY ( pa_p_idx, pa_a_idx );
 
-CREATE TABLE likelist  (
-    l_b_idx               INTEGER NOT NULL,
-    l_m_idx				  INTEGER NOT NULL
-);
-ALTER TABLE likelist ADD CONSTRAINT like_pk PRIMARY KEY ( l_b_idx, l_m_idx );
-
 CREATE TABLE professor_crop (
     pc_p_idx  INTEGER NOT NULL,
     pc_c_idx  INTEGER NOT NULL
 );
 ALTER TABLE professor_crop ADD CONSTRAINT relation_3_pk PRIMARY KEY ( pc_p_idx, pc_c_idx );
 
+CREATE TABLE likelist  (
+    l_b_idx               INTEGER NOT NULL,
+    l_m_idx				  INTEGER NOT NULL
+);
+ALTER TABLE likelist ADD CONSTRAINT like_pk PRIMARY KEY ( l_b_idx, l_m_idx );
 
 ALTER TABLE board
     ADD CONSTRAINT board_member_fk FOREIGN KEY ( b_m_idx )

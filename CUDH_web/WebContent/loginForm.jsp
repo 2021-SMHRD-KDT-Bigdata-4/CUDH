@@ -29,7 +29,6 @@ function loginFn() {
 			if (data == "NO") {
 				alert("회원인증 실패");
 			} else {
-				//location.href="/CUDH_web/memberBoard.jsp"
 				location.href="/CUDH_web/tabHome.jsp"
 			}
 		},

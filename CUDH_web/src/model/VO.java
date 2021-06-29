@@ -49,7 +49,6 @@ public class VO {
 	    private String h_wind_spd;
 	    private String sow_month;
 	    
-	    
 	    private int m_idx;
 	    private String m_id;
 	    private String m_pw;

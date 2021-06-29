@@ -16,14 +16,14 @@
 
 <script type="text/javascript">
 
-function memberBoardLikeUP(b_likes, b_idx ,b_m_idx){
+function memberBoardLikeUP(b_likes, b_idx ,m_idx){
 	$.ajax({
         url : "memberBoardLikeUP.do", //----------------------> AjavBoardListController ----↓
         type : "get",        //                      ↓ JSON = dic : {"idx":1, "name":"홍길동"}
-        success : callBack,  //-----------------------------------------------------
-        data: {"b_likes": b_likes,"b_idx":b_idx,"b_m_idx":b_m_idx},
+        success : callBack(b_idx),  //-----------------------------------------------------
+        data: {"b_likes": b_likes,"b_idx":b_idx,"m_idx": m_idx},
         dataType : "json",
-        error : function(){ alert("이미 좋아요를 누른 게시물입니다");}
+        error : function(){ alert("이거시 뜨면 된겁니다.");}
      });
 }
 
@@ -95,7 +95,7 @@ function boardlist(){
 		</form>
     </div>
     <div class="panel-footer">
-    <button class="btn btn-success btn-sm" onclick="memberBoardLikeUP(${vo.b_likes},${vo.b_idx},${vo.b_m_idx})">좋아요: ${vo.b_likes}</button>
+    <button class="btn btn-success btn-sm" onclick="memberBoardLikeUP(${vo.b_likes},${vo.b_idx},${sessionScope.loginVO.m_idx})">좋아요: ${vo.b_likes}</button>
     </div>
   </div>
 </div>
