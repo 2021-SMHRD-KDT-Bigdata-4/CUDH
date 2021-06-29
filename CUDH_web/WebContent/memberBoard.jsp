@@ -30,8 +30,8 @@ function list(){
 }
 function callBack(data){
  //alert(data);
- var view="<table class = 'table table-bordered'>";
- view+="<tr>";
+ var view="<table class='table table-hover'>";
+ view+="<tr class='table-active'>";
  view+="<td>지역</td>";
  view+="<td><center>제목</center></td>";
  view+="<td>작성자</td>";
@@ -40,7 +40,7 @@ function callBack(data){
  view+="</tr>";
  
  $.each(data,(b_idx,obj)=>{
-    view+="<tr>";
+    view+="<tr scope='row'>";
     view+="<td id='b_idx"+b_idx+"'>"+obj.b_state+'/'+obj.b_city+"</td>";
     view+="<td><a href='javascript:contentFn("+obj.b_idx+","+obj.b_views+")'>"+obj.b_title+"</td>";
     view+="<td>"+obj.b_writer+"</td>";
