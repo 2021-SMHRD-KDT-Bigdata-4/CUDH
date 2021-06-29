@@ -67,7 +67,7 @@ function logoutFn() {
 
 </script>
 </head>
-<body>
+<body style="background-image : url('img/b14.PNG'); background-repeat: no-repeat; background-position: center; background-size: cover;">
 
  <div class="tab-bar" style=" width: 100%; height : 50px">
 	<div style="float: left; width: 40%;">

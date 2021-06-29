@@ -150,7 +150,7 @@
 </script>
 </head>
 
-<body>
+<body style="background-color:transparent">
 
 	<div class="panel-heading">
 		<c:if test='${sessionScope.loginVO.m_id==\'admin\'}'>

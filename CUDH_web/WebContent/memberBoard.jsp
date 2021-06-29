@@ -67,10 +67,11 @@ function btnWrite(){
 function contentFn(b_idx, b_views) {
 	location.href="<c:url value='/memberBoardContent.do'/>?b_idx="+b_idx+"&b_views="+b_views;
 }
-
+/* style="background-image : url('img/base1.png'); background-repeat: no-repeat; background-position: center; background-size: cover;" */
+/* style="background-color:transparent" */
 </script>
 </head>
-<body>
+<body style="background-color:transparent">
 	<div>
 	<center>
 		<h1 >게시판</h1>
