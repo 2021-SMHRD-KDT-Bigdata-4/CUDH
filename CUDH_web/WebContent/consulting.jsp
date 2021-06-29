@@ -59,35 +59,47 @@
 				});
 		 }
 	 }
-	 
-	 function card(data){
-		 
-		 data = JSON.parse(data);
-		 var view="";
-		 view += "<span class='badge bg-success' id='span"+data[0].p_expertise+"'> "+ data[0].p_expertise +" </span>";
-		 view += "<div class='flex-container' id ='div'"+data[0].p_expertise+">";
-		 $.each(data, (index,obj) =>{
-			 view += "<table class='flex-item' id='tbl"+ obj.p_expertise + index +"'>";
-			 view += "<tr>";
-			 view += "<td> <img class='img_profile' src='img/profile.png'> </td>";
-			 view += "<td> <p class='text-secondary'> "+obj.p_career+" </p> </td>";
-			 view += "</tr>";
-			 view += "<tr>";
-			 view += "<td><p class='text-primary'> "+ obj.p_name +" </p></td>";
-			 view += "<td><p class='text-success'>" + obj.p_consulting_price + "만원</p></td>";
-			 view += "</tr>";
-			 view += "<tr>";
-			 var idx=JSON.stringify( obj.p_idx );
-			 var name=JSON.stringify( obj.p_name );
-			 var ept=JSON.stringify( obj.p_expertise );
-			 view += "<td colspan = '2'><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'/></td>";
-			 view += "</tr>";
-			 view += "</table>";
-			 cnt++;
-		});
-		 view += "</div>";
-		 $("#consulting_main").append(view);
-	 }
+
+     function card(data){
+         data = JSON.parse(data);
+         var view="";
+         view += "<div class='flex-container' id='div'"+data[0].p_expertise+">";
+         view += "<span class='badge bg-success' id='span"+data[0].p_expertise+"'>"+ "<h4><strong>"+data[0].p_expertise+"</strong></h4>" +"</span>";
+         view += "</div>";
+         view += "<div class='flex-container' id='div'"+data[0].p_expertise+">";
+         $.each(data, (index,obj)=>{
+            view += "<table class='flex-item' id='tbl"+ obj.p_expertise + index +"'>";
+            view += "<tr>";
+            view += "<td rowspan='5'><img class='img_profile' src='img/"+obj.p_name+".png'></td>";
+            view += "<td></td>";
+            view += "</tr>";
+            view += "<tr>";
+            view += "<td></td>";
+            view += "<td><p class='text-primary'>"+"<strong>"+obj.p_name+"</strong>" +" </p></td>";
+            view += "</tr>";
+            view += "<tr>";
+            view += "<td></td>";
+            view += "<td><p class='text-success'>" + obj.p_career + "</p></td>";
+            view += "</tr>";
+            view += "<tr>";
+            view += "<td></td>";
+            view += "<td><p class='text-success'>컨설팅 비용: " + obj.p_consulting_price + "</p></td>";
+            view += "</tr>";
+            view += "<tr>";
+               var idx=JSON.stringify( obj.p_idx );
+               var name=JSON.stringify( obj.p_name );
+               var ept=JSON.stringify( obj.p_expertise );
+               view += "<td></td>";
+              view += "<td><input type ='button' value ='컨설팅 신청' class ='btn btn-primary' href=\"#top\" onclick='btnWrite("+idx+","+name+","+ept+")'></td>";
+              view += "</tr>";
+           view += "</table>";
+            
+        });
+         
+         view += "</div>";
+         $("#consulting_main").append(view);
+      }
+  
 	 
 
 	 function btnList(){

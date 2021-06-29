@@ -8,15 +8,17 @@ insert into member values(5,'pyb','12345','박윤빈','yes','전남','비트',0)
 insert into member values(6,'jgj','12345','장경진','yes','전남','벼','0');-- 숫자 2가지방식 다 들어감
 
 --p_idx, p_name, p_expertise, p_career, p_consulting_price
-insert into professor values('1','김사과','영양학','사과학 박사','40');
-insert into professor values('2','이귤귤','영양학','겨울 귤 예측학 저자','35');
-insert into professor values('3','박감감','질병학','닭토란 고정 패널','40');
-insert into professor values('4','장비트','질병학','비트수확의 혁신 드랍 더 비트 저자','50');
-insert into professor values('5','최벼벼','영양학','전남 벼 관련 특허 보유','전화 컨택후 협상');
-insert into professor values('6','고배추','육종학','김장용 배추 연구','25');
-insert into professor values('7','정포도','육종학','국내 와인용 포도 일인자','50');
-insert into professor values('8','김무우','질병학','무름병 예방 연구','40');
-insert into professor values('9','신감자','영양학','얘 봄감자가 맛있단다 저자','전화 컨택후 협상');
+insert into professor values('1','김사과','농업경영','서울대학교 농경제학과(경영학 석사)','40만원');
+insert into professor values('2','이귤귤','농업경영','스인개은행 상무이사(경영 지도사)','35만원');
+insert into professor values('3','박감감','농업경영','경진대학, 희경대학 교수(경영학 박사)','40만원');
+insert into professor values('4','장비트','농업기술','강준경영컨설팅그룹(주) 이사(기술 지도사)','50만원');
+insert into professor values('5','최벼벼','농업기술','빈건축사 사무소 대표(건축기술사)','전화 컨택후 협상');
+insert into professor values('6','고배추','농업기술','최강환경 이사(대기환경기사)','25만원');
+insert into professor values('7','정포도','농업회계','성은회계사 사무소 대표(공인회계사)','50만원');
+insert into professor values('8','김무우','농업회계','성우회계사 사무소 대표(세무사)','40만원');
+insert into professor values('9','신감자','농업회계','코언디흐 경영컨설팅 대표(경영지도사)','전화 컨택후 협상');
+
+
 
 insert into area values('1','전라남도','나주시');
 insert into area values('2','전라남도','순천시');
