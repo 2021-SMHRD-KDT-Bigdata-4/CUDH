@@ -33,7 +33,7 @@
 	<div id="sideBar" class="sidenav" style='padding-top: 30px;'>
 		<div id="flaskDiv">
 			<table id="flaskTable" class="sidelist" >
-			<thead> <tr> <th> 항목 </th> <th> 내용 </th> </tr> </thead>
+			<thead> <tr> <th> 예측 항목 </th> <th> 내용 </th> </tr> </thead>
 			<tbody>
 				<tr>
 					<th>작물명</th>
@@ -41,12 +41,12 @@
 				</tr>
 
 				<tr>
-					<th>예측생산양</th>
+					<th>예측생산량(t)</th>
 					<td id="sidePreProduction_amount"></td>
 				</tr>
 
 				<tr>
-					<th>예측정확도</th>
+					<th>예측정확도(%)</th>
 					<td id="sidePreProduction_test_score"></td>
 				</tr>
 				</tbody>
@@ -54,7 +54,7 @@
 		</div>
 
 		<div>
-			<image src='img/background_tea.jpg' id="chart"></image>
+			<image src='img/chart1.png' id="chart"></image>
 		</div>
 
 		<div id="climateDiv"></div>
@@ -285,22 +285,22 @@
 		 var view="";
 		 $.each(data, (index,obj) =>{
 			 view += "<table id='climateTable' class=\"sidelist\">";
-			 view += "<thead> <tr> <th> 항목 </th> <th> 내용 </th> </tr> </thead>"
-		 	 view += "<tr scope=\"row\"><th>평균 기온</td>";
+			 view += "<thead> <tr> <th> 기상 항목 </th> <th> 내용 </th> </tr> </thead>"
+		 	 view += "<tr scope=\"row\"><th>평균 기온(℃)</td>";
 			 view += "<td id ="+obj.a_tem+">"+obj.a_tem+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>평균 최고기온 </td>";
+			 view += "<tr scope=\"row\"><th>평균 최고기온(℃)</td>";
 			 view += "<td id ="+obj.ah_tem+">"+obj.ah_tem+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>평균 최저기온 </td>";
+			 view += "<tr scope=\"row\"><th>평균 최저기온(℃)</td>";
 			 view += "<td id ="+obj.al_tem+">"+obj.al_tem+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>평균 강수량 </td>";
+			 view += "<tr scope=\"row\"><th>평균 강수량(mm)</td>";
 			 view += "<td id ="+obj.precipitation+">"+obj.precipitation+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>습도</td>";
+			 view += "<tr scope=\"row\"><th>습도(%rh)</td>";
 			 view += "<td id ="+obj.a_humidity+">"+obj.a_humidity+"</td></tr>";
 			 view += "<tr scope=\"row\"><th>일조량</td>";
 			 view += "<td id ="+obj.insolation+">"+obj.insolation+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>평균 풍속</td>";
+			 view += "<tr scope=\"row\"><th>평균 풍속(m/s)</td>";
 			 view += "<td id ="+obj.a_wind_spd+">"+obj.a_wind_spd+"</td></tr>";
-			 view += "<tr scope=\"row\"><th>최대  풍속</td>";
+			 view += "<tr scope=\"row\"><th>최대 풍속(m/s)</td>";
 			 view += "<td id ="+obj.h_wind_spd+">"+obj.h_wind_spd+"</td></tr>";
 			 view += "</table>";
 		 });
