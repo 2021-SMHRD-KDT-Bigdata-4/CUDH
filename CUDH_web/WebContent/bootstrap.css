@@ -50,11 +50,14 @@
     
   }
   
+  
+	.nanumsquare {
+	    font-family: 'NanumSquare', sans-serif !important;
+	}
 
 
 body {
   margin: 0;
-  font-family: 'NanumBarunGothic';
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4081,7 +4084,7 @@ fieldset:disabled .btn {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -ms-flex-pack: start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .btn-toolbar .input-group {
@@ -4174,8 +4177,8 @@ fieldset:disabled .btn {
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
-  color: #4582ec;
+  padding: 0.5rem 0.5rem;
+  color: rgba(0, 0, 0, 0.55);
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
@@ -4206,6 +4209,7 @@ fieldset:disabled .btn {
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+   line-height: 1.8;
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
@@ -4274,6 +4278,7 @@ fieldset:disabled .btn {
 }
 
 .navbar {
+  font-family: 'NanumBarunGothic';
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -4411,6 +4416,7 @@ fieldset:disabled .btn {
   .navbar-expand-sm .navbar-nav .nav-link {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+   
   }
   .navbar-expand-sm .navbar-nav-scroll {
     overflow: visible;
@@ -11157,19 +11163,7 @@ table,
 	display:inline-block;
 }
 
-.flex-container {
-  display : flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-}
 
-.flex-item {
-	display : flex;
-	flex-basis : 0%;
-	
-}
 
 
 .Main__background {
@@ -11235,13 +11229,6 @@ font-size: 26px;
   	background-repeat: no-repeat;
   	position: center;
 } */
-
-
-.img_profile{
-	width: 250px;
-	height: 250px;
-	object-fit: fill;
-}
 
 
 

@@ -23,7 +23,7 @@
 <body>
 
 	<!-- 지도가 실제로 그려지는 div-->
-	<div id="map" style="width: 100%; height: 900px;"></div>
+	<div id="map" style="width: 100%; height: 880px;"></div>
 
 
 			
@@ -33,24 +33,25 @@
 	<div id="sideBar" class="sidenav" style='padding-top: 30px;'>
 		<div id="flaskDiv">
 			<table id="flaskTable" class="sidelist" >
-			<thead> <tr> <th> 예측 항목 </th> <th> 내용 </th> </tr> </thead>
-			<tbody>
-				<tr>
-					<th>작물명</th>
-					<td id="sideCropName"></td>
-				</tr>
+				<thead> <tr> <th> 예측 항목 </th> <th> 내용 </th> </tr> </thead>
+				<tbody>
+					<tr>
+						<th>작물명</th>
+						<td id="sideCropName"></td>
+					</tr>
 
-				<tr>
-					<th>예측생산량(t)</th>
-					<td id="sidePreProduction_amount"></td>
-				</tr>
+					<tr>
+						<th>예측생산량(t)</th>
+						<td id="sidePreProduction_amount"></td>
+					</tr>
 
-				<tr>
-					<th>예측정확도(%)</th>
-					<td id="sidePreProduction_test_score"></td>
-				</tr>
+					<tr>
+						<th>예측정확도(%)</th>
+						<td id="sidePreProduction_test_score"></td>
+					</tr>
 				</tbody>
 			</table>
+			
 		</div>
 
 		<div>
@@ -59,7 +60,6 @@
 
 		<div id="climateDiv"></div>
 
-		</table>
 	</div>
 
 	<div style="display: none;">

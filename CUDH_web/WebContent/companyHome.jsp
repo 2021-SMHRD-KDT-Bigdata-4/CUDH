@@ -77,7 +77,7 @@ function show(){
 						<div id="login_bt" class="login_bt" name="login_bt">
 							<button type="button" class="btn btn-outline-success" onclick="show()">로그인</button>
 						</div>
-						<button type="button" class="btn btn-outline-success" onclick="signUp()">회원가입</button>
+						<button type="button" style="margin-left:15px;" class="btn btn-outline-success" onclick="signUp()">회원가입</button>
 					</form>
 					
 				</div>
@@ -99,13 +99,21 @@ function show(){
 		</div>
 	</div>
 
-	<div class="Service" id="SERVICE">
-	
+	<div class="Service Main__background" id="SERVICE">
+	<div id="TITLES" >
+				<span style="margin-top:950px; color:#fff;" class="subTitle">회원제 커뮤니티<br></span> 
+				<span style="margin-top:950px; color:#fff;"	class="mainTitle"> 제주도의 귤 과수원부터 철원의 눈 덮힌 밭까지<br>다양한 소식을 전달합니다.
+				</span>
+			</div>
 	</div>
 	
-	
-	<div class="Contact" id="CONTACT">
-	
+
+	<div class="Contact Main__background" id="CONTACT">
+		<div id="TITLES">
+				<span style="margin-top:1900px; color:#fff;" class="subTitle">신뢰와 전문성<br></span>
+				<span style="margin-top:1900px; color:#fff;" class="mainTitle">믿음직한 전문가와 함께라면<br>해결할 수 없는 문제는 없습니다.
+				</span>
+			</div>
 	</div>
 	
 </body>

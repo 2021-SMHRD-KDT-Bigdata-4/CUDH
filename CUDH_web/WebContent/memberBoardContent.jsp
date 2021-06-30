@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 <title>게시판 상세보기</title>
 
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -47,32 +48,32 @@ function boardlist(){
 
 </script>
 </head>
-<body>
+<body style="font-family: 'NanumSquare', sans-serif !important;">
   <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading"></div>
+  <div class="panel panel-default" style="margin-top: 100px;">
+    <div class="panel-heading"><h2>게시글 수정</h2></div>
     <div class="panel-body">
 		 <form id="ufrm" class="form-horizontal" action="<c:url value='/memberBoardUpdate.do'/>" method="post">
 		  <div class="form-group">
-		    <label class="control-label col-sm-2">번호:</label>
+		    <label class="control-label col-sm-2" style="font-size: 2rem;">번호:</label>
 		    <div class="col-sm-10">
 		      <input type="text" class="form-control" name="b_idx" id="b_idx" readonly="readonly" value="${vo.getB_idx()}">
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label class="control-label col-sm-2">제목:</label>
+		    <label class="control-label col-sm-2" style="font-size: 2rem;">제목:</label>
 		    <div class="col-sm-10">
 		      <input type="text" class="form-control" name="b_title" id="b_title" value="${vo.getB_title()}">
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label class="control-label col-sm-2">내용:</label>
+		    <label class="control-label col-sm-2" style="font-size: 2rem;">내용:</label>
 		    <div class="col-sm-10">
 		      <textarea rows="8" cols="60" class="form-control" name="b_contents" id="b_contents">${vo.getB_contents()}</textarea>
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label class="control-label col-sm-2">작성자:</label>
+		    <label class="control-label col-sm-2" style="font-size: 2rem;">작성자:</label>
 		    <div class="col-sm-10">
 		      <input type="text" class="form-control" readonly="readonly" id="b_writer" value="${vo.getB_writer()}">
 		    </div>

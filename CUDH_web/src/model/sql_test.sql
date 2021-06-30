@@ -14,6 +14,10 @@ insert into contract values(1,2,1,'2021-07-05','일단 신청할게요','n');-- 
 insert into contract values(2,5,4,'2021-07-01','내용은 수정할 수 있으니까','n');
 insert into contract values(3,4,3,'2021-07-08','아무내용','n');
 
+update contract set con_about='회계감사' where con_idx=1;
+update contract set con_about='농장 울타리 및 농수로 보수' where con_idx=2;
+update contract set con_about='기술경영 지원사업' where con_idx=3;
+
 select * from crop;
 
 insert into contract(con_m_idx, con_p_idx, con_date, con_about, con_approval)

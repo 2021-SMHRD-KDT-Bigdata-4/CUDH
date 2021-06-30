@@ -7,11 +7,18 @@
 <meta charset="UTF-8">
 
 <link rel="stylesheet" type="text/css" href="bootstrap.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CUDH</title>
+
+
+<style>
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+</style>
 
 <script type="text/javascript">
 
@@ -67,12 +74,12 @@ function logoutFn() {
 
 </script>
 </head>
-<body style="background-image : url('img/b14.PNG'); background-repeat: no-repeat; background-position: center; background-size: cover;">
-
- <div class="tab-bar" style=" width: 100%; height : 50px">
-	<div style="float: left; width: 40%;">
+<body style="font-family: 'NanumBarunGothic';">
+ <div style="width:100%; height : 5px";></div>
+ <div class="tab-bar" style="width: 100%; height : 41px">
+	<div style="float: left; width: 40%; vertical-align: bottom;">
 	<ul class="nav nav-tabs" style="border-bottom-width: 0px;">
-		<a class="navbar-brand" href="companyHome.jsp">CUDH</a>
+		<a class="navbar-brand" href="companyHome.jsp" style="margin-left:13px; vertical-align: bottom; font-weight: 400; line-height: 1.95; color:#343a40;">CUDH</a>
 		
 		<li class="nav-item">
 			<a class="nav-link" data-bs-toggle="tab" data-tab="tab-1" onclick='maptab()' href="#tab-1">수확량 예측 지도</a></li>
@@ -85,9 +92,9 @@ function logoutFn() {
 
 	</ul>
 	</div>
-	<div style="float: right; width: 20%;">	
+	<div style="float: right; padding-top: 6px;">	
 		<c:if test='${sessionScope.loginVO!=null}'>
-					<a><strong>${sessionScope.loginVO.m_name}</strong>님 방문을 환영합니다.</a><input type="button" value="로그아웃" class="btn btn-primary" onclick="logoutFn()">
+					<a style="margin-right:20px;" ><strong>${sessionScope.loginVO.m_name}</strong>님 방문을 환영합니다.</a><input type="button" style="margin-right:12px;" value="로그아웃" class="btn btn-primary" onclick="logoutFn()">
 		</c:if>
 	</div>
 </div>
