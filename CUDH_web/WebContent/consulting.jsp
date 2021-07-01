@@ -57,7 +57,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
 <script type="text/javascript">
 	 var Columns = [];
 	 
@@ -118,7 +117,8 @@
 	           view += "<td rowspan='5'><img class='img_profile' src='img/"+obj.p_name+".png'></td>";
 	           view += "</tr>";
 	           view += "<tr>";
-	           view += "<td><p class='text-primary'>"+"<strong><h4>"+obj.p_name+"</h4></strong>" +" </p></td>";
+	           view += "<td></td>";
+	           view += "<td><p class='text-primary' style='font-size: 15px !important;'>"+"<strong><h4>"+obj.p_name+"</h4></strong>" +" </p></td>";
 	           view += "</tr>";
 	           view += "<tr>";
 	           view += "<td><p style='font-size : 2 rem;'  class='text-inner'>약력</p><p style='font-size : 2 rem;'  class='text-inner'>" + obj.p_career + "</p></td>";

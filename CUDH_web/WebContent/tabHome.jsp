@@ -71,7 +71,7 @@ function logoutFn() {
 	});
 }
 
-
+/* style="background-image : url('img/b14.PNG'); background-repeat: no-repeat; background-position: center; background-size: cover;" */
 </script>
 </head>
 <body style="font-family: 'NanumBarunGothic';">
