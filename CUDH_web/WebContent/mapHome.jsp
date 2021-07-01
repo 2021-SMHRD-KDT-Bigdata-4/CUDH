@@ -39,15 +39,20 @@
 						<th>작물명</th>
 						<td id="sideCropName"></td>
 					</tr>
-
+					
 					<tr>
-						<th>예측생산량(t)</th>
+						<th>예측 생산량(t)</th>
 						<td id="sidePreProduction_amount"></td>
 					</tr>
-
 					<tr>
-						<th>예측정확도(%)</th>
+						<td colspan='2' style="text-align:center;">생산단수 X 재배면적</td>
+					</tr>
+					<tr>
+						<th>예측 정확도(%)</th>
 						<td id="sidePreProduction_test_score"></td>
+						<tr>
+						<td colspan='2'  style="text-align:center;">실제 데이터와 예측 데이터를 비교하여 얼마나 정확한지 확률로 나타냄</td>
+					</tr>
 					</tr>
 				</tbody>
 			</table>

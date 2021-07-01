@@ -125,7 +125,7 @@ ul{
 
 .sidelist tbody th {
   width: 150px;
-  padding: 8px;
+  padding: 6px;
   font-weight: bold;
   vertical-align: top;
   border-bottom: 1px solid #ccc;
@@ -134,7 +134,7 @@ ul{
 
 .sidelist td {
   width: 350px;
-  padding: 8px;
+  padding: 6px;
   vertical-align: top;
   border-bottom: 1px solid #ccc;
 }
